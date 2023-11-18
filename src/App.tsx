@@ -1,8 +1,10 @@
+import Typography from "./components/ui/Typography";
+
 function App() {
   return (
-    <div>
-      <h1 className="text-7xl text-primary-red-45">App</h1>
-      <p className="text-lg">
+    <div className="bg-yellow-400">
+      <Typography variant="h1">App</Typography>
+      <Typography variant="body">
         Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet
         cubilia tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt
         turpis? Sagittis venenatis! Cubilia? Lectus quas laboriosam magna
@@ -15,7 +17,7 @@ function App() {
         molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis libero
         luctus, eu praesent at augue, eos dictumst blandit mi adipiscing earum
         accusantium, voluptas dignissimos mi.
-      </p>
+      </Typography>
     </div>
   );
 }

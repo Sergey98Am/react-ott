@@ -2,9 +2,7 @@
 module.exports = {
   content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
-    fontFamily: {
-      sans: ["Manrope", "sans-serif"],
-    },
+    fontFamily: { sans: ["Manrope", "sans-serif"] },
     fontSize: {
       xs: ["0.75rem", { fontWeight: "600" }], // 12px
       sm: ["0.875rem", { fontWeight: "400" }], // 14px
