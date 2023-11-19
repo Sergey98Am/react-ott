@@ -1,3 +1,4 @@
+import { PlayIcon } from "./components/icons/PlayIcon";
 import Button from "./components/ui/Button";
 import Typography from "./components/ui/Typography";
 
@@ -20,6 +21,9 @@ function App() {
         accusantium, voluptas dignissimos mi.
       </Typography>
       <div className="flex items-start 2xl:text-lg">
+        <Button className="gap-1">
+          <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
+        </Button>
         <Button>Choose Plan</Button>
         <Button variant="dark">Start Free Trial</Button>
       </div>
