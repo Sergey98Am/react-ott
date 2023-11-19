@@ -22,7 +22,7 @@ function App() {
       </Typography>
       <div className="flex items-start 2xl:text-lg">
         <Button className="gap-1">
-          <PlayIcon width={28} height={28} /> Start Watching Now
+          <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
         </Button>
         <Button>Choose Plan</Button>
         <Button variant="dark">Start Free Trial</Button>
