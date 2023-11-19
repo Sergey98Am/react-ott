@@ -1,8 +1,9 @@
+import Button from "./components/ui/Button";
 import Typography from "./components/ui/Typography";
 
 function App() {
   return (
-    <div className="bg-yellow-400">
+    <div className="bg-absolute-black">
       <Typography variant="h1">App</Typography>
       <Typography variant="body">
         Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet
@@ -18,6 +19,10 @@ function App() {
         luctus, eu praesent at augue, eos dictumst blandit mi adipiscing earum
         accusantium, voluptas dignissimos mi.
       </Typography>
+      <div className="flex items-start 2xl:text-lg">
+        <Button>Choose Plan</Button>
+        <Button variant="dark">Start Free Trial</Button>
+      </div>
     </div>
   );
 }
