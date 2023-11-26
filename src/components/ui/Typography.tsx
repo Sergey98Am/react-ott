@@ -10,6 +10,7 @@ const typographyVariants = cva("text-absolute-white", {
       h2: "text-3xl xl:text-4xl 2xl:text-5xl",
       h3: "text-lg xl:text-xl 2xl:text-3xl",
       body: "text-grey-grey-60 text-sm 2xl:text-lg",
+      span: "",
     },
   },
   defaultVariants: {
@@ -27,6 +28,7 @@ const variantElementMap: Record<
   h2: "h2",
   h3: "h3",
   body: "p",
+  span: "span",
 };
 
 export interface TypographyProps
@@ -48,7 +50,7 @@ const Typography = React.forwardRef<HTMLElement, TypographyProps>(
         {...props}
       />
     );
-  }
+  },
 );
 
 Typography.displayName = "Typography";

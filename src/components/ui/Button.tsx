@@ -11,6 +11,7 @@ const buttonVariants = cva(
       variant: {
         primary: "bg-primary-red-45 border-transparent",
         dark: "bg-dark-black-08 border-dark-black-15",
+        ghost: "border-0 !p-0",
       },
     },
     defaultVariants: {
