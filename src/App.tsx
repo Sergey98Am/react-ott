@@ -1,34 +1,22 @@
-import { PlayIcon } from "./components/icons/PlayIcon";
-import Button from "./components/ui/Button";
-import Container from "./components/ui/Container";
-import Typography from "./components/ui/Typography";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import Layout from "./pages/Layout";
+import Home from "./pages/Home";
+import Movies from "./pages/Movies";
+import Support from "./pages/Support";
+import Subscriptions from "./pages/Subscriptions";
 
 function App() {
   return (
-    <Container>
-      <Typography variant="h1">App</Typography>
-      <Typography variant="body">
-        Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet
-        cubilia tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt
-        turpis? Sagittis venenatis! Cubilia? Lectus quas laboriosam magna
-        imperdiet incidunt, alias sapien occaecat sequi, magnis molestiae?
-        Cillum habitasse laudantium asperiores. In voluptate, et senectus,
-        perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-        Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-        dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-        excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-        molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis libero
-        luctus, eu praesent at augue, eos dictumst blandit mi adipiscing earum
-        accusantium, voluptas dignissimos mi.
-      </Typography>
-      <div>
-        <Button className="gap-1">
-          <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
-        </Button>
-        <Button>Choose Plan</Button>
-        <Button variant="dark">Start Free Trial</Button>
-      </div>
-    </Container>
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Home />} />
+          <Route path="movies" element={<Movies />} />
+          <Route path="support" element={<Support />} />
+          <Route path="subscriptions" element={<Subscriptions />} />
+        </Route>
+      </Routes>
+    </BrowserRouter>
   );
 }
 

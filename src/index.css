@@ -43,7 +43,12 @@
 
 @layer base {
   body {
-    margin: 0;
-    background: var(--black-08);
+    @apply m-0 bg-dark-black-08 text-absolute-white;
   }
 }
+
+/* @layer components {
+  .navbar .active {
+    @apply bg-dark-black-10 text-absolute-white;
+  }
+} */
