@@ -36,12 +36,14 @@ const MobileNavbar = () => {
           <Logo className="w-[126px]" />
         </NavLink>
 
+        {/* Icons */}
         <div className="flex items-center justify-center space-x-3">
           <div className="flex gap-x-3.5 2xl:gap-x-[30px]">
             <Loop />
             <Bell />
           </div>
 
+          {/* Toggle Icon and animation */}
           <Sheet key="left">
             <SheetTrigger asChild>
               <Button
@@ -57,6 +59,7 @@ const MobileNavbar = () => {
                   <Logo className="w-[126px]" />
                 </div>
                 <ScrollArea className="h-[calc(100vh-8rem)]">
+                  {/* Nav links */}
                   <div className="nav-items flex flex-col">
                     {navLinks.map((nav) => (
                       <Link

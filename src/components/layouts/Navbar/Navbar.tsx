@@ -45,6 +45,7 @@ export function Navbar() {
           </NavigationMenuList>
         </NavigationMenu>
 
+        {/* Icons */}
         <div className="flex gap-x-3.5 2xl:gap-x-[30px]">
           <Loop />
           <Bell />
