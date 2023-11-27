@@ -1,4 +1,4 @@
-import BellIcon from "@/components/icons/BellIcon";
+// import BellIcon from "@/components/icons/BellIcon";
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/Avatar";
 import Button from "@/components/ui/Button";
 import {
@@ -7,6 +7,7 @@ import {
   PopoverTrigger,
 } from "@/components/ui/Popover";
 import Typography from "@/components/ui/Typography";
+import { BellIcon } from "@heroicons/react/24/outline";
 
 const Bell = () => {
   return (

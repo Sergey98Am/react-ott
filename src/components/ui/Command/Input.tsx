@@ -1,14 +1,14 @@
 import * as React from "react";
 import { Command as CommandPrimitive } from "cmdk";
 import { cn } from "@/lib/utils";
-import SearchIcon from "@/components/icons/SearchIcon";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const CommandInput = React.forwardRef<
   React.ElementRef<typeof CommandPrimitive.Input>,
   React.ComponentPropsWithoutRef<typeof CommandPrimitive.Input>
 >(({ className, ...props }, ref) => (
   <div className="flex items-center border-b px-3" cmdk-input-wrapper="">
-    <SearchIcon className={cn("me-2", className)} />
+    <MagnifyingGlassIcon className={cn("me-2", className)} />
     <CommandPrimitive.Input
       ref={ref}
       className={cn(

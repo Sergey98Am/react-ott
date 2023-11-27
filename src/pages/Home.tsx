@@ -1,12 +1,32 @@
-import { PlayIcon } from "@/components/icons/PlayIcon";
+// import { PlayIcon } from "@/components/icons/PlayIcon";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
+import Image from "@/components/ui/Image";
 import Typography from "@/components/ui/Typography";
+import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Home = () => {
   return (
     <>
-      <Container className="pt-28">
+      <div className="relative">
+        <Image
+          src="./src/assets/Banner.jpg"
+          alt="Photo by Drew Beamer"
+          className="aspect-[39/50] object-cover sm:aspect-[1920/860]"
+        />
+        <div
+          style={{
+            background:
+              "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)",
+            position: "absolute",
+            top: "0",
+            right: "0",
+            bottom: "0",
+            left: "0",
+          }}
+        ></div>
+      </div>
+      <Container>
         <Typography variant="h1">App</Typography>
         <Typography variant="body">
           Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet

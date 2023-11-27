@@ -3,7 +3,7 @@ import { VariantProps, cva } from "class-variance-authority";
 import * as SheetPrimitive from "@radix-ui/react-dialog";
 import { SheetOverlay, SheetPortal } from ".";
 import { cn } from "@/lib/utils";
-import { X } from "lucide-react";
+import { XMarkIcon } from "@heroicons/react/24/outline";
 
 const sheetVariants = cva(
   "fixed z-50 gap-4 bg-dark-black-08 p-6 shadow-lg transition ease-in-out data-[state=open]:animate-in data-[state=closed]:animate-out data-[state=closed]:duration-300 data-[state=open]:duration-500",
@@ -41,7 +41,7 @@ const SheetContent = React.forwardRef<
     >
       {children}
       <SheetPrimitive.Close className="focus:ring-ring data-[state=open]:bg-secondary absolute right-4 top-12 rounded-sm opacity-70 ring-offset-absolute-white transition-opacity hover:opacity-100 focus:outline-none focus:ring-2 focus:ring-offset-2 disabled:pointer-events-none">
-        <X className="h-6 w-6" />
+        <XMarkIcon className="h-6 w-6" />
         <span className="sr-only">Close</span>
       </SheetPrimitive.Close>
     </SheetPrimitive.Content>
