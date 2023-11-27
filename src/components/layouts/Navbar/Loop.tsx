@@ -1,4 +1,3 @@
-import SearchIcon from "@/components/icons/SearchIcon";
 import Button from "@/components/ui/Button";
 import {
   CommandDialog,
@@ -9,6 +8,7 @@ import {
   CommandList,
 } from "@/components/ui/Command";
 import React from "react";
+import { MagnifyingGlassIcon } from "@heroicons/react/24/outline";
 
 const Loop = () => {
   const [open, setOpen] = React.useState(false);
@@ -27,7 +27,7 @@ const Loop = () => {
   return (
     <div>
       <Button variant="ghost" onClick={() => setOpen((open) => !open)}>
-        <SearchIcon className="h-6 w-6 2xl:h-[34px] 2xl:w-[34px]" />
+        <MagnifyingGlassIcon className="h-6 w-6 2xl:h-[34px] 2xl:w-[34px]" />
       </Button>
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />

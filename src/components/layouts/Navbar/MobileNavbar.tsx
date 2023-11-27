@@ -1,10 +1,11 @@
+import React from "react";
 import Container from "@/components/ui/Container";
 import { NavLink } from "react-router-dom";
 import Logo from "@/components/icons/Logo";
 import { cn } from "@/lib/utils";
 import { useScrollPosition } from "@/hooks/useScrollPosition";
 import Button from "@/components/ui/Button";
-import ToggleIcon from "@/components/icons/ToggleIcon";
+import { Bars3BottomRightIcon } from "@heroicons/react/24/outline";
 import {
   Sheet,
   SheetClose,
@@ -14,7 +15,6 @@ import {
 import { ScrollArea } from "@/components/ui/ScrollArea";
 import { navLinks } from "@/constants";
 import Typography from "@/components/ui/Typography";
-import React from "react";
 import Loop from "./Loop";
 import Bell from "./Bell";
 
@@ -27,7 +27,7 @@ const MobileNavbar = () => {
         scrollPosition > 0
           ? "supports-[backdrop-filter]:bg-absolute-black/60 backdrop-blur"
           : "bg-transparent",
-        "mobile-navbar fixed w-full pb-[11px] pt-[37px] md:hidden",
+        "mobile-navbar fixed z-10 w-full pb-[11px] pt-[37px] md:hidden",
       )}
     >
       <Container className="flex items-center justify-between">
@@ -50,7 +50,7 @@ const MobileNavbar = () => {
                 variant="ghost"
                 className="rounded-md border-[3px] border-dark-black-15 bg-dark-black-10 !p-3"
               >
-                <ToggleIcon width={24} height={24} />
+                <Bars3BottomRightIcon width={24} height={24} />
               </Button>
             </SheetTrigger>
             <SheetContent side="left" className="w-full px-0 py-0">
