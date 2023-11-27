@@ -4,13 +4,14 @@ import Container from "@/components/ui/Container";
 import Image from "@/components/ui/Image";
 import Typography from "@/components/ui/Typography";
 import { PlayIcon } from "@heroicons/react/24/solid";
+import Banner from "@/assets/Banner.jpg";
 
 const Home = () => {
   return (
     <>
       <div className="relative">
         <Image
-          src="./src/assets/Banner.jpg"
+          src={Banner}
           alt="Photo by Drew Beamer"
           className="aspect-[39/50] object-cover sm:aspect-[1920/860]"
         />
