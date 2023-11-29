@@ -1,32 +1,14 @@
 // import { PlayIcon } from "@/components/icons/PlayIcon";
+import Hero from "@/components/Homepage/Hero";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import Image from "@/components/ui/Image";
 import Typography from "@/components/ui/Typography";
 import { PlayIcon } from "@heroicons/react/24/solid";
-import Banner from "@/assets/Banner.jpg";
 
 const Home = () => {
   return (
     <>
-      <div className="relative">
-        <Image
-          src={Banner}
-          alt="Photo by Drew Beamer"
-          className="aspect-[39/50] object-cover sm:aspect-[1920/860]"
-        />
-        <div
-          style={{
-            background:
-              "linear-gradient(to top, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 60%, rgba(0, 0, 0, 0.8) 100%)",
-            position: "absolute",
-            top: "0",
-            right: "0",
-            bottom: "0",
-            left: "0",
-          }}
-        ></div>
-      </div>
+      <Hero />
       <Container>
         <Typography variant="h1">App</Typography>
         <Typography variant="body">
