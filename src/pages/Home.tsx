@@ -1,5 +1,5 @@
-// import { PlayIcon } from "@/components/icons/PlayIcon";
-import Hero from "@/components/Homepage/Hero";
+import GenreCard from "@/components/cards/GenreCard";
+import Hero from "@/components/homepage/Hero";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Typography from "@/components/ui/Typography";
@@ -10,6 +10,13 @@ const Home = () => {
     <>
       <Hero />
       <Container>
+        <div className="grid grid-cols-5 gap-[30px]">
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+          <GenreCard />
+        </div>
         <Typography variant="h1">App</Typography>
         <Typography variant="body">
           Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet
