@@ -12,10 +12,10 @@ const Home = () => {
       <Container>
         <div className="grid grid-cols-5 gap-[30px]">
           <GenreCard />
+          {/* <GenreCard />
           <GenreCard />
           <GenreCard />
-          <GenreCard />
-          <GenreCard />
+          <GenreCard /> */}
         </div>
         <Typography variant="h1">App</Typography>
         <Typography variant="body">
