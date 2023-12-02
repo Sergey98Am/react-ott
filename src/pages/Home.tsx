@@ -3,19 +3,27 @@ import Hero from "@/components/homepage/Hero";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
 import Typography from "@/components/ui/Typography";
+import { useGenres } from "@/hooks/useGenres";
 import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Home = () => {
+  const { isLoading, genres } = useGenres();
+  console.log(isLoading, genres);
+
   return (
     <>
       <Hero />
       <Container>
-        <div className="grid grid-cols-5 gap-[30px]">
-          <GenreCard />
-          {/* <GenreCard />
-          <GenreCard />
-          <GenreCard />
-          <GenreCard /> */}
+        <div className="grid-col-1 grid gap-[30px] xl:grid-cols-5">
+          {genres?.map((genre) => {
+            return (
+              <GenreCard
+                key={genre.id}
+                title={genre.title}
+                image={genre.image}
+              />
+            );
+          })}
         </div>
         <Typography variant="h1">App</Typography>
         <Typography variant="body">
