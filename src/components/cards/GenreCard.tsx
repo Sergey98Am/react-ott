@@ -2,13 +2,18 @@ import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import Image from "../ui/Image";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 
-const GenreCard = () => {
+interface GenreCardProps {
+  title: string;
+  image: string;
+}
+
+const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
   return (
     <div>
       <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-[30px]">
         <CardContent className="rounder-[18px] relative p-0">
           <Image
-            src="https://m.media-amazon.com/images/M/MV5BMDBmYTZjNjUtN2M1MS00MTQ2LTk2ODgtNzc2M2QyZGE5NTVjXkEyXkFqcGdeQXVyNzAwMjU2MTY@._V1_.jpg"
+            src={image}
             alt="ddd"
             className="aspect-[47/50] object-cover"
           ></Image>
@@ -21,8 +26,9 @@ const GenreCard = () => {
           ></div>
         </CardContent>
         <CardFooter className="p-0">
-          <button className="flex w-full items-center justify-between text-lg font-semibold">
-            <span>Action</span> <ArrowRightIcon className="h-[30px] w-[30px]" />
+          <button className="flex w-full items-center justify-between text-lg font-semibold capitalize">
+            <span>{title}</span>
+            <ArrowRightIcon className="h-[30px] w-[30px]" />
           </button>
         </CardFooter>
       </Card>
