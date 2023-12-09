@@ -14,7 +14,7 @@ const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
         <CardContent className="rounder-[18px] relative p-0">
           <Image
             src={image}
-            alt="ddd"
+            alt="lll"
             className="aspect-[47/50] object-cover"
           ></Image>
           <div
