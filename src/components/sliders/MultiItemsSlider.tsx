@@ -106,6 +106,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
           clickable: true,
         },
         slidesPerView: slidesPerView,
+        cssMode: false,
       },
       1536: {
         pagination: {
@@ -116,6 +117,8 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
         },
         slidesPerView: slidesPerView,
         spaceBetween: 30,
+        mousewheel: true,
+        cssMode: false,
       },
     },
     ...settings,
@@ -162,6 +165,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
             <div className="flex items-center justify-center">
               <div className="pagination-small-screens mt-6 flex w-fit bg-dark-black-20"></div>
             </div>
+            {/* <div className="swiper-scrollbar"></div> */}
           </>
         )}
       </div>
