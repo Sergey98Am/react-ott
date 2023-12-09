@@ -85,6 +85,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
     modules: [Navigation, Pagination, EffectFade, Autoplay],
     spaceBetween: 20,
     slidesPerView: "auto",
+    cssMode: true,
     pagination: {
       el: ".pagination-small-screens",
       bulletClass: bulletClasses,
