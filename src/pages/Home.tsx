@@ -1,140 +1,15 @@
-import GenreCard from "@/components/cards/GenreCard";
+import GenresSlider from "@/components/GenresSlider";
 import Hero from "@/components/homepage/Hero";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import Typography from "@/components/ui/Typography";
-import { useGenres } from "@/hooks/useGenres";
 import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Home = () => {
-  const { isLoading, genres } = useGenres();
-  console.log(isLoading, genres);
-
   return (
-    <>
+    <div className="space-y-[100px] xl:space-y-[150px] 2xl:space-y-[200px]">
       <Hero />
-      <Container>
-        <div className="grid-col-1 grid gap-[30px] xl:grid-cols-5">
-          {genres?.map((genre) => {
-            return (
-              <GenreCard
-                key={genre.id}
-                title={genre.title}
-                image={genre.image}
-              />
-            );
-          })}
-        </div>
-        <Typography variant="h1">App</Typography>
-        <Typography variant="body">
-          Illum tenetur quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet
-          cubilia tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt
-          turpis? Sagittis venenatis! Cubilia? Lectus quas laboriosam magna
-          imperdiet incidunt, alias sapien occaecat sequi, magnis molestiae?
-          Cillum habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. Illum tenetur
-          quos eaque. Ornare potenti nobis saepe rutrum! Imperdiet cubilia
-          tenetur? Eu nostra ex maxime tempus nonummy? Tortor nesciunt turpis?
-          Sagittis venenatis! Cubilia? Lectus quas laboriosam magna imperdiet
-          incidunt, alias sapien occaecat sequi, magnis molestiae? Cillum
-          habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi. habitasse
-          laudantium asperiores. In voluptate, et senectus, perspiciatis maxime
-          consequat eiusmod explicabo, alias congue quod! Natoque iste.
-          Convallis autem. Feugiat suspendisse blandit commodo dolore, dictumst
-          nunc, sequi sint laborum unde cubilia convallis excepteur, aliquid
-          gravida unde neque? Inventore, elementum minim, molestiae adipisci
-          repudiandae venenatis! Tortor ut perspiciatis libero luctus, eu
-          praesent at augue, eos dictumst blandit mi adipiscing earum
-          accusantium, voluptas dignissimos mi. habitasse laudantium asperiores.
-          In voluptate, et senectus, perspiciatis maxime consequat eiusmod
-          explicabo, alias congue quod! Natoque iste. Convallis autem. Feugiat
-          suspendisse blandit commodo dolore, dictumst nunc, sequi sint laborum
-          unde cubilia convallis excepteur, aliquid gravida unde neque?
-          Inventore, elementum minim, molestiae adipisci repudiandae venenatis!
-          Tortor ut perspiciatis libero luctus, eu praesent at augue, eos
-          dictumst blandit mi adipiscing earum accusantium, voluptas dignissimos
-          mi. habitasse laudantium asperiores. In voluptate, et senectus,
-          perspiciatis maxime consequat eiusmod explicabo, alias congue quod!
-          Natoque iste. Convallis autem. Feugiat suspendisse blandit commodo
-          dolore, dictumst nunc, sequi sint laborum unde cubilia convallis
-          excepteur, aliquid gravida unde neque? Inventore, elementum minim,
-          molestiae adipisci repudiandae venenatis! Tortor ut perspiciatis
-          libero luctus, eu praesent at augue, eos dictumst blandit mi
-          adipiscing earum accusantium, voluptas dignissimos mi.
-        </Typography>
+      <Container className="space-y-[80px] xl:space-y-[120px] 2xl:space-y-[150px]">
+        <GenresSlider />
         <div>
           <Button className="gap-1">
             <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
@@ -143,7 +18,7 @@ const Home = () => {
           <Button variant="dark">Start Free Trial</Button>
         </div>
       </Container>
-    </>
+    </div>
   );
 };
 
