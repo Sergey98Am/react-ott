@@ -10,7 +10,7 @@ interface GenreCardProps {
 const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
   return (
     <div>
-      <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-[30px]">
+      <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-5 sm:px-6 xl:p-[30px]">
         <CardContent className="rounder-[18px] relative p-0">
           <Image
             src={image}
