@@ -9,11 +9,13 @@ const Hero = () => {
   return (
     <div>
       <div className="relative">
-        <Image
-          src={Banner}
-          alt="Photo by Drew Beamer"
-          className="aspect-[39/50] object-cover sm:aspect-[1920/860]"
-        />
+        <div className="aspect-ratio-portrait sm:aspect-ratio-cinemascope">
+          <Image
+            src={Banner}
+            alt="Photo by Drew Beamer"
+            className="h-full w-full object-cover"
+          />
+        </div>
         <div
           style={{
             background:

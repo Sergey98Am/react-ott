@@ -47,8 +47,16 @@
   }
 }
 
-/* @layer components {
-  .navbar .active {
-    @apply bg-dark-black-10 text-absolute-white;
+@layer utilities {
+  .aspect-ratio-cinemascope {
+    @apply aspect-w-[21] aspect-h-9;
   }
-} */
+
+  .aspect-ratio-portrait {
+    @apply aspect-w-4 aspect-h-5;
+  }
+
+  .aspect-ratio-short-portrait {
+    @apply aspect-w-9 aspect-h-10;
+  }
+}
