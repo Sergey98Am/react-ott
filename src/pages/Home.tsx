@@ -1,4 +1,5 @@
 import GenresSlider from "@/components/GenresSlider";
+import Features from "@/components/homepage/Features";
 import Hero from "@/components/homepage/Hero";
 import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
@@ -10,6 +11,7 @@ const Home = () => {
       <Hero />
       <Container className="space-y-[80px] xl:space-y-[120px] 2xl:space-y-[150px]">
         <GenresSlider />
+        <Features />
         <div>
           <Button className="gap-1">
             <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
