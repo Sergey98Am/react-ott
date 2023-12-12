@@ -130,7 +130,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
       <div className={headingClasses}>
         {/* Title and description */}
         <div className={infoClasses}>
-          <Typography variant="h2">
+          <Typography variant="h2" className="font-bold">
             Explore our wide variety of categories
           </Typography>
           <Typography variant="body">
