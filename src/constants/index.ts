@@ -4,6 +4,7 @@ import SmartTV from "@/assets/icons/smart-tv.svg";
 import Laptop from "@/assets/icons/laptop.svg";
 import Console from "@/assets/icons/console.svg";
 import VR from "@/assets/icons/vr.svg";
+import { FooterItem } from "@/types";
 
 export const navLinks = [
   {
@@ -160,3 +161,106 @@ export const yearlyPlan = [
     price: 199.99,
   },
 ];
+
+export const footerNav = [
+  {
+    title: "Home",
+    items: [
+      {
+        title: "Categories",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Devices",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Pricing",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "FAQ",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Movies",
+    items: [
+      {
+        title: "Genres",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Trending",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "New Release",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Popular",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Show",
+    items: [
+      {
+        title: "Genres",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Trending",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "New Release",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Popular",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Support",
+    items: [
+      {
+        title: "Contact Us",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+    ],
+  },
+  {
+    title: "Subscription",
+    items: [
+      {
+        title: "Plans",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+      {
+        title: "Features",
+        href: "https://github.com/Sergey98Am/react-ott",
+        external: true,
+      },
+    ],
+  },
+] satisfies FooterItem[];

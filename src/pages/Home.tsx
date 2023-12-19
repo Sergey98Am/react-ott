@@ -8,9 +8,9 @@ import Container from "@/components/ui/Container";
 
 const Home = () => {
   return (
-    <div className="space-y-[100px] xl:space-y-[150px] 2xl:space-y-[200px]">
+    <div>
       <Hero />
-      <Container className="space-y-[80px] xl:space-y-[120px] 2xl:space-y-[150px]">
+      <Container className="space-y-[80px] py-[100px] xl:space-y-[120px] xl:py-[150px] 2xl:space-y-[150px] 2xl:py-[200px]">
         <GenresSlider />
         <Features />
         <FAQ />
