@@ -27,7 +27,7 @@ const MobileNavbar = () => {
         scrollPosition > 0
           ? "supports-[backdrop-filter]:bg-absolute-black/60 backdrop-blur"
           : "bg-transparent",
-        "mobile-navbar fixed z-10 w-full pb-[11px] pt-[37px] md:hidden",
+        "mobile-navbar fixed z-20 w-full pb-[11px] pt-[37px] md:hidden",
       )}
     >
       <Container className="flex items-center justify-between">
