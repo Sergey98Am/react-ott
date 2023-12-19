@@ -1,12 +1,13 @@
 import Button from "./ui/Button";
 import Typography from "./ui/Typography";
+import Background from "@/assets/Banner.jpg";
 
 const FreeTrial = () => {
   return (
     <div
       className="relative z-10 flex flex-col items-center justify-center gap-y-12 overflow-hidden rounded-xl border border-dark-black-15 px-7 py-12 text-center lg:flex-row lg:justify-between lg:gap-y-0 lg:px-14 lg:py-20 lg:text-start 2xl:px-20 2xl:py-28"
       style={{
-        backgroundImage: `url("./src/assets/Banner.jpg")`,
+        backgroundImage: `url("${Background}")`,
       }}
     >
       <div
