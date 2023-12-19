@@ -1,11 +1,10 @@
 import FAQ from "@/components/FAQ";
+import FreeTrial from "@/components/FreeTrial";
 import GenresSlider from "@/components/GenresSlider";
 import Pricing from "@/components/Pricing";
 import Features from "@/components/homepage/Features";
 import Hero from "@/components/homepage/Hero";
-import Button from "@/components/ui/Button";
 import Container from "@/components/ui/Container";
-import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Home = () => {
   return (
@@ -16,13 +15,7 @@ const Home = () => {
         <Features />
         <FAQ />
         <Pricing />
-        <div>
-          <Button className="gap-1">
-            <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
-          </Button>
-          <Button>Choose Plan</Button>
-          <Button variant="dark">Start Free Trial</Button>
-        </div>
+        <FreeTrial />
       </Container>
     </div>
   );

@@ -25,7 +25,7 @@ export function Navbar() {
         scrollPosition > 0
           ? "supports-[backdrop-filter]:bg-absolute-black/60 backdrop-blur"
           : "bg-transparent",
-        "navbar fixed z-10 hidden w-full py-[18px] transition md:block",
+        "navbar fixed z-20 hidden w-full py-[18px] transition md:block",
       )}
     >
       <Container className="flex items-center justify-between">
