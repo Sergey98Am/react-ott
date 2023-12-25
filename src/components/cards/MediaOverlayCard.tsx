@@ -3,12 +3,14 @@ import Button from "../ui/Button";
 import { Card, CardContent } from "../ui/Card";
 import Typography from "../ui/Typography";
 import { PlayIcon, PlusIcon } from "@heroicons/react/24/solid";
-import bg from "@/assets/avengers-endgame-cast-characters-uhdpaper.com-8K-62.jpg";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
 interface MediaOverlayCardProps {
   className?: string;
+  title: string;
+  image: string;
+  description: string;
 }
 
 const cardClasses = ctl(
@@ -53,29 +55,26 @@ const iconClasses = ctl(
   2xl:w-7`,
 );
 
-const MediaOverlayCard: React.FC<MediaOverlayCardProps> = ({ className }) => {
+const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
   return (
     <Card
       className={cardClasses}
       style={{
-        background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${bg}), lightgray 50% / cover no-repeat`,
+        background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${props.image}), lightgray 50% / cover no-repeat`,
       }}
     >
       <div
         className={cn(
           "flex items-end justify-center p-6 pb-4 md:p-10 md:pb-4 2xl:p-12 2xl:pb-5",
-          className,
+          props.className,
         )}
       >
         <CardContent className="w-full p-0 lg:px-28 2xl:px-36">
           <div className="flex flex-col items-center gap-y-5 text-center md:gap-y-6 2xl:gap-y-7">
             <div className="info">
-              <Typography variant="h2">Avengers : Endgame</Typography>
+              <Typography variant="h2">{props.title}</Typography>
               <Typography className="hidden md:block" variant="body">
-                With the help of remaining allies, the Avengers must assemble
-                once more in order to undo Thanos's actions and undo the chaos
-                to the universe, no matter what consequences may be in store,
-                and no matter who they face... Avenge the fallen.
+                {props.description}
               </Typography>
             </div>
             <div className={actionClasses}>
