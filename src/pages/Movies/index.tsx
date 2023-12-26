@@ -5,9 +5,41 @@ import { useMovies } from "@/hooks/useMovies";
 import MoviesList from "./MoviesList";
 import ShowsList from "./ShowsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
+import ctl from "@netlify/classnames-template-literals";
 
 const Movies = () => {
   const { isLoading, movies } = useMovies();
+
+  const desktopMoviesAndShowsClasses = ctl(
+    `for-desktop 
+    hidden 
+    space-y-32 
+    md:block 
+    2xl:space-y-36`,
+  );
+
+  const movieAndShowClasses = ctl(
+    `relative 
+    rounded-xl 
+    border 
+    border-dark-black-15 
+    p-10 
+    2xl:p-12 
+    2xl:pt-16`,
+  );
+
+  const movieAndShowTextClasses = ctl(
+    `absolute 
+    top-[-20px] 
+    rounded-md 
+    bg-primary-red-45 
+    px-4 py-2 
+    font-semibold 
+    2xl:rounded-lg 
+    2xl:px-6 
+    2xl:py-2.5 
+    2xl:text-xl`,
+  );
 
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
@@ -30,17 +62,13 @@ const Movies = () => {
         {/* Movies and Shows */}
         <div className="movies-and-shows">
           {/* For Desktop */}
-          <div className="for-desktop hidden space-y-32 md:block 2xl:space-y-36">
-            <div className="movies relative rounded-xl border border-dark-black-15 p-10 2xl:p-12 2xl:pt-16">
-              <div className="absolute top-[-20px] rounded-md bg-primary-red-45 px-4 py-2 font-semibold 2xl:rounded-lg 2xl:px-6 2xl:py-2.5 2xl:text-xl">
-                Movies
-              </div>
+          <div className={desktopMoviesAndShowsClasses}>
+            <div className={`movies ${movieAndShowClasses}`}>
+              <div className={movieAndShowTextClasses}>Movies</div>
               <MoviesList />
             </div>
-            <div className="shows relative rounded-xl border border-dark-black-15 p-10 2xl:p-12 2xl:pt-16">
-              <div className="absolute top-[-20px] rounded-md bg-primary-red-45 px-4 py-2 font-semibold 2xl:rounded-lg 2xl:px-6 2xl:py-2.5 2xl:text-xl">
-                Shows
-              </div>
+            <div className={`shows ${movieAndShowClasses}`}>
+              <div className={movieAndShowTextClasses}>Shows</div>
               <ShowsList />
             </div>
           </div>
