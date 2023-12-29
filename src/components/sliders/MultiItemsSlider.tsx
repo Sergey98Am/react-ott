@@ -1,4 +1,4 @@
-import { ReactNode } from "react";
+import { ReactNode, useState } from "react";
 import Typography from "@/components/ui/Typography";
 import Spinner from "@/components/icons/Spinner";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
@@ -13,12 +13,16 @@ interface MultiItemsSliderProps {
   children: ReactNode;
   isLoading?: boolean;
   slidesPerView?: number;
+  headingTitle: string;
+  headingDescription?: string;
 }
 
 const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
   children,
   isLoading = false,
   slidesPerView = 5,
+  headingTitle,
+  headingDescription,
   ...settings
 }) => {
   const sliderContainer = ctl(
@@ -33,7 +37,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
   const headingClasses = ctl(
     `heading 
     flex 
-    items-end 
+    ${headingDescription ? "items-end" : "items-center"}
     justify-between`,
   );
 
@@ -81,26 +85,33 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
     lg:flex`,
   );
 
+  const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
+  const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
+  const [paginationEl, setPaginationEl] = useState<HTMLElement | null>(null);
+  const [mobilePaginationEl, setMobilePaginationEl] =
+    useState<HTMLElement | null>(null);
+  // console.log(prevEl);
+
   const sliderOptions: SwiperProps = {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
     spaceBetween: 20,
     slidesPerView: "auto",
     cssMode: true,
     pagination: {
-      el: ".pagination-small-screens",
+      el: mobilePaginationEl,
       bulletClass: bulletClasses,
       bulletActiveClass: bulletActiveClass,
       clickable: true,
     },
     navigation: {
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
+      prevEl,
+      nextEl,
       disabledClass: "text-dark-black-30",
     },
     breakpoints: {
       1024: {
         pagination: {
-          el: ".pagination",
+          el: paginationEl,
           bulletClass: bulletClasses,
           bulletActiveClass: bulletActiveClass,
           clickable: true,
@@ -110,7 +121,7 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
       },
       1536: {
         pagination: {
-          el: ".pagination",
+          el: paginationEl,
           bulletClass: bulletClasses,
           bulletActiveClass: bulletActiveClass,
           clickable: true,
@@ -126,27 +137,37 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
 
   return (
     <div className={sliderContainer}>
+      {/* <div ref={ref}>Text</div> */}
       {/* Heading */}
       <div className={headingClasses}>
         {/* Title and description */}
         <div className={infoClasses}>
           <Typography variant="h2" className="font-bold">
-            Explore our wide variety of categories
+            {headingTitle}
           </Typography>
-          <Typography variant="body">
-            Whether you're looking for a comedy to make you laugh, a drama to
-            make you think, or a documentary to learn something new
-          </Typography>
+          {headingDescription && (
+            <Typography variant="body">{headingDescription}</Typography>
+          )}
         </div>
         {/* Desktop/laptop arrows and pagination */}
         <div className={arrowsAndPaginationClasses}>
-          <div className="swiper-button-prev flex">
+          <div
+            className="swiper-button-prev flex"
+            ref={(node) => setPrevEl(node)}
+          >
             <button className={arrowButtons}>
               <ArrowLeftIcon className={arrowIcons} />
             </button>
           </div>
-          <div className="pagination flex gap-[3px]"></div>
-          <div className="swiper-button-next flex">
+          <div
+            className="pagination flex gap-[3px]"
+            ref={(node) => setPaginationEl(node)}
+          ></div>
+          <div
+            className="swiper-button-next flex"
+            ref={(node) => setNextEl(node)}
+            // ref={nextEl}
+          >
             <button className={arrowButtons}>
               <ArrowRightIcon className={arrowIcons} />
             </button>
@@ -163,9 +184,11 @@ const MultiItemsSlider: React.FC<MultiItemsSliderProps & SwiperProps> = ({
             <Swiper {...sliderOptions}>{children}</Swiper>
             {/* Mobile pagination */}
             <div className="flex items-center justify-center">
-              <div className="pagination-small-screens mt-6 flex w-fit bg-dark-black-20"></div>
+              <div
+                className="pagination-small-screens mt-6 flex w-fit bg-dark-black-20"
+                ref={(node) => setMobilePaginationEl(node)}
+              ></div>
             </div>
-            {/* <div className="swiper-scrollbar"></div> */}
           </>
         )}
       </div>
