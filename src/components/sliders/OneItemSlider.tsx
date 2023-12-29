@@ -1,10 +1,9 @@
-import { ReactNode } from "react";
+import React, { ReactNode, useState } from "react";
 import Spinner from "@/components/icons/Spinner";
 import { Swiper, SwiperProps, SwiperSlide } from "swiper/react";
 import { Navigation, Pagination, EffectFade, Autoplay } from "swiper/modules";
 import { ArrowLeftIcon, ArrowRightIcon } from "@heroicons/react/24/solid";
 import ctl from "@netlify/classnames-template-literals";
-// Import Swiper styles
 import "swiper/css";
 import "swiper/css/scrollbar";
 
@@ -69,20 +68,24 @@ const OneItemSlider: React.FC<OneItemSliderProps & SwiperProps> = ({
     2xl:bottom-5`,
   );
 
+  const [prevEl, setPrevEl] = useState<HTMLElement | null>(null);
+  const [nextEl, setNextEl] = useState<HTMLElement | null>(null);
+  const [paginationEl, setPaginationEl] = useState<HTMLElement | null>(null);
+
   const sliderOptions: SwiperProps = {
     modules: [Navigation, Pagination, EffectFade, Autoplay],
     spaceBetween: 20,
     slidesPerView: 1,
     cssMode: false,
     pagination: {
-      el: ".pagination",
+      el: paginationEl,
       bulletClass: bulletClasses,
       bulletActiveClass: bulletActiveClass,
       clickable: true,
     },
     navigation: {
-      prevEl: ".swiper-button-prev",
-      nextEl: ".swiper-button-next",
+      prevEl,
+      nextEl,
       disabledClass: "text-dark-black-30",
     },
     ...settings,
@@ -99,13 +102,22 @@ const OneItemSlider: React.FC<OneItemSliderProps & SwiperProps> = ({
           <div className="relative">
             <Swiper {...sliderOptions}>{children}</Swiper>
             <div className={arrowsAndPaginationClasses}>
-              <div className="swiper-button-prev flex">
+              <div
+                className="swiper-button-prev flex"
+                ref={(node) => setPrevEl(node)}
+              >
                 <button className={arrowButtons}>
                   <ArrowLeftIcon className={arrowIcons} />
                 </button>
               </div>
-              <div className="pagination flex gap-[3px]"></div>
-              <div className="swiper-button-next flex">
+              <div
+                className="pagination flex gap-[3px]"
+                ref={(node) => setPaginationEl(node)}
+              ></div>
+              <div
+                className="swiper-button-next flex"
+                ref={(node) => setNextEl(node)}
+              >
                 <button className={arrowButtons}>
                   <ArrowRightIcon className={arrowIcons} />
                 </button>

@@ -74,7 +74,7 @@ const Movies = () => {
           </div>
           {/* For Mobile */}
           <div className="for-mobile md:hidden">
-            <Tabs defaultValue="movies">
+            <Tabs defaultValue="movies" className="space-y-12">
               <TabsList className="w-full">
                 <TabsTrigger value="movies" className="w-6/12">
                   Movies
@@ -84,7 +84,7 @@ const Movies = () => {
                 </TabsTrigger>
               </TabsList>
               <TabsContent value="movies">
-                Make changes to your account here.
+                <MoviesList />
               </TabsContent>
               <TabsContent value="shows">
                 Change your password here.
