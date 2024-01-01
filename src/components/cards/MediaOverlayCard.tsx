@@ -60,7 +60,7 @@ const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
     <Card
       className={cardClasses}
       style={{
-        background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${props.image}), lightgray 50% / cover no-repeat`,
+        background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${props.image}), 50% / cover no-repeat`,
       }}
     >
       <div

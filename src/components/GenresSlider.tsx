@@ -1,6 +1,8 @@
 import GenreCard from "@/components/cards/GenreCard";
 import { useGenres } from "@/hooks/useGenres";
-import MultiItemsSlider, { Slide } from "@/components/sliders/MultiItemsSlider";
+import MultiItemsSlider, {
+  Slide,
+} from "@/components/carousels/MultiItemsSlider";
 
 const GenresSlider = () => {
   const { isLoading, genres } = useGenres();

@@ -1,11 +1,11 @@
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
-import OneItemSlider, { Slide } from "@/components/sliders/OneItemSlider";
 import Container from "@/components/ui/Container";
 import { useMovies } from "@/hooks/useMovies";
-import MoviesList from "./MoviesList";
-import ShowsList from "./ShowsList";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import ctl from "@netlify/classnames-template-literals";
+import CarouselDefault from "@/components/carousels/CarouselDefault";
+import ShowsList from "./ShowsList";
+import MoviesList from "./MoviesList";
 
 const Movies = () => {
   const { isLoading, movies } = useMovies();
@@ -41,24 +41,38 @@ const Movies = () => {
     2xl:text-xl`,
   );
 
+  const carouselItemsParentClasses = ctl(
+    `backface-hidden 
+    flex 
+    touch-pan-y`,
+  );
+
+  const carouselItemClasses = ctl(
+    `w-full
+    flex-shrink-0 
+    flex-grow-0`,
+  );
+
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
       <Container className="space-y-24 2xl:space-y-32">
         {/* Movies slider */}
-        <OneItemSlider isLoading={isLoading}>
-          {movies?.map((movie) => {
-            return (
-              <Slide key={movie.id}>
-                <MediaOverlayCard
-                  className="md:!pb-[88px]"
-                  title={movie.title}
-                  description={movie.description}
-                  image={movie.image}
-                />
-              </Slide>
-            );
-          })}
-        </OneItemSlider>
+        <CarouselDefault isLoading={isLoading}>
+          <div className={carouselItemsParentClasses}>
+            {movies?.map((movie) => {
+              return (
+                <div key={movie.id} className={carouselItemClasses}>
+                  <MediaOverlayCard
+                    className="md:!pb-[88px]"
+                    title={movie.title}
+                    description={movie.description}
+                    image={movie.image}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </CarouselDefault>
         {/* Movies and Shows */}
         <div className="movies-and-shows">
           {/* For Desktop */}
@@ -87,7 +101,7 @@ const Movies = () => {
                 <MoviesList />
               </TabsContent>
               <TabsContent value="shows">
-                Change your password here.
+                <ShowsList />
               </TabsContent>
             </Tabs>
           </div>
