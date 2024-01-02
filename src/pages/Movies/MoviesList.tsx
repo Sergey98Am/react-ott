@@ -78,7 +78,11 @@ const MoviesList = () => {
                   className={cn(`${carouselItemClasses} w-[250px]  lg:w-1/4`)}
                   key={genre.id}
                 >
-                  <GenreCard title={genre.title} image={genre.image} />
+                  <GenreCard
+                    title={genre.title}
+                    image={genre.image}
+                    topBadge={genre.top}
+                  />
                 </div>
               );
             })}

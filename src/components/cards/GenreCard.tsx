@@ -5,9 +5,14 @@ import { Badge } from "../ui/Badge";
 interface GenreCardProps {
   title: string;
   image: string;
+  topBadge?: boolean;
 }
 
-const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
+const GenreCard: React.FC<GenreCardProps> = ({
+  title,
+  image,
+  topBadge = false,
+}) => {
   return (
     <div>
       <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-5 sm:px-6 xl:p-[30px]">
@@ -25,7 +30,7 @@ const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
         </CardContent>
         <CardFooter className="justify-between p-0">
           <div className="text flex flex-col items-start gap-y-2">
-            <Badge>Top 10 In</Badge>
+            {topBadge && <Badge>Top 10 In</Badge>}
             <span className="flex w-full items-center justify-between text-lg font-semibold capitalize">
               {title}
             </span>
