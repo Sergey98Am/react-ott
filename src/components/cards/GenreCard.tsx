@@ -1,5 +1,6 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
+import { Badge } from "../ui/Badge";
 
 interface GenreCardProps {
   title: string;
@@ -22,11 +23,14 @@ const GenreCard: React.FC<GenreCardProps> = ({ title, image }) => {
             }}
           ></div>
         </CardContent>
-        <CardFooter className="p-0">
-          <button className="flex w-full items-center justify-between text-lg font-semibold capitalize">
-            <span>{title}</span>
-            <ArrowRightIcon className="h-[30px] w-[30px]" />
-          </button>
+        <CardFooter className="justify-between p-0">
+          <div className="text flex flex-col items-start gap-y-2">
+            <Badge>Top 10 In</Badge>
+            <span className="flex w-full items-center justify-between text-lg font-semibold capitalize">
+              {title}
+            </span>
+          </div>
+          <ArrowRightIcon className="h-[30px] w-[30px]" />
         </CardFooter>
       </Card>
     </div>
