@@ -9,3 +9,16 @@ export async function getMovies() {
 
   return data;
 }
+
+export async function getTrendingMovies() {
+  const { data, error } = await supabase
+    .from("movies")
+    .select("*")
+    .eq("trending", true);
+
+  if (error) {
+    throw new Error("The tending ovies couldn't be loaded");
+  }
+
+  return data;
+}

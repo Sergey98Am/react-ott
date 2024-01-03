@@ -3,13 +3,13 @@ import { cva, type VariantProps } from "class-variance-authority";
 
 import { cn } from "@/lib/utils";
 
-const badgeVariants = cva("w-auto text-center", {
+const badgeVariants = cva("w-fit text-center", {
   variants: {
     variant: {
       default:
         "bg-primary-red-45 text-absolute-white !font-semibold rounded p-2 text-xs 2xl:p-2.5 2xl:text-base 2xl:rounded-md",
       circle:
-        "bg-dark-black-08 border border-dark-black-15 p-1 text-xs 2xl:text-base",
+        "bg-dark-black-08 border border-dark-black-15 p-1 text-xs 2xl:text-base rounded-3xl",
     },
   },
   defaultVariants: {

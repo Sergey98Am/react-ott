@@ -1,6 +1,8 @@
 import GenreCard from "@/components/cards/GenreCard";
+import MediaCard from "@/components/cards/MediaCard";
 import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
 import { useGenres } from "@/hooks/useGenres";
+import { useTrendingMovies } from "@/hooks/useTrendingMovies";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
@@ -26,32 +28,12 @@ const carouselItemClasses = ctl(
 const MoviesList = () => {
   const { isLoading: isLoadingGenres, genres } = useGenres();
   const topGenres = genres?.filter((data) => data.top === true);
+  const { isLoading: isLoadingTrendingMovies, trending_movies } =
+    useTrendingMovies();
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
       <div className="genres space-y-12 2xl:space-y-24">
-        {/* <MultiItemsSlider headingTitle="Our Genres" isLoading={isLoadingGenres}>
-          {genres?.map((genre) => {
-            return (
-              <Slide className="w-[200px]" key={`genre-${genre.id}`}>
-                <GenreCard title={genre.title} image={genre.image} />
-              </Slide>
-            );
-          })}
-        </MultiItemsSlider> */}
-        {/* <MultiItemsSlider
-          headingTitle="Popular Top 10 In Genres"
-          isLoading={isLoadingGenres}
-          slidesPerView={4}
-        >
-          {topGenres?.map((genre) => {
-            return (
-              <Slide className="w-[200px]" key={`genre-${genre.id}`}>
-                <GenreCard title={genre.title} image={genre.image} />
-              </Slide>
-            );
-          })}
-        </MultiItemsSlider> */}
         <CarouselOutsideControls
           headingTitle="Our Genres"
           isLoading={isLoadingGenres}
@@ -82,6 +64,29 @@ const MoviesList = () => {
                     title={genre.title}
                     image={genre.image}
                     topBadge={genre.top}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </CarouselOutsideControls>
+
+        <CarouselOutsideControls
+          headingTitle="Trending Now"
+          isLoading={isLoadingTrendingMovies}
+        >
+          <div className={carouselItemsParentClasses}>
+            {trending_movies?.map((movie) => {
+              return (
+                <div
+                  className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
+                  key={movie.id}
+                >
+                  <MediaCard
+                    variant="views"
+                    image={movie.image}
+                    duration={movie.duration}
+                    views={movie.views}
                   />
                 </div>
               );
