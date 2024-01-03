@@ -49,3 +49,16 @@ export async function getMustWatchMovies() {
 
   return data;
 }
+
+export async function getTopMovies() {
+  const { data, error } = await supabase
+    .from("movies")
+    .select("*")
+    .eq("top", true);
+
+  if (error) {
+    throw new Error("The top movies couldn't be loaded");
+  }
+
+  return data;
+}
