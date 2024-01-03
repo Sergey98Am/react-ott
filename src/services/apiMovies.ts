@@ -17,7 +17,21 @@ export async function getTrendingMovies() {
     .eq("trending", true);
 
   if (error) {
-    throw new Error("The tending ovies couldn't be loaded");
+    throw new Error("The trending movies couldn't be loaded");
+  }
+
+  return data;
+}
+
+export async function getNewMovies() {
+  const { data, error } = await supabase
+    .from("movies")
+    .select("*")
+    .order("created_at", { ascending: false })
+    .limit(10);
+
+  if (error) {
+    throw new Error("The new movies couldn't be loaded");
   }
 
   return data;

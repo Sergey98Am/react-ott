@@ -82,15 +82,6 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
   );
 };
 
-// interface MediaCardProps {
-//   // variant?: "views" | "releasedTime" | "rating" | "season";
-//   image: string;
-//   // duration?: string;
-//   // views?: number;
-//   // releasedTime?: string;
-//   // season?: number;
-// }
-
 interface MediaCardPropsBase {
   image: string;
 }

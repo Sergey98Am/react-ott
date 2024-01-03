@@ -2,6 +2,7 @@ import GenreCard from "@/components/cards/GenreCard";
 import MediaCard from "@/components/cards/MediaCard";
 import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
 import { useGenres } from "@/hooks/useGenres";
+import { useNewMovies } from "@/hooks/useNewMovies";
 import { useTrendingMovies } from "@/hooks/useTrendingMovies";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
@@ -30,6 +31,7 @@ const MoviesList = () => {
   const topGenres = genres?.filter((data) => data.top === true);
   const { isLoading: isLoadingTrendingMovies, trending_movies } =
     useTrendingMovies();
+  const { isLoading: isLoadingNewMovies, new_movies } = useNewMovies();
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
@@ -87,6 +89,28 @@ const MoviesList = () => {
                     image={movie.image}
                     duration={movie.duration}
                     views={movie.views}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </CarouselOutsideControls>
+
+        <CarouselOutsideControls
+          headingTitle="New Releases"
+          isLoading={isLoadingNewMovies}
+        >
+          <div className={carouselItemsParentClasses}>
+            {new_movies?.map((movie) => {
+              return (
+                <div
+                  className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
+                  key={movie.id}
+                >
+                  <MediaCard
+                    variant="releasedTime"
+                    image={movie.image}
+                    releasedTime={movie.created_at}
                   />
                 </div>
               );
