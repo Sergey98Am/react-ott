@@ -1,14 +1,14 @@
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import Container from "@/components/ui/Container";
-import { useMovies } from "@/hooks/useMovies";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/Tabs";
 import ctl from "@netlify/classnames-template-literals";
 import CarouselDefault from "@/components/carousels/CarouselDefault";
 import ShowsList from "./ShowsList";
 import MoviesList from "./MoviesList";
+import { useTopMovies } from "@/hooks/useTopMovies";
 
 const Movies = () => {
-  const { isLoading, movies } = useMovies();
+  const { isLoading, top_movies } = useTopMovies();
 
   const desktopMoviesAndShowsClasses = ctl(
     `for-desktop 
@@ -59,7 +59,7 @@ const Movies = () => {
         {/* Movies slider */}
         <CarouselDefault isLoading={isLoading}>
           <div className={carouselItemsParentClasses}>
-            {movies?.map((movie) => {
+            {top_movies?.map((movie) => {
               return (
                 <div key={movie.id} className={carouselItemClasses}>
                   <MediaOverlayCard
