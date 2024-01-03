@@ -36,3 +36,16 @@ export async function getNewMovies() {
 
   return data;
 }
+
+export async function getMustWatchMovies() {
+  const { data, error } = await supabase
+    .from("movies")
+    .select("*")
+    .eq("must_watch", true);
+
+  if (error) {
+    throw new Error("The must watch movies couldn't be loaded");
+  }
+
+  return data;
+}
