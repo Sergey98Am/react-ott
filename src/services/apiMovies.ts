@@ -1,15 +1,6 @@
 import { supabase } from "./supabaseClient";
 
-export async function getMovies() {
-  const { data, error } = await supabase.from("movies").select("*");
-
-  if (error) {
-    throw new Error("Movies couldn't be loaded");
-  }
-
-  return data;
-}
-
+// Get trending movies
 export async function getTrendingMovies() {
   const { data, error } = await supabase
     .from("movies")
@@ -23,6 +14,7 @@ export async function getTrendingMovies() {
   return data;
 }
 
+// Get new movies
 export async function getNewMovies() {
   const { data, error } = await supabase
     .from("movies")
@@ -37,6 +29,7 @@ export async function getNewMovies() {
   return data;
 }
 
+// Get must watch movies
 export async function getMustWatchMovies() {
   const { data, error } = await supabase
     .from("movies")
@@ -50,6 +43,7 @@ export async function getMustWatchMovies() {
   return data;
 }
 
+// Get top movies
 export async function getTopMovies() {
   const { data, error } = await supabase
     .from("movies")

@@ -39,6 +39,7 @@ const MoviesList = () => {
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
       <div className="genres space-y-12 2xl:space-y-24">
+        {/* Genres */}
         <CarouselOutsideControls
           headingTitle="Our Genres"
           isLoading={isLoadingGenres}
@@ -54,6 +55,7 @@ const MoviesList = () => {
           </div>
         </CarouselOutsideControls>
 
+        {/* Popular 10 genres */}
         <CarouselOutsideControls
           headingTitle="Popular Top 10 In Genres"
           isLoading={isLoadingGenres}
@@ -76,6 +78,7 @@ const MoviesList = () => {
           </div>
         </CarouselOutsideControls>
 
+        {/* Trending movies */}
         <CarouselOutsideControls
           headingTitle="Trending Now"
           isLoading={isLoadingTrendingMovies}
@@ -99,6 +102,7 @@ const MoviesList = () => {
           </div>
         </CarouselOutsideControls>
 
+        {/* New released movies */}
         <CarouselOutsideControls
           headingTitle="New Releases"
           isLoading={isLoadingNewMovies}
@@ -121,6 +125,7 @@ const MoviesList = () => {
           </div>
         </CarouselOutsideControls>
 
+        {/* Must watch movies */}
         <CarouselOutsideControls
           headingTitle="Must - Watch Movies"
           isLoading={isLoadingMustWatchMovies}
