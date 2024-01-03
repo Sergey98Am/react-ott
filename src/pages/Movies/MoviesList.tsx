@@ -2,6 +2,7 @@ import GenreCard from "@/components/cards/GenreCard";
 import MediaCard from "@/components/cards/MediaCard";
 import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
 import { useGenres } from "@/hooks/useGenres";
+import { useMustWatchMovies } from "@/hooks/useMustWatchMovies";
 import { useNewMovies } from "@/hooks/useNewMovies";
 import { useTrendingMovies } from "@/hooks/useTrendingMovies";
 import { cn } from "@/lib/utils";
@@ -32,6 +33,8 @@ const MoviesList = () => {
   const { isLoading: isLoadingTrendingMovies, trending_movies } =
     useTrendingMovies();
   const { isLoading: isLoadingNewMovies, new_movies } = useNewMovies();
+  const { isLoading: isLoadingMustWatchMovies, must_watch_movies } =
+    useMustWatchMovies();
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
@@ -111,6 +114,28 @@ const MoviesList = () => {
                     variant="releasedTime"
                     image={movie.image}
                     releasedTime={movie.created_at}
+                  />
+                </div>
+              );
+            })}
+          </div>
+        </CarouselOutsideControls>
+
+        <CarouselOutsideControls
+          headingTitle="Must - Watch Movies"
+          isLoading={isLoadingMustWatchMovies}
+        >
+          <div className={carouselItemsParentClasses}>
+            {must_watch_movies?.map((movie) => {
+              return (
+                <div
+                  className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
+                  key={movie.id}
+                >
+                  <MediaCard
+                    variant="rating"
+                    image={movie.image}
+                    duration={movie.duration}
                   />
                 </div>
               );
