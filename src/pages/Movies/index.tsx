@@ -5,7 +5,7 @@ import ctl from "@netlify/classnames-template-literals";
 import CarouselDefault from "@/components/carousels/CarouselDefault";
 import ShowsList from "./ShowsList";
 import MoviesList from "./MoviesList";
-import { useTopMovies } from "@/hooks/useTopMovies";
+import { useTopMovies } from "@/hooks/movies/useTopMovies";
 
 const Movies = () => {
   const { isLoading, top_movies } = useTopMovies();

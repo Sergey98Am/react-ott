@@ -2,9 +2,9 @@ import GenreCard from "@/components/cards/GenreCard";
 import MediaCard from "@/components/cards/MediaCard";
 import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
 import { useGenres } from "@/hooks/useGenres";
-import { useMustWatchMovies } from "@/hooks/useMustWatchMovies";
-import { useNewMovies } from "@/hooks/useNewMovies";
-import { useTrendingMovies } from "@/hooks/useTrendingMovies";
+import { useMustWatchMovies } from "@/hooks/movies/useMustWatchMovies";
+import { useNewMovies } from "@/hooks/movies/useNewMovies";
+import { useTrendingMovies } from "@/hooks/movies/useTrendingMovies";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
