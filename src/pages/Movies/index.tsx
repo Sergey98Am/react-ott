@@ -6,6 +6,7 @@ import CarouselDefault from "@/components/carousels/CarouselDefault";
 import ShowsList from "./ShowsList";
 import MoviesList from "./MoviesList";
 import { useTopMovies } from "@/hooks/movies/useTopMovies";
+import FreeTrial from "@/components/FreeTrial";
 
 const Movies = () => {
   const { isLoading, top_movies } = useTopMovies();
@@ -73,6 +74,7 @@ const Movies = () => {
             })}
           </div>
         </CarouselDefault>
+
         {/* Movies and Shows */}
         <div className="movies-and-shows">
           {/* For Desktop */}
@@ -106,6 +108,8 @@ const Movies = () => {
             </Tabs>
           </div>
         </div>
+
+        <FreeTrial />
       </Container>
     </div>
   );
