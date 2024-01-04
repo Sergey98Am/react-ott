@@ -21,6 +21,7 @@
     "@radix-ui/react-separator": "^1.0.3",
     "@radix-ui/react-tabs": "^1.0.4",
     "@radix-ui/themes": "^2.0.1",
+    "@smastrom/react-rating": "^1.4.0",
     "@supabase/supabase-js": "^2.39.0",
     "class-variance-authority": "^0.7.0",
     "clsx": "^2.0.0",

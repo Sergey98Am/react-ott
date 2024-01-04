@@ -7,6 +7,7 @@ import { Card, CardContent } from "../ui/Card";
 import Image from "../ui/Image";
 import { Badge } from "../ui/Badge";
 import { formatDate, formatNumber } from "@/lib/utils";
+import CustomRating from "../ui/CustomRating";
 
 // Duration component
 interface DurationProps {
@@ -100,6 +101,7 @@ interface MediaCardReleasedTimeVariant {
 interface MediaCardRatingVariant {
   variant: "rating";
   duration: string;
+  votes: number;
 }
 
 interface MediaCardSeasonVariant {
@@ -125,22 +127,35 @@ const MediaCard: React.FC<MediaCardProps> = (props) => {
             className="rouded-lg object-cover 2xl:rounded-xl"
           />
         </div>
+        {/* Variant "Views" */}
         {props.variant === "views" && (
           <div className="flex items-center justify-between">
             <Duration duration={props.duration} />
             <Views views={props.views} />
           </div>
         )}
+        {/* Variant "released Time" */}
         {props.variant === "releasedTime" && (
           <div className="flex items-center justify-between">
             <ReleasedTime time={props.releasedTime} />
           </div>
         )}
+        {/* Variant "rating" */}
         {props.variant === "rating" && (
           <div className="flex items-center justify-between">
             <Duration duration={props.duration} />
+            <Badge
+              variant="circle"
+              className="flex items-center gap-0.5 space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
+            >
+              <CustomRating value={4} readOnly />
+              <span className="text-grey-grey-60">
+                {formatNumber(props.votes)}
+              </span>
+            </Badge>
           </div>
         )}
+        {/* Variant "season" */}
         {props.variant === "season" && (
           <div className="flex items-center justify-between">
             <Duration duration={props.duration} />
