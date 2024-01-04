@@ -141,6 +141,7 @@ const MoviesList = () => {
                     variant="rating"
                     image={movie.image}
                     duration={movie.duration}
+                    votes={movie.votes}
                   />
                 </div>
               );

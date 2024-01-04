@@ -142,6 +142,7 @@ const ShowsList = () => {
                     variant="rating"
                     image={movie.image}
                     duration={movie.duration}
+                    votes={movie.votes}
                   />
                 </div>
               );
