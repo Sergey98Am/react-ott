@@ -7,7 +7,7 @@ export function useSingleMovie(id: number) {
     data: single_movie,
     error,
   } = useQuery({
-    queryKey: ["single_movie"],
+    queryKey: ["single_movie", id],
     queryFn: () => getSingleMovie(id),
   });
 
