@@ -1,4 +1,4 @@
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Layout from "./pages/Layout";
 import Home from "./pages/Home";
 import MoviesAndShows from "./pages/MoviesAndShows/List";
@@ -6,10 +6,12 @@ import Support from "./pages/Support";
 import Subscriptions from "./pages/Subscriptions";
 import MovieDetail from "./pages/MoviesAndShows/MovieDetail";
 import ShowDetail from "./pages/MoviesAndShows/ShowDetail";
+import { ScrollToTop } from "./lib/utils";
 
 function App() {
   return (
-    <BrowserRouter>
+    <Router>
+      <ScrollToTop />
       <Routes>
         <Route path="/" element={<Layout />}>
           <Route index element={<Home />} />
@@ -22,7 +24,7 @@ function App() {
           <Route path="subscriptions" element={<Subscriptions />} />
         </Route>
       </Routes>
-    </BrowserRouter>
+    </Router>
   );
 }
 
