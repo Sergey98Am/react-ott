@@ -15,7 +15,7 @@ export const navLinks = [
   {
     id: "movies",
     title: "Movies & Shows",
-    link: "/movies",
+    link: "/movies-and-shows",
   },
   {
     id: "support",
