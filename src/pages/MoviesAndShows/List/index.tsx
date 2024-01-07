@@ -8,7 +8,7 @@ import MoviesList from "./MoviesList";
 import { useTopMovies } from "@/hooks/movies/useTopMovies";
 import FreeTrial from "@/components/FreeTrial";
 
-const Movies = () => {
+const MoviesAndShows = () => {
   const { isLoading, top_movies } = useTopMovies();
 
   const desktopMoviesAndShowsClasses = ctl(
@@ -67,7 +67,7 @@ const Movies = () => {
                     className="md:!pb-[88px]"
                     title={movie.title}
                     description={movie.description}
-                    image={movie.image}
+                    image={movie.banner}
                   />
                 </div>
               );
@@ -115,4 +115,4 @@ const Movies = () => {
   );
 };
 
-export default Movies;
+export default MoviesAndShows;
