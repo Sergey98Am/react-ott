@@ -1,5 +1,7 @@
 import { clsx, type ClassValue } from "clsx";
 import { twMerge } from "tailwind-merge";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
 
 export function cn(...inputs: ClassValue[]) {
   return twMerge(clsx(inputs));
@@ -57,4 +59,14 @@ export const formatDate = (dateTimeString: string): string => {
   const year = date.getFullYear();
 
   return `${day} ${month} ${year}`;
+};
+
+export const ScrollToTop = () => {
+  const { pathname } = useLocation();
+
+  useEffect(() => {
+    window.scrollTo(0, 0);
+  }, [pathname]);
+
+  return null;
 };

@@ -56,3 +56,18 @@ export async function getTopMovies() {
 
   return data;
 }
+
+// Get single movie
+export async function getSingleMovie(id: number) {
+  const { data, error } = await supabase
+    .from("movies")
+    .select()
+    .eq("id", id)
+    .single();
+
+  if (error) {
+    throw new Error("The movie couldn't be loaded");
+  }
+
+  return data;
+}
