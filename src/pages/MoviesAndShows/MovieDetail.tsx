@@ -5,6 +5,13 @@ import Spinner from "@/components/icons/Spinner";
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
+import Typography from "@/components/ui/Typography";
+import {
+  CalendarIcon,
+  LanguageIcon,
+  Squares2X2Icon,
+  StarIcon,
+} from "@heroicons/react/24/outline";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -15,6 +22,26 @@ const infoSectionClasses = ctl(
   sm:p-10
   2xl:rounded-xl
   2xl:p-12`,
+);
+
+const fieldLabelClasses = ctl(
+  `title 
+  text-sm 
+  !font-medium 
+  text-grey-grey-60 
+  flex
+  items-center
+  gap-x-0.5
+  sm:text-base 
+  2xl:text-lg
+  2xl:gap-x-1`,
+);
+
+const labelIconClasses = ctl(
+  `h-5
+  w-5 
+  2xl:h-6 
+  2xl:w-6`,
 );
 
 const MovieDetail = () => {
@@ -40,26 +67,74 @@ const MovieDetail = () => {
                 <div
                   className={`${infoSectionClasses} description hidden xl:block`}
                 >
-                  Description
+                  <Typography variant="body" className={fieldLabelClasses}>
+                    Description
+                  </Typography>
                 </div>
-                <div className={`${infoSectionClasses} cast`}>Cast</div>
-                <div className={`${infoSectionClasses} reviews`}>Reviews</div>
+                <div className={`${infoSectionClasses} cast`}>
+                  <Typography variant="body" className={fieldLabelClasses}>
+                    Cast
+                  </Typography>
+                </div>
+                <div className={`${infoSectionClasses} reviews`}>
+                  <Typography variant="body" className={fieldLabelClasses}>
+                    Reviews
+                  </Typography>
+                </div>
               </div>
               <div className="order-first col-span-12 flex flex-col gap-y-5 xl:order-last xl:col-span-4">
                 <div
                   className={`${infoSectionClasses} description block xl:hidden`}
                 >
-                  Description
+                  <Typography variant="body" className={fieldLabelClasses}>
+                    Description
+                  </Typography>
                 </div>
                 <div
                   className={`${infoSectionClasses} flex flex-col gap-y-5 sm:gap-y-6`}
                 >
-                  <div className="released-year">Relased Year</div>
-                  <div className="available-languages">Available Languages</div>
-                  <div className="ratings">Ratings</div>
-                  <div className="genres">Genres</div>
-                  <div className="director">Director</div>
-                  <div className="music">Music</div>
+                  <div className="released-year">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      <span>
+                        <CalendarIcon className={labelIconClasses} />
+                      </span>
+                      <span>Relased Year</span>
+                    </Typography>
+                  </div>
+                  <div className="available-languages">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      <span>
+                        <LanguageIcon className={labelIconClasses} />
+                      </span>
+                      <span>Available Languages</span>
+                    </Typography>
+                  </div>
+                  <div className="ratings">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      <span>
+                        <StarIcon className={labelIconClasses} />
+                      </span>
+                      <span>Ratings</span>
+                    </Typography>
+                  </div>
+                  <div className="genres">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      <span>
+                        <Squares2X2Icon className={labelIconClasses} />
+                      </span>
+                      <span>Genres</span>
+                    </Typography>
+                  </div>
+                  <div className="director">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      Director
+                    </Typography>
+                  </div>
+                  <div className="music">
+                    <Typography variant="body" className={fieldLabelClasses}>
+                      Music
+                    </Typography>
+                  </div>
                 </div>
               </div>
             </div>
