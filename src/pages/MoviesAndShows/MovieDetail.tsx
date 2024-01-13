@@ -19,9 +19,14 @@ const infoSectionClasses = ctl(
   border-dark-black-15
   rounded-lg
   p-6
+  flex
+  flex-col
+  gap-y-2
   sm:p-10
+  sm:gap-y-2.5
   2xl:rounded-xl
-  2xl:p-12`,
+  2xl:p-12
+  2xl:gap-y-3.5`,
 );
 
 const fieldLabelClasses = ctl(
@@ -65,18 +70,29 @@ const MovieDetail = () => {
             <div className="info grid grid-cols-12 gap-5">
               <div className="col-span-12 flex flex-col gap-y-5 xl:col-span-8 2xl:gap-y-7">
                 <div
-                  className={`${infoSectionClasses} description hidden xl:block`}
+                  className={`${infoSectionClasses} description hidden xl:!flex`}
                 >
+                  {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
                     Description
                   </Typography>
+
+                  {/* Description */}
+                  <Typography
+                    variant="body"
+                    className={`${fieldLabelClasses} text-absolute-white`}
+                  >
+                    {single_movie.description}
+                  </Typography>
                 </div>
                 <div className={`${infoSectionClasses} cast`}>
+                  {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
                     Cast
                   </Typography>
                 </div>
                 <div className={`${infoSectionClasses} reviews`}>
+                  {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
                     Reviews
                   </Typography>
@@ -86,14 +102,24 @@ const MovieDetail = () => {
                 <div
                   className={`${infoSectionClasses} description block xl:hidden`}
                 >
+                  {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
                     Description
+                  </Typography>
+
+                  {/* Description */}
+                  <Typography
+                    variant="body"
+                    className={`${fieldLabelClasses} text-absolute-white`}
+                  >
+                    {single_movie.description}
                   </Typography>
                 </div>
                 <div
                   className={`${infoSectionClasses} flex flex-col gap-y-5 sm:gap-y-6`}
                 >
                   <div className="released-year">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       <span>
                         <CalendarIcon className={labelIconClasses} />
@@ -102,6 +128,7 @@ const MovieDetail = () => {
                     </Typography>
                   </div>
                   <div className="available-languages">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       <span>
                         <LanguageIcon className={labelIconClasses} />
@@ -110,6 +137,7 @@ const MovieDetail = () => {
                     </Typography>
                   </div>
                   <div className="ratings">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       <span>
                         <StarIcon className={labelIconClasses} />
@@ -118,6 +146,7 @@ const MovieDetail = () => {
                     </Typography>
                   </div>
                   <div className="genres">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       <span>
                         <Squares2X2Icon className={labelIconClasses} />
@@ -126,11 +155,13 @@ const MovieDetail = () => {
                     </Typography>
                   </div>
                   <div className="director">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       Director
                     </Typography>
                   </div>
                   <div className="music">
+                    {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       Music
                     </Typography>
