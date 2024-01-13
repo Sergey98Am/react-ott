@@ -61,6 +61,11 @@ export const formatDate = (dateTimeString: string): string => {
   return `${day} ${month} ${year}`;
 };
 
+export const getYear = (dateTimeString: string): number => {
+  const date = new Date(dateTimeString);
+  return date.getFullYear();
+};
+
 export const ScrollToTop = () => {
   const { pathname } = useLocation();
 
