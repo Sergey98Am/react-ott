@@ -7,11 +7,12 @@ import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
 import Typography from "@/components/ui/Typography";
 import {
-  CalendarIcon,
   LanguageIcon,
   Squares2X2Icon,
   StarIcon,
 } from "@heroicons/react/24/outline";
+import Description from "./Description";
+import ReleasedYear from "./ReleasedYear";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -19,13 +20,16 @@ const infoSectionClasses = ctl(
   border-dark-black-15
   rounded-lg
   p-6
-  flex
-  flex-col
-  gap-y-2
   sm:p-10
-  sm:gap-y-2.5
   2xl:rounded-xl
-  2xl:p-12
+  2xl:p-12`,
+);
+
+const fieldContentDistanceClasses = ctl(
+  `flex
+  flex-col 
+  gap-y-2 
+  sm:gap-y-2.5 
   2xl:gap-y-3.5`,
 );
 
@@ -69,28 +73,24 @@ const MovieDetail = () => {
             />
             <div className="info grid grid-cols-12 gap-5">
               <div className="col-span-12 flex flex-col gap-y-5 xl:col-span-8 2xl:gap-y-7">
-                <div
-                  className={`${infoSectionClasses} description hidden xl:!flex`}
-                >
-                  {/* Label */}
-                  <Typography variant="body" className={fieldLabelClasses}>
-                    Description
-                  </Typography>
-
-                  {/* Description */}
-                  <Typography
-                    variant="body"
-                    className={`${fieldLabelClasses} text-absolute-white`}
-                  >
-                    {single_movie.description}
-                  </Typography>
+                {/* Movie description */}
+                <div className="description hidden xl:!flex">
+                  <Description
+                    infoSectionClasses={infoSectionClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    fieldLabelClasses={fieldLabelClasses}
+                    single_movie={single_movie}
+                  />
                 </div>
+                {/* Cast */}
                 <div className={`${infoSectionClasses} cast`}>
                   {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
                     Cast
                   </Typography>
                 </div>
+
+                {/* Reviews */}
                 <div className={`${infoSectionClasses} reviews`}>
                   {/* Label */}
                   <Typography variant="body" className={fieldLabelClasses}>
@@ -99,34 +99,27 @@ const MovieDetail = () => {
                 </div>
               </div>
               <div className="order-first col-span-12 flex flex-col gap-y-5 xl:order-last xl:col-span-4">
-                <div
-                  className={`${infoSectionClasses} description block xl:hidden`}
-                >
-                  {/* Label */}
-                  <Typography variant="body" className={fieldLabelClasses}>
-                    Description
-                  </Typography>
-
-                  {/* Description */}
-                  <Typography
-                    variant="body"
-                    className={`${fieldLabelClasses} text-absolute-white`}
-                  >
-                    {single_movie.description}
-                  </Typography>
+                {/* Movie description */}
+                <div className="description block xl:hidden">
+                  <Description
+                    infoSectionClasses={infoSectionClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    fieldLabelClasses={fieldLabelClasses}
+                    single_movie={single_movie}
+                  />
                 </div>
+
                 <div
                   className={`${infoSectionClasses} flex flex-col gap-y-5 sm:gap-y-6`}
                 >
-                  <div className="released-year">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      <span>
-                        <CalendarIcon className={labelIconClasses} />
-                      </span>
-                      <span>Relased Year</span>
-                    </Typography>
-                  </div>
+                  {/* Released year */}
+                  <ReleasedYear
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    labelIconClasses={labelIconClasses}
+                    single_movie={single_movie}
+                  />
+                  {/* Available languages */}
                   <div className="available-languages">
                     {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
@@ -136,6 +129,8 @@ const MovieDetail = () => {
                       <span>Available Languages</span>
                     </Typography>
                   </div>
+
+                  {/* Ratings */}
                   <div className="ratings">
                     {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
@@ -145,6 +140,8 @@ const MovieDetail = () => {
                       <span>Ratings</span>
                     </Typography>
                   </div>
+
+                  {/* Genres */}
                   <div className="genres">
                     {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
@@ -154,12 +151,16 @@ const MovieDetail = () => {
                       <span>Genres</span>
                     </Typography>
                   </div>
+
+                  {/* Director */}
                   <div className="director">
                     {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
                       Director
                     </Typography>
                   </div>
+
+                  {/* Music */}
                   <div className="music">
                     {/* Label */}
                     <Typography variant="body" className={fieldLabelClasses}>
