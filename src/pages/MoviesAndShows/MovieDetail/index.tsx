@@ -6,10 +6,11 @@ import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
 import Typography from "@/components/ui/Typography";
-import { Squares2X2Icon, StarIcon } from "@heroicons/react/24/outline";
+import { StarIcon } from "@heroicons/react/24/outline";
 import Description from "../DetailPagesComponents/Description";
 import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
 import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
+import Genres from "../DetailPagesComponents/Genres";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -137,15 +138,12 @@ const MovieDetail = () => {
                   </div>
 
                   {/* Genres */}
-                  <div className="genres">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      <span>
-                        <Squares2X2Icon className={labelIconClasses} />
-                      </span>
-                      <span>Genres</span>
-                    </Typography>
-                  </div>
+                  <Genres
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    labelIconClasses={labelIconClasses}
+                    genres={single_movie.genres}
+                  />
 
                   {/* Director */}
                   <div className="director">
