@@ -1,37 +1,37 @@
 import Typography from "@/components/ui/Typography";
-import { LanguageIcon } from "@heroicons/react/24/outline";
+import { Squares2X2Icon } from "@heroicons/react/24/outline";
 import React from "react";
 
-interface Language {
+interface Genre {
   title: string;
 }
 
-interface AvailableLanguagesProps {
+interface GenresProps {
   fieldLabelClasses: string;
   fieldContentDistanceClasses: string;
   labelIconClasses: string;
-  languages: Language[];
+  genres: Genre[];
 }
 
-const AvailableLanguages: React.FC<AvailableLanguagesProps> = ({
+const Genres: React.FC<GenresProps> = ({
   fieldLabelClasses,
   fieldContentDistanceClasses,
   labelIconClasses,
-  languages,
+  genres,
 }) => {
   return (
-    <div className={`available-languages ${fieldContentDistanceClasses}`}>
+    <div className={`genres ${fieldContentDistanceClasses}`}>
       {/* Label */}
       <Typography variant="body" className={fieldLabelClasses}>
         <span>
-          <LanguageIcon className={labelIconClasses} />
+          <Squares2X2Icon className={labelIconClasses} />
         </span>
-        <span>Available Languages</span>
+        <span>Genres</span>
       </Typography>
 
-      {/* Available languages */}
+      {/* Genres */}
       <div className="flex flex-wrap gap-2.5">
-        {languages.map((item, index) => (
+        {genres.map((item, index) => (
           <button
             key={index}
             className="rounded-md border border-dark-black-15 bg-dark-black-08 px-3 py-1.5 text-sm font-medium capitalize 2xl:rounded-lg 2xl:px-3.5 2xl:py-2 2xl:text-lg"
@@ -44,4 +44,4 @@ const AvailableLanguages: React.FC<AvailableLanguagesProps> = ({
   );
 };
 
-export default AvailableLanguages;
+export default Genres;
