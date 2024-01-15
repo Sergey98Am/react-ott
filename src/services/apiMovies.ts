@@ -61,7 +61,7 @@ export async function getTopMovies() {
 export async function getSingleMovie(id: number) {
   const { data, error } = await supabase
     .from("movies")
-    .select()
+    .select(`*, languages (title)`)
     .eq("id", id)
     .single();
 

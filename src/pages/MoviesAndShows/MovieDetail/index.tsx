@@ -6,13 +6,10 @@ import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
 import Typography from "@/components/ui/Typography";
-import {
-  LanguageIcon,
-  Squares2X2Icon,
-  StarIcon,
-} from "@heroicons/react/24/outline";
-import Description from "./Description";
-import ReleasedYear from "./ReleasedYear";
+import { Squares2X2Icon, StarIcon } from "@heroicons/react/24/outline";
+import Description from "../DetailPagesComponents/Description";
+import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
+import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -56,6 +53,7 @@ const labelIconClasses = ctl(
 const MovieDetail = () => {
   const params = useParams();
   const { isLoading, single_movie } = useSingleMovie(Number(params.id));
+  console.log(single_movie);
 
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
@@ -120,15 +118,12 @@ const MovieDetail = () => {
                     single_movie={single_movie}
                   />
                   {/* Available languages */}
-                  <div className="available-languages">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      <span>
-                        <LanguageIcon className={labelIconClasses} />
-                      </span>
-                      <span>Available Languages</span>
-                    </Typography>
-                  </div>
+                  <AvailableLanguages
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    labelIconClasses={labelIconClasses}
+                    languages={single_movie.languages}
+                  />
 
                   {/* Ratings */}
                   <div className="ratings">
