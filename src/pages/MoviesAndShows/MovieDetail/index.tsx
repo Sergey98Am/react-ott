@@ -11,6 +11,9 @@ import Description from "../DetailPagesComponents/Description";
 import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
 import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
 import Genres from "../DetailPagesComponents/Genres";
+import Director from "../DetailPagesComponents/Director";
+import { Role, Member } from "@/types/index";
+import Music from "../DetailPagesComponents/Music";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -54,7 +57,16 @@ const labelIconClasses = ctl(
 const MovieDetail = () => {
   const params = useParams();
   const { isLoading, single_movie } = useSingleMovie(Number(params.id));
-  console.log(single_movie);
+  const directors: Member[] = single_movie
+    ? single_movie.members.filter((member: Member) =>
+        member.roles.some((role: Role) => role.name === "director"),
+      )
+    : [];
+  const musicians: Member[] = single_movie
+    ? single_movie.members.filter((member: Member) =>
+        member.roles.some((role: Role) => role.name === "musician"),
+      )
+    : [];
 
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
@@ -81,6 +93,7 @@ const MovieDetail = () => {
                     single_movie={single_movie}
                   />
                 </div>
+
                 {/* Cast */}
                 <div className={`${infoSectionClasses} cast`}>
                   {/* Label */}
@@ -118,6 +131,7 @@ const MovieDetail = () => {
                     labelIconClasses={labelIconClasses}
                     single_movie={single_movie}
                   />
+
                   {/* Available languages */}
                   <AvailableLanguages
                     fieldLabelClasses={fieldLabelClasses}
@@ -145,21 +159,19 @@ const MovieDetail = () => {
                     genres={single_movie.genres}
                   />
 
-                  {/* Director */}
-                  <div className="director">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      Director
-                    </Typography>
-                  </div>
+                  {/* Director or directors */}
+                  <Director
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    directors={directors}
+                  />
 
-                  {/* Music */}
-                  <div className="music">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      Music
-                    </Typography>
-                  </div>
+                  {/* Musician on musicians */}
+                  <Music
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    musicians={musicians}
+                  />
                 </div>
               </div>
             </div>

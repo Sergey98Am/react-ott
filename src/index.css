@@ -63,4 +63,8 @@
   .aspect-ratio-short-portrait {
     @apply aspect-h-10 aspect-w-9;
   }
+
+  .aspect-ratio-square {
+    @apply aspect-h-1 aspect-w-1;
+  }
 }
