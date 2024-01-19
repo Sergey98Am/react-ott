@@ -16,6 +16,7 @@ import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
 import Cast from "../DetailPagesComponents/Cast";
 import CarouselOutsideBottomControls from "@/components/carousels/CarouselOutsideBottomControls";
+import ReviewCard from "@/components/cards/ReviewCard";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -115,11 +116,11 @@ const MovieDetail = () => {
 
                   <CarouselOutsideBottomControls>
                     <div>
-                      <div>1</div>
-                      <div>2</div>
-                      <div>3</div>
-                      <div>4</div>
-                      <div>5</div>
+                      <ReviewCard />
+                      <ReviewCard />
+                      <ReviewCard />
+                      <ReviewCard />
+                      <ReviewCard />
                     </div>
                   </CarouselOutsideBottomControls>
                 </div>
