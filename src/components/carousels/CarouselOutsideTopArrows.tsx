@@ -56,6 +56,7 @@ const CarouselOutsideTopArrows: React.FC<PropType> = (props) => {
 
   const arrowClasses = ctl(
     `rounded-full
+    bg-dark-black-08
     p-3
     2xl:p-3.5`,
   );
