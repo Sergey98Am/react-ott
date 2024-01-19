@@ -1,11 +1,15 @@
 import { supabase } from "./supabaseClient";
 
-// Get trending movies
-export async function getTrendingMovies() {
+// 1 is Movie and 2 is Show
+type MediaType = "Movie" | "Show";
+
+// Get trending media
+export async function getTrendingMediaItems(mediaType: MediaType) {
   const { data, error } = await supabase
-    .from("movies")
+    .from("media")
     .select("*")
-    .eq("trending", true);
+    .eq("trending", true)
+    .eq("media_type", mediaType);
 
   if (error) {
     throw new Error("The trending movies couldn't be loaded");
@@ -14,13 +18,14 @@ export async function getTrendingMovies() {
   return data;
 }
 
-// Get new movies
-export async function getNewMovies() {
+// Get new media
+export async function getNewMediaItems(mediaType: MediaType) {
   const { data, error } = await supabase
-    .from("movies")
+    .from("media")
     .select("*")
     .order("created_at", { ascending: false })
-    .limit(10);
+    .limit(10)
+    .eq("media_type", mediaType);
 
   if (error) {
     throw new Error("The new movies couldn't be loaded");
@@ -29,12 +34,13 @@ export async function getNewMovies() {
   return data;
 }
 
-// Get must watch movies
-export async function getMustWatchMovies() {
+// Get must watch media
+export async function getMustWatchMediaItems(mediaType: MediaType) {
   const { data, error } = await supabase
-    .from("movies")
+    .from("media")
     .select("*")
-    .eq("must_watch", true);
+    .eq("must_watch", true)
+    .eq("media_type", mediaType);
 
   if (error) {
     throw new Error("The must watch movies couldn't be loaded");
@@ -43,12 +49,13 @@ export async function getMustWatchMovies() {
   return data;
 }
 
-// Get top movies
-export async function getTopMovies() {
+// Get top media
+export async function getTopMediaItems(mediaType: MediaType) {
   const { data, error } = await supabase
-    .from("movies")
+    .from("media")
     .select("*")
-    .eq("top", true);
+    .eq("top", true)
+    .eq("media_type", mediaType);
 
   if (error) {
     throw new Error("The top movies couldn't be loaded");
@@ -58,9 +65,9 @@ export async function getTopMovies() {
 }
 
 // Get single movie
-export async function getSingleMovie(id: number) {
+export async function getSingleMediaItem(id: number) {
   const { data, error } = await supabase
-    .from("movies")
+    .from("media")
     .select(
       `*, languages(title), genres(title), members(image, first_name, last_name, roles (name), countries(name))`,
     )

@@ -7,7 +7,7 @@ interface ReleasedYearProps {
   fieldLabelClasses: string;
   fieldContentDistanceClasses: string;
   labelIconClasses: string;
-  single_movie: {
+  single_media_item: {
     created_at: string;
   };
 }
@@ -16,7 +16,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
   fieldLabelClasses,
   fieldContentDistanceClasses,
   labelIconClasses,
-  single_movie,
+  single_media_item,
 }) => {
   return (
     <div className={`released year ${fieldContentDistanceClasses}`}>
@@ -33,7 +33,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
         variant="body"
         className="text-base !font-semibold text-absolute-white 2xl:text-xl"
       >
-        {getYear(single_movie.created_at)}
+        {getYear(single_media_item.created_at)}
       </Typography>
     </div>
   );

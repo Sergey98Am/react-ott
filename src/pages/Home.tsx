@@ -6,7 +6,7 @@ import Hero from "@/components/homepage/Hero";
 import Container from "@/components/ui/Container";
 import { useGenres } from "@/hooks/useGenres";
 import GenreCard from "@/components/cards/GenreCard";
-import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
+import CarouselOutsideTopControls from "@/components/carousels/CarouselOutsideTopControls";
 import ctl from "@netlify/classnames-template-literals";
 
 const carouselItemsParentClasses = ctl(
@@ -37,7 +37,7 @@ const Home = () => {
       <Container className="space-y-[80px] py-[100px] xl:space-y-[120px] xl:py-[150px] 2xl:space-y-[150px] 2xl:py-[200px]">
         {/* <GenresSlider /> */}
         <div className="genres">
-          <CarouselOutsideControls
+          <CarouselOutsideTopControls
             headingTitle="Explore our wide variety of categories"
             headingDescription="Whether you're looking for a comedy to make you laugh, a drama to make you think, or a documentary to learn something new"
             isLoading={isLoading}
@@ -51,7 +51,7 @@ const Home = () => {
                 );
               })}
             </div>
-          </CarouselOutsideControls>
+          </CarouselOutsideTopControls>
         </div>
         <Features />
         <FAQ />

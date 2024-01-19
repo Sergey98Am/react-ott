@@ -19,7 +19,7 @@ type PropType = {
   headingDescription?: string;
 };
 
-const CarouselOutsideControls: React.FC<PropType> = (props) => {
+const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
   const {
     children,
     isLoading = false,
@@ -146,4 +146,4 @@ const CarouselOutsideControls: React.FC<PropType> = (props) => {
   );
 };
 
-export default CarouselOutsideControls;
+export default CarouselOutsideTopControls;

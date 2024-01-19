@@ -1,10 +1,10 @@
 import GenreCard from "@/components/cards/GenreCard";
 import MediaCard from "@/components/cards/MediaCard";
-import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
+import CarouselOutsideTopControls from "@/components/carousels/CarouselOutsideTopControls";
 import { useGenres } from "@/hooks/useGenres";
-import { useMustWatchMovies } from "@/hooks/movies/useMustWatchMovies";
-import { useNewMovies } from "@/hooks/movies/useNewMovies";
-import { useTrendingMovies } from "@/hooks/movies/useTrendingMovies";
+import { useMustWatchMediaItems } from "@/hooks/media/useMustWatchMediaItems";
+import { useNewMediaItems } from "@/hooks/media/useNewMediaItems";
+import { useTrendingMediaItem } from "@/hooks/media/useTrendingMediaItem";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
@@ -29,18 +29,27 @@ const carouselItemClasses = ctl(
 
 const MoviesList = () => {
   const { isLoading: isLoadingGenres, genres } = useGenres();
+
   const topGenres = genres?.filter((data) => data.top === true);
-  const { isLoading: isLoadingTrendingMovies, trending_movies } =
-    useTrendingMovies();
-  const { isLoading: isLoadingNewMovies, new_movies } = useNewMovies();
-  const { isLoading: isLoadingMustWatchMovies, must_watch_movies } =
-    useMustWatchMovies();
+
+  const {
+    isLoading: isLoadingTrendingMovies,
+    trendingMediaItems: trendingMovies,
+  } = useTrendingMediaItem("Movie");
+
+  const { isLoading: isLoadingNewMovies, new_media_items: newMovies } =
+    useNewMediaItems("Movie");
+
+  const {
+    isLoading: isLoadingMustWatchMovies,
+    must_watch_media_items: mustWatchMovies,
+  } = useMustWatchMediaItems("Movie");
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
       <div className="genres space-y-12 2xl:space-y-24">
         {/* Genres */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Our Genres"
           isLoading={isLoadingGenres}
         >
@@ -53,10 +62,10 @@ const MoviesList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Popular 10 genres */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Popular Top 10 In Genres"
           isLoading={isLoadingGenres}
         >
@@ -76,15 +85,15 @@ const MoviesList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Trending movies */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Trending Now"
           isLoading={isLoadingTrendingMovies}
         >
           <div className={carouselItemsParentClasses}>
-            {trending_movies?.map((movie) => {
+            {trendingMovies?.map((movie) => {
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
@@ -101,15 +110,15 @@ const MoviesList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* New released movies */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="New Releases"
           isLoading={isLoadingNewMovies}
         >
           <div className={carouselItemsParentClasses}>
-            {new_movies?.map((movie) => {
+            {newMovies?.map((movie) => {
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
@@ -125,15 +134,15 @@ const MoviesList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Must watch movies */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Must - Watch Movies"
           isLoading={isLoadingMustWatchMovies}
         >
           <div className={carouselItemsParentClasses}>
-            {must_watch_movies?.map((movie) => {
+            {mustWatchMovies?.map((movie) => {
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
@@ -150,7 +159,7 @@ const MoviesList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
       </div>
     </div>
   );

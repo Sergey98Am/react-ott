@@ -1,9 +1,9 @@
 import GenreCard from "@/components/cards/GenreCard";
 import MediaCard from "@/components/cards/MediaCard";
-import CarouselOutsideControls from "@/components/carousels/CarouselOutsideControls";
-import { useMustWatchShows } from "@/hooks/shows/useMustWatchShows";
-import { useNewShows } from "@/hooks/shows/useNewShows";
-import { useTrendingShows } from "@/hooks/shows/useTrendingShows";
+import CarouselOutsideTopControls from "@/components/carousels/CarouselOutsideTopControls";
+import { useMustWatchMediaItems } from "@/hooks/media/useMustWatchMediaItems";
+import { useNewMediaItems } from "@/hooks/media/useNewMediaItems";
+import { useTrendingMediaItem } from "@/hooks/media/useTrendingMediaItem";
 import { useGenres } from "@/hooks/useGenres";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
@@ -30,17 +30,24 @@ const carouselItemClasses = ctl(
 const ShowsList = () => {
   const { isLoading: isLoadingGenres, genres } = useGenres();
   const topGenres = genres?.filter((data) => data.top === true);
-  const { isLoading: isLoadingTrendingShows, trending_shows } =
-    useTrendingShows();
-  const { isLoading: isLoadingNewShows, new_shows } = useNewShows();
-  const { isLoading: isLoadingMustWatchShows, must_watch_shows } =
-    useMustWatchShows();
+  const {
+    isLoading: isLoadingTrendingShows,
+    trendingMediaItems: trendingShows,
+  } = useTrendingMediaItem("Show");
+  console.log(trendingShows);
+
+  const { isLoading: isLoadingNewShows, new_media_items: new_shows } =
+    useNewMediaItems("Show");
+  const {
+    isLoading: isLoadingMustWatchShows,
+    must_watch_media_items: must_watch_shows,
+  } = useMustWatchMediaItems("Show");
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
       <div className="genres space-y-12 2xl:space-y-24">
         {/* Genres */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Our Genres"
           isLoading={isLoadingGenres}
         >
@@ -53,10 +60,10 @@ const ShowsList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Popular 10 genres */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Popular Top 10 In Genres"
           isLoading={isLoadingGenres}
         >
@@ -76,15 +83,15 @@ const ShowsList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Trending shows */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Trending Shows Now"
           isLoading={isLoadingTrendingShows}
         >
           <div className={carouselItemsParentClasses}>
-            {trending_shows?.map((movie) => {
+            {trendingShows?.map((movie) => {
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
@@ -101,10 +108,10 @@ const ShowsList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* New released shows */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="New Released Shows"
           isLoading={isLoadingNewShows}
         >
@@ -126,10 +133,10 @@ const ShowsList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
 
         {/* Must watch shows */}
-        <CarouselOutsideControls
+        <CarouselOutsideTopControls
           headingTitle="Must - Watch Shows"
           isLoading={isLoadingMustWatchShows}
         >
@@ -151,7 +158,7 @@ const ShowsList = () => {
               );
             })}
           </div>
-        </CarouselOutsideControls>
+        </CarouselOutsideTopControls>
       </div>
     </div>
   );
