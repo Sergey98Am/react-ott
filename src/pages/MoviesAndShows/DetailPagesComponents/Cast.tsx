@@ -28,11 +28,15 @@ const Cast: React.FC<CastProps> = ({ infoSectionClasses, actors }) => {
           {actors.map((actor, index) => (
             <div
               key={index}
-              className="relative w-[79px] min-w-0 flex-shrink-0 flex-grow-0 pl-2.5 sm:w-[100px] 2xl:w-[122px] 2xl:pl-5"
+              className="relative w-[79px] min-w-0 flex-shrink-0 flex-grow-0 overflow-hidden pl-2.5 sm:w-[100px] 2xl:w-[122px]  2xl:pl-5"
             >
               <div>
                 <div className="aspect-ratio-square">
-                  <Image src={actor.image} alt="fds" className="object-cover" />
+                  <Image
+                    src={actor.image}
+                    alt="fds"
+                    className="rounded-lg object-cover 2xl:rounded-xl"
+                  />
                 </div>
               </div>
             </div>
