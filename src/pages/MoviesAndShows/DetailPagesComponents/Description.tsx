@@ -5,7 +5,7 @@ interface DescriptionProps {
   infoSectionClasses: string;
   fieldContentDistanceClasses: string;
   fieldLabelClasses: string;
-  single_movie: {
+  single_media_item: {
     description: string;
   };
 }
@@ -14,7 +14,7 @@ const Description: React.FC<DescriptionProps> = ({
   infoSectionClasses,
   fieldContentDistanceClasses,
   fieldLabelClasses,
-  single_movie,
+  single_media_item,
 }) => {
   return (
     <div className={`${infoSectionClasses} ${fieldContentDistanceClasses}`}>
@@ -28,7 +28,7 @@ const Description: React.FC<DescriptionProps> = ({
         variant="body"
         className={`${fieldLabelClasses} text-absolute-white`}
       >
-        {single_movie.description}
+        {single_media_item.description}
       </Typography>
     </div>
   );

@@ -1,6 +1,6 @@
 import { useParams } from "react-router-dom";
 import Container from "@/components/ui/Container";
-import { useSingleMovie } from "@/hooks/movies/useSingleMovie";
+import { useSingleMediaItem } from "@/hooks/media/useSingleMediaItem";
 import Spinner from "@/components/icons/Spinner";
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
@@ -14,6 +14,7 @@ import Genres from "../DetailPagesComponents/Genres";
 import Director from "../DetailPagesComponents/Director";
 import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
+import Cast from "../DetailPagesComponents/Cast";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -56,15 +57,22 @@ const labelIconClasses = ctl(
 
 const MovieDetail = () => {
   const params = useParams();
-  const { isLoading, single_movie } = useSingleMovie(Number(params.id));
-  const directors: Member[] = single_movie
-    ? single_movie.members.filter((member: Member) =>
+  const { isLoading, single_media_item } = useSingleMediaItem(
+    Number(params.id),
+  );
+  const directors: Member[] = single_media_item
+    ? single_media_item.members.filter((member: Member) =>
         member.roles.some((role: Role) => role.name === "director"),
       )
     : [];
-  const musicians: Member[] = single_movie
-    ? single_movie.members.filter((member: Member) =>
+  const musicians: Member[] = single_media_item
+    ? single_media_item.members.filter((member: Member) =>
         member.roles.some((role: Role) => role.name === "musician"),
+      )
+    : [];
+  const actors: Member[] = single_media_item
+    ? single_media_item.members.filter((member: Member) =>
+        member.roles.some((role: Role) => role.name === "actor"),
       )
     : [];
 
@@ -78,9 +86,9 @@ const MovieDetail = () => {
         ) : (
           <div className="space-y-14 sm:space-y-20 2xl:space-y-24">
             <MediaOverlayCard
-              image={single_movie.banner}
-              title={single_movie.title}
-              description={single_movie.description}
+              image={single_media_item.banner}
+              title={single_media_item.title}
+              description={single_media_item.description}
             />
             <div className="info grid grid-cols-12 gap-5">
               <div className="col-span-12 flex flex-col gap-y-5 xl:col-span-8 2xl:gap-y-7">
@@ -90,17 +98,12 @@ const MovieDetail = () => {
                     infoSectionClasses={infoSectionClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
                     fieldLabelClasses={fieldLabelClasses}
-                    single_movie={single_movie}
+                    single_media_item={single_media_item}
                   />
                 </div>
 
                 {/* Cast */}
-                <div className={`${infoSectionClasses} cast`}>
-                  {/* Label */}
-                  <Typography variant="body" className={fieldLabelClasses}>
-                    Cast
-                  </Typography>
-                </div>
+                <Cast infoSectionClasses={infoSectionClasses} actors={actors} />
 
                 {/* Reviews */}
                 <div className={`${infoSectionClasses} reviews`}>
@@ -117,7 +120,7 @@ const MovieDetail = () => {
                     infoSectionClasses={infoSectionClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
                     fieldLabelClasses={fieldLabelClasses}
-                    single_movie={single_movie}
+                    single_media_item={single_media_item}
                   />
                 </div>
 
@@ -129,7 +132,7 @@ const MovieDetail = () => {
                     fieldLabelClasses={fieldLabelClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
                     labelIconClasses={labelIconClasses}
-                    single_movie={single_movie}
+                    single_media_item={single_media_item}
                   />
 
                   {/* Available languages */}
@@ -137,7 +140,7 @@ const MovieDetail = () => {
                     fieldLabelClasses={fieldLabelClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
                     labelIconClasses={labelIconClasses}
-                    languages={single_movie.languages}
+                    languages={single_media_item.languages}
                   />
 
                   {/* Ratings */}
@@ -156,7 +159,7 @@ const MovieDetail = () => {
                     fieldLabelClasses={fieldLabelClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
                     labelIconClasses={labelIconClasses}
-                    genres={single_movie.genres}
+                    genres={single_media_item.genres}
                   />
 
                   {/* Director or directors */}

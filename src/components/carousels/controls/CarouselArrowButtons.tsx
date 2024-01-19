@@ -58,7 +58,7 @@ type PropType = PropsWithChildren<
   React.DetailedHTMLProps<
     React.ButtonHTMLAttributes<HTMLButtonElement>,
     HTMLButtonElement
-  >
+  > & { iconClassName?: string }
 >;
 
 const arrowButtons = ctl(
@@ -72,7 +72,7 @@ const arrowButtons = ctl(
 );
 
 export const PrevButton: React.FC<PropType> = (props) => {
-  const { children, className, ...restProps } = props;
+  const { children, className, iconClassName, ...restProps } = props;
 
   return (
     <button
@@ -80,14 +80,14 @@ export const PrevButton: React.FC<PropType> = (props) => {
       type="button"
       {...restProps}
     >
-      <ArrowLeftIcon className="h-7 w-7" />
+      <ArrowLeftIcon className={cn(`h-7 w-7`, iconClassName)} />
       {children}
     </button>
   );
 };
 
 export const NextButton: React.FC<PropType> = (props) => {
-  const { children, className, ...restProps } = props;
+  const { children, className, iconClassName, ...restProps } = props;
 
   return (
     <button
@@ -95,7 +95,7 @@ export const NextButton: React.FC<PropType> = (props) => {
       type="button"
       {...restProps}
     >
-      <ArrowRightIcon className="h-7 w-7" />
+      <ArrowRightIcon className={cn(`h-7 w-7`, iconClassName)} />
       {children}
     </button>
   );
