@@ -15,6 +15,7 @@ import Director from "../DetailPagesComponents/Director";
 import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
 import Cast from "../DetailPagesComponents/Cast";
+import CarouselOutsideBottomControls from "@/components/carousels/CarouselOutsideBottomControls";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -111,6 +112,16 @@ const MovieDetail = () => {
                   <Typography variant="body" className={fieldLabelClasses}>
                     Reviews
                   </Typography>
+
+                  <CarouselOutsideBottomControls>
+                    <div>
+                      <div>1</div>
+                      <div>2</div>
+                      <div>3</div>
+                      <div>4</div>
+                      <div>5</div>
+                    </div>
+                  </CarouselOutsideBottomControls>
                 </div>
               </div>
               <div className="order-first col-span-12 flex flex-col gap-y-5 xl:order-last xl:col-span-4">
