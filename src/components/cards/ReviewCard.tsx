@@ -1,4 +1,4 @@
-import { formatNumber } from "@/lib/utils";
+import { cn, formatNumber } from "@/lib/utils";
 import { Badge } from "../ui/Badge";
 import { Card, CardContent, CardHeader } from "../ui/Card";
 import CustomRating from "../ui/CustomRating";
@@ -9,6 +9,7 @@ interface ReviewCardProps {
   userCountry: string;
   reviewRating: number;
   reviewDescription: string;
+  className?: string;
 }
 
 const ReviewCard: React.FC<ReviewCardProps> = ({
@@ -16,9 +17,15 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   userCountry,
   reviewRating,
   reviewDescription,
+  className,
 }) => {
   return (
-    <Card className="flex flex-col gap-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none sm:p-7 2xl:gap-y-5 2xl:p-10">
+    <Card
+      className={cn(
+        `flex flex-col gap-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none sm:p-7 2xl:gap-y-5 2xl:p-10`,
+        className,
+      )}
+    >
       <CardHeader className="flex flex-row items-center justify-between">
         <div className="user">
           <h4 className="text-base !font-medium sm:text-lg 2xl:text-xl">
