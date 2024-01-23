@@ -74,6 +74,7 @@ const Reviews: React.FC<ReviewsProps> = ({
             >
               <ReviewCard
                 key={index}
+                className="h-full"
                 userName={`${review.users.first_name} ${review.users.last_name}`}
                 userCountry={review.users.countries.name}
                 reviewRating={review.rating}
