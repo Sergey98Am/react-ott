@@ -10,7 +10,6 @@ import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
 import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
 import Genres from "../DetailPagesComponents/Genres";
 import Director from "../DetailPagesComponents/Director";
-import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
 import Cast from "../DetailPagesComponents/Cast";
 import Reviews from "../DetailPagesComponents/Reviews";
@@ -60,21 +59,6 @@ const MovieDetail = () => {
   const { isLoading, single_media_item } = useSingleMediaItem(
     Number(params.id),
   );
-  const directors: Member[] = single_media_item
-    ? single_media_item.members.filter((member: Member) =>
-        member.roles.some((role: Role) => role.name === "director"),
-      )
-    : [];
-  const musicians: Member[] = single_media_item
-    ? single_media_item.members.filter((member: Member) =>
-        member.roles.some((role: Role) => role.name === "musician"),
-      )
-    : [];
-  const actors: Member[] = single_media_item
-    ? single_media_item.members.filter((member: Member) =>
-        member.roles.some((role: Role) => role.name === "actor"),
-      )
-    : [];
 
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
@@ -103,7 +87,10 @@ const MovieDetail = () => {
                 </div>
 
                 {/* Cast */}
-                <Cast infoSectionClasses={infoSectionClasses} actors={actors} />
+                <Cast
+                  infoSectionClasses={infoSectionClasses}
+                  actors={single_media_item.actors}
+                />
 
                 {/* Reviews */}
                 <Reviews
@@ -161,14 +148,14 @@ const MovieDetail = () => {
                   <Director
                     fieldLabelClasses={fieldLabelClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
-                    directors={directors}
+                    directors={single_media_item.directors}
                   />
 
                   {/* Musician on musicians */}
                   <Music
                     fieldLabelClasses={fieldLabelClasses}
                     fieldContentDistanceClasses={fieldContentDistanceClasses}
-                    musicians={musicians}
+                    musicians={single_media_item.musicians}
                   />
                 </div>
               </div>
