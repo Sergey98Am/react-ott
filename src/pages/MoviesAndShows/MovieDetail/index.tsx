@@ -5,8 +5,6 @@ import Spinner from "@/components/icons/Spinner";
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
-import Typography from "@/components/ui/Typography";
-import { StarIcon } from "@heroicons/react/24/outline";
 import Description from "../DetailPagesComponents/Description";
 import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
 import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
@@ -16,6 +14,7 @@ import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
 import Cast from "../DetailPagesComponents/Cast";
 import Reviews from "../DetailPagesComponents/Reviews";
+import Ratings from "../DetailPagesComponents/Ratings";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -144,15 +143,11 @@ const MovieDetail = () => {
                   />
 
                   {/* Ratings */}
-                  <div className="ratings">
-                    {/* Label */}
-                    <Typography variant="body" className={fieldLabelClasses}>
-                      <span>
-                        <StarIcon className={labelIconClasses} />
-                      </span>
-                      <span>Ratings</span>
-                    </Typography>
-                  </div>
+                  <Ratings
+                    fieldLabelClasses={fieldLabelClasses}
+                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    labelIconClasses={labelIconClasses}
+                  />
 
                   {/* Genres */}
                   <Genres

@@ -31,7 +31,10 @@ const CustomRating: React.FC<CustomRatingProps> = ({
 }) => {
   return (
     <Rating
-      className={cn("max-w-[70px] 2xl:max-w-[90px]", className)}
+      className={cn(
+        "flex max-w-[70px] items-center 2xl:max-w-[90px]",
+        className,
+      )}
       value={value}
       itemStyles={customStyles}
       {...rest}
