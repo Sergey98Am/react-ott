@@ -15,8 +15,7 @@ import Director from "../DetailPagesComponents/Director";
 import { Role, Member } from "@/types/index";
 import Music from "../DetailPagesComponents/Music";
 import Cast from "../DetailPagesComponents/Cast";
-import CarouselOutsideBottomControls from "@/components/carousels/CarouselOutsideBottomControls";
-import ReviewCard from "@/components/cards/ReviewCard";
+import Reviews from "../DetailPagesComponents/Reviews";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10
@@ -108,22 +107,11 @@ const MovieDetail = () => {
                 <Cast infoSectionClasses={infoSectionClasses} actors={actors} />
 
                 {/* Reviews */}
-                <div className={`${infoSectionClasses} reviews`}>
-                  {/* Label */}
-                  <Typography variant="body" className={fieldLabelClasses}>
-                    Reviews
-                  </Typography>
-
-                  <CarouselOutsideBottomControls>
-                    <div>
-                      <ReviewCard />
-                      <ReviewCard />
-                      <ReviewCard />
-                      <ReviewCard />
-                      <ReviewCard />
-                    </div>
-                  </CarouselOutsideBottomControls>
-                </div>
+                <Reviews
+                  infoSectionClasses={infoSectionClasses}
+                  fieldLabelClasses={fieldLabelClasses}
+                  reviews={single_media_item.reviews}
+                />
               </div>
               <div className="order-first col-span-12 flex flex-col gap-y-5 xl:order-last xl:col-span-4">
                 {/* Movie description */}
