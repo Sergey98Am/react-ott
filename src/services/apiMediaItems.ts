@@ -69,7 +69,7 @@ export async function getSingleMediaItem(id: number) {
   const { data, error } = await supabase
     .from("media")
     .select(
-      `*, languages(title), genres(title), members(image, first_name, last_name, roles (name), countries(name))`,
+      `*, languages(title), genres(title), members(image, first_name, last_name, roles (name), countries(name)), reviews(description, rating, users (first_name, last_name, countries(name)))`,
     )
     .eq("id", id)
     .single();
