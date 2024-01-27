@@ -56,6 +56,10 @@
     @apply aspect-h-1 aspect-w-2;
   }
 
+  .aspect-ratio-wildscreen {
+    @apply aspect-h-10 aspect-w-16;
+  }
+
   .aspect-ratio-portrait {
     @apply aspect-h-5 aspect-w-4;
   }
