@@ -5,15 +5,15 @@ import Spinner from "@/components/icons/Spinner";
 import MediaOverlayCard from "@/components/cards/MediaOverlayCard";
 import FreeTrial from "@/components/FreeTrial";
 import ctl from "@netlify/classnames-template-literals";
-import Description from "../DetailPagesComponents/Description";
-import ReleasedYear from "../DetailPagesComponents/ReleasedYear";
-import AvailableLanguages from "../DetailPagesComponents/AvailableLanguages";
-import Genres from "../DetailPagesComponents/Genres";
-import Director from "../DetailPagesComponents/Director";
-import Music from "../DetailPagesComponents/Music";
-import Cast from "../DetailPagesComponents/Cast";
-import Reviews from "../DetailPagesComponents/Reviews";
-import Ratings from "../DetailPagesComponents/Ratings";
+import Description from "./DetailPagesComponents/Description";
+import ReleasedYear from "./DetailPagesComponents/ReleasedYear";
+import AvailableLanguages from "./DetailPagesComponents/AvailableLanguages";
+import Genres from "./DetailPagesComponents/Genres";
+import Director from "./DetailPagesComponents/Director";
+import Music from "./DetailPagesComponents/Music";
+import Cast from "./DetailPagesComponents/Cast";
+import Reviews from "./DetailPagesComponents/Reviews";
+import Ratings from "./DetailPagesComponents/Ratings";
 
 const infoSectionClasses = ctl(
   `bg-dark-black-10

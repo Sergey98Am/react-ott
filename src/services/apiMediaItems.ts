@@ -75,7 +75,8 @@ export async function getSingleMediaItem(id: number) {
       actors(image), 
       directors(image, first_name, last_name, countries(name)), 
       musicians(image, first_name, last_name, countries(name)), 
-      reviews(description, rating, users (first_name, last_name, countries(name)))`,
+      reviews(description, rating, users (first_name, last_name, countries(name))),
+      seasons(number, episodes(number, image, title, description, duration))`,
     )
     .eq("id", id)
     .single();

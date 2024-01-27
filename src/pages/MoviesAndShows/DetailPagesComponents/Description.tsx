@@ -17,7 +17,9 @@ const Description: React.FC<DescriptionProps> = ({
   single_media_item,
 }) => {
   return (
-    <div className={`${infoSectionClasses} ${fieldContentDistanceClasses}`}>
+    <div
+      className={`${infoSectionClasses} ${fieldContentDistanceClasses} w-full`}
+    >
       {/* Label */}
       <Typography variant="body" className={fieldLabelClasses}>
         Description
