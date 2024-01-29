@@ -75,10 +75,13 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
                   {season.episodes.map((episode, index) => (
                     <React.Fragment key={`episode-${index}`}>
                       <div className="relative flex items-center gap-x-4 rounded-lg bg-dark-black-08 p-5 md:gap-x-5 md:bg-transparent md:p-0 2xl:gap-x-11">
-                        <div className="absolute right-5 top-14 text-3xl !font-semibold text-grey-grey-60 md:static md:text-4xl">
-                          {episode.number > 10
-                            ? episode.number
-                            : `0${episode.number}`}
+                        <div className="absolute left-5 right-5 top-14 flex items-center space-x-6 text-3xl !font-semibold text-grey-grey-60 md:static md:text-4xl">
+                          <div className="h-[1px] w-screen bg-absolute-white md:hidden"></div>
+                          <div>
+                            {episode.number > 10
+                              ? episode.number
+                              : `0${episode.number}`}
+                          </div>
                         </div>
                         <VideoCard
                           image={episode.image}
