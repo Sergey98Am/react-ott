@@ -51,10 +51,7 @@ const FAQ = () => {
       <div className={headingClasses}>
         {/* Title and description */}
         <div className={infoClasses}>
-          <Typography
-            variant="h2"
-            className="text-xl font-bold xl:text-4xl 2xl:text-5xl"
-          >
+          <Typography variant="h2" className="text-xl xl:text-4xl 2xl:text-5xl">
             Frequently Asked Questions
           </Typography>
           <Typography variant="body">

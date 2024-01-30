@@ -73,7 +73,10 @@ const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
           <div className="flex flex-col items-center gap-y-5 text-center md:gap-y-6 2xl:gap-y-7">
             <div className="info">
               <Typography variant="h2">{props.title}</Typography>
-              <Typography className="hidden md:block" variant="body">
+              <Typography
+                className="hidden font-medium md:block"
+                variant="body"
+              >
                 {props.description}
               </Typography>
             </div>

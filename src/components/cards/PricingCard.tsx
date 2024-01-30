@@ -16,14 +16,12 @@ const PricingCard: React.FC<PricingCardProps> = (props) => {
         <Typography variant="h3" className="font-bold">
           {props.title}
         </Typography>
-        <Typography variant="body" className="text-sm sm:text-base 2xl:text-lg">
-          {props.description}
-        </Typography>
+        <Typography variant="body">{props.description}</Typography>
       </CardHeader>
       <CardContent className="price p-0">
         <div className="flex items-end">
           <Typography variant="h2" className="leading-[73%]">
-            <span className="!font-semibold">${props.price}</span>
+            <span className="font-semibold">${props.price}</span>
             <Typography
               variant="span"
               className="text-sm text-grey-grey-60 sm:text-base 2xl:text-lg"

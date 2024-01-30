@@ -4,17 +4,17 @@ module.exports = {
   theme: {
     fontFamily: { sans: ["Manrope", "sans-serif"] },
     fontSize: {
-      xs: ["0.75rem", { fontWeight: "600" }], // 12px
-      sm: ["0.875rem", { fontWeight: "400" }], // 14px
-      base: ["1rem", { fontWeight: "400" }], // 16px
-      lg: ["1.125rem", { fontWeight: "400" }], // 18px
-      xl: ["1.25rem", { fontWeight: "600" }], // 20px
-      "2xl": ["1.375rem", { fontWeight: "500" }], // 22px
-      "3xl": ["1.5rem", { fontWeight: "600" }], // 24px
-      "4xl": ["1.75rem", { fontWeight: "700" }], // 28px
-      "5xl": ["2.375rem", { fontWeight: "700" }], // 38px
-      "6xl": ["3rem", { fontWeight: "700" }], // 48px
-      "7xl": ["3.625rem", { fontWeight: "700" }], // 58px
+      xs: "0.75rem", // 12px
+      sm: "0.875rem", // 14px
+      base: "1rem", // 16px
+      lg: "1.125rem", // 18px
+      xl: "1.25rem", // 20px
+      "2xl": "1.375rem", // 22px
+      "3xl": "1.5rem", // 24px
+      "4xl": "1.75rem", // 28px
+      "5xl": "2.375rem", // 38px
+      "6xl": "3rem", // 48px
+      "7xl": "3.625rem", // 58px
     },
     extend: {
       colors: {

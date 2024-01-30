@@ -32,7 +32,7 @@ const Hero = () => {
         <div className="relative flex max-w-[1096px] flex-col items-center justify-center gap-[30px] self-stretch text-center xl:gap-10 2xl:gap-[50px]">
           <div className="text-content relative flex flex-col gap-2.5 2xl:gap-3.5">
             <Typography variant="h1">The Best Streaming Experience</Typography>
-            <Typography variant="body">
+            <Typography variant="body" className="text-sm 2xl:text-lg">
               StreamVibe is the best streaming experience for watching your
               favorite movies and shows on demand, anytime, anywhere. With
               StreamVibe, you can enjoy a wide variety of content, including the

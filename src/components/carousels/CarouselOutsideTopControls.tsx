@@ -95,9 +95,7 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
       <div className={headingClasses}>
         {/* Title and description */}
         <div className={infoClasses}>
-          <Typography variant="h2" className="font-bold">
-            {headingTitle}
-          </Typography>
+          <Typography variant="h2">{headingTitle}</Typography>
           {headingDescription && (
             <Typography variant="body">{headingDescription}</Typography>
           )}

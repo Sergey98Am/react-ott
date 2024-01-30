@@ -36,13 +36,13 @@ const MemberCard: React.FC<MemberCardProps> = ({
       <div className="info">
         <Typography
           variant="body"
-          className="text-base !font-medium text-absolute-white 2xl:text-lg"
+          className="text-base font-medium text-absolute-white 2xl:text-lg"
         >
           {name}
         </Typography>
         <Typography
           variant="body"
-          className="text-sm !font-medium 2xl:text-base"
+          className="text-sm font-medium 2xl:text-base"
         >
           From {country}
         </Typography>

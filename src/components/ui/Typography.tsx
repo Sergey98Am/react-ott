@@ -6,10 +6,10 @@ import { cn } from "@/lib/utils";
 const typographyVariants = cva("text-absolute-white", {
   variants: {
     variant: {
-      h1: "text-4xl xl:text-6xl 2xl:text-7xl",
-      h2: "text-3xl xl:text-4xl 2xl:text-5xl",
-      h3: "text-lg xl:text-xl 2xl:text-3xl",
-      body: "text-grey-grey-60 text-sm 2xl:text-lg",
+      h1: "font-bold text-4xl xl:text-6xl 2xl:text-7xl",
+      h2: "font-bold text-3xl xl:text-4xl 2xl:text-5xl",
+      h3: "font-semibold text-lg xl:text-xl 2xl:text-3xl",
+      body: "font-normal text-grey-grey-60 text-sm sm:text-base 2xl:text-lg",
       span: "",
     },
   },

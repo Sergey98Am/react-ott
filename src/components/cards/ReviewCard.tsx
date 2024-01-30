@@ -28,10 +28,10 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     >
       <CardHeader className="flex flex-row items-center justify-between">
         <div className="user">
-          <h4 className="text-base !font-medium sm:text-lg 2xl:text-xl">
+          <h4 className="text-base font-medium sm:text-lg 2xl:text-xl">
             {userName}
           </h4>
-          <h5 className="text-sm !font-medium text-grey-grey-60 sm:text-base 2xl:text-lg">
+          <h5 className="text-sm font-medium text-grey-grey-60 sm:text-base 2xl:text-lg">
             {userCountry}
           </h5>
         </div>
@@ -41,16 +41,14 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             className="flex items-center gap-0.5 space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
           >
             <CustomRating value={Number(reviewRating)} readOnly />
-            <span className="text-grey-grey-60">
+            <span className="font-medium text-grey-grey-60">
               {formatNumber(Number(reviewRating))}
             </span>
           </Badge>
         </div>
       </CardHeader>
       <CardContent className="p-0">
-        <Typography variant="body" className="text-sm sm:text-base 2xl:text-lg">
-          {reviewDescription}
-        </Typography>
+        <Typography variant="body">{reviewDescription}</Typography>
       </CardContent>
     </Card>
   );

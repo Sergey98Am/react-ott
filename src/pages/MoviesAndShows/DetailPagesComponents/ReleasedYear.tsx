@@ -31,7 +31,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
       {/* Released year */}
       <Typography
         variant="body"
-        className="text-base !font-semibold text-absolute-white 2xl:text-xl"
+        className="text-base font-semibold text-absolute-white 2xl:text-xl"
       >
         {getYear(single_media_item.created_at)}
       </Typography>
