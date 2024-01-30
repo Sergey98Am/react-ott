@@ -43,12 +43,12 @@ const VideoCard: React.FC<VideoCardProps> = ({
       </div>
       <div className="flex flex-col gap-2.5 2xl:gap-3.5">
         <div className="info-heading flex flex-col-reverse justify-between	gap-2.5 md:flex-row md:items-center 2xl:gap-3.5">
-          <h4 className="text-base font-bold md:text-lg 2xl:text-xl">
+          <h4 className="text-base font-semibold md:text-lg 2xl:text-xl">
             {title}
           </h4>
           <div className="md:text-md flex w-fit min-w-[80px] items-center justify-center gap-x-1 rounded-md border border-dark-black-15 bg-dark-black-08 p-1.5 text-xs text-grey-grey-60 2xl:rounded-lg 2xl:px-2.5 2xl:py-2 2xl:text-base">
             <ClockIcon className="h-5 w-5 2xl:h-6 2xl:w-6" />
-            <span className="font-semibold">{duration}</span>
+            <span className="font-medium">{duration}</span>
           </div>
         </div>
         <Typography

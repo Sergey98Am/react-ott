@@ -55,7 +55,10 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
               {/* Trigger */}
               <AccordionTrigger className="trigger group p-0 hover:no-underline [&[data-state=open]>.arrow]:rotate-180">
                 <div className="flex items-center gap-x-1 xl:gap-x-2 2xl:gap-x-3">
-                  <Typography variant="h3" className="font-semibold">
+                  <Typography
+                    variant="h3"
+                    className="text-base xl:text-xl 2xl:text-3xl"
+                  >
                     Season{" "}
                     {season.number < 10 ? `0${season.number}` : season.number}
                   </Typography>

@@ -29,13 +29,9 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
             className="h-6 w-6 sm:h-[30px] sm:w-[30px] 2xl:h-[40px] 2xl:w-[40px]"
           />
         </div>
-        <Typography variant="h3" className="font-semibold">
-          {title}
-        </Typography>
+        <Typography variant="h3">{title}</Typography>
       </CardHeader>
-      <Typography variant="body" className="text-sm sm:text-base 2xl:text-lg">
-        {description}
-      </Typography>
+      <Typography variant="body">{description}</Typography>
     </Card>
   );
 };

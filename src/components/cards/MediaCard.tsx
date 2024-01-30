@@ -23,7 +23,7 @@ const Duration: React.FC<DurationProps> = ({ duration }) => {
       className="flex items-center gap-0.5 pr-2 2xl:p-1.5 2xl:pr-2.5"
     >
       <ClockIcon className="h-5 w-5 text-grey-grey-60 2xl:h-6 2xl:w-6" />
-      <span className="text-xs !font-medium text-grey-grey-60 2xl:text-base">
+      <span className="text-xs font-medium text-grey-grey-60 2xl:text-base">
         {duration}
       </span>
     </Badge>
@@ -58,7 +58,7 @@ const ReleasedTime: React.FC<ReleasedTimeProps> = ({ time }) => {
   return (
     <Badge
       variant="circle"
-      className="w-full gap-0.5 pr-2 !font-semibold text-grey-grey-75 2xl:p-1.5 2xl:pr-2.5"
+      className="w-full gap-0.5 pr-2 font-medium text-grey-grey-75 2xl:p-1.5 2xl:pr-2.5"
     >
       <p>Released at</p>
       <p>{formatDate(`${time}`)}</p>
@@ -78,7 +78,7 @@ const Season: React.FC<SeasonProps> = ({ season }) => {
       className="flex items-center gap-0.5 pr-2 2xl:p-1.5 2xl:pr-2.5"
     >
       <RectangleStackIcon className="h-5 w-5 text-grey-grey-60 2xl:h-6 2xl:w-6" />
-      <span className="text-xs !font-medium text-grey-grey-60 2xl:text-base">
+      <span className="text-xs font-medium text-grey-grey-60 2xl:text-base">
         {season} season
       </span>
     </Badge>
@@ -162,7 +162,7 @@ const MediaCard: React.FC<MediaCardProps> = (props) => {
             className="flex items-center gap-0.5 space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
           >
             <CustomRating value={4} readOnly />
-            <span className="text-grey-grey-60">
+            <span className="font-medium text-grey-grey-60">
               {formatNumber(props.votes)}
             </span>
           </Badge>

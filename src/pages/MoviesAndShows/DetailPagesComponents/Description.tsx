@@ -28,7 +28,7 @@ const Description: React.FC<DescriptionProps> = ({
       {/* Description */}
       <Typography
         variant="body"
-        className={`${fieldLabelClasses} text-absolute-white`}
+        className={`${fieldLabelClasses} font-medium text-absolute-white`}
       >
         {single_media_item.description}
       </Typography>

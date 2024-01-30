@@ -43,7 +43,7 @@ const Ratings: React.FC<RatingProps> = ({
             variant="circle"
             className="w-full flex-shrink-0 basis-1/2 gap-0.5 rounded-lg p-3 text-start sm:p-3.5 2xl:p-4"
           >
-            <h4 className="text-sm font-bold sm:text-base 2xl:text-xl">
+            <h4 className="text-sm font-semibold sm:text-base 2xl:text-xl">
               {rating.title}
             </h4>
             <div className="flex items-center space-x-1">
@@ -52,7 +52,9 @@ const Ratings: React.FC<RatingProps> = ({
                 value={rating.stars}
                 readOnly
               />
-              <span className="text-sm 2xl:text-xl">{rating.stars}</span>
+              <span className="text-sm font-medium 2xl:text-xl">
+                {rating.stars}
+              </span>
             </div>
           </Badge>
         ))}

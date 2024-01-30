@@ -51,7 +51,7 @@ const Pricing = () => {
         <div className={headingClasses}>
           {/* Title and description */}
           <div className={infoClasses}>
-            <Typography variant="h2" className="font-bold">
+            <Typography variant="h2">
               Choose the plan that's right for you
             </Typography>
             <Typography variant="body">

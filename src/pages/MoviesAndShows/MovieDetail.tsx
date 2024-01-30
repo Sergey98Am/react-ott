@@ -37,7 +37,7 @@ const fieldContentDistanceClasses = ctl(
 const fieldLabelClasses = ctl(
   `title 
   text-sm 
-  !font-medium 
+  font-medium 
   text-grey-grey-60 
   flex
   items-center
