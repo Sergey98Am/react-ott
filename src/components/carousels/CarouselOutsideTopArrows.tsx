@@ -86,7 +86,7 @@ const CarouselOutsideTopArrows: React.FC<PropType> = (props) => {
       {/* Heading */}
       <div className={headingClasses}>
         {/* Title */}
-        <Typography variant="body" className={headingTitleClasses}>
+        <Typography variant="h5" className={headingTitleClasses}>
           {headingTitle}
         </Typography>
 

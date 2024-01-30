@@ -22,7 +22,7 @@ const AvailableLanguages: React.FC<AvailableLanguagesProps> = ({
   return (
     <div className={`available-languages ${fieldContentDistanceClasses}`}>
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         <span>
           <LanguageIcon className={labelIconClasses} />
         </span>

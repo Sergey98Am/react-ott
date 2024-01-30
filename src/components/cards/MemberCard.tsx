@@ -35,15 +35,12 @@ const MemberCard: React.FC<MemberCardProps> = ({
       </div>
       <div className="info">
         <Typography
-          variant="body"
-          className="text-base font-medium text-absolute-white 2xl:text-lg"
+          variant="h5"
+          className="text-base text-absolute-white 2xl:text-lg"
         >
           {name}
         </Typography>
-        <Typography
-          variant="body"
-          className="text-sm font-medium 2xl:text-base"
-        >
+        <Typography variant="h5" className="text-grey-grey-60">
           From {country}
         </Typography>
       </div>

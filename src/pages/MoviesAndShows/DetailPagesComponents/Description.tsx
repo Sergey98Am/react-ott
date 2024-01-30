@@ -21,7 +21,7 @@ const Description: React.FC<DescriptionProps> = ({
       className={`${infoSectionClasses} ${fieldContentDistanceClasses} w-full`}
     >
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         Description
       </Typography>
 

@@ -62,7 +62,7 @@ interface NavLinkProps {
 }
 
 const Link = (props: NavLinkProps) => {
-  const activeClasses = "bg-dark-black-10 text-absolute-white";
+  const activeClasses = "bg-dark-black-10 text-absolute-white font-medium";
   const unActiveClasses = "text-grey-grey-75";
 
   return (

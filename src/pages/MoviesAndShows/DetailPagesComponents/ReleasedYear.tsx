@@ -21,7 +21,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
   return (
     <div className={`released year ${fieldContentDistanceClasses}`}>
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         <span>
           <CalendarIcon className={labelIconClasses} />
         </span>
@@ -29,10 +29,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
       </Typography>
 
       {/* Released year */}
-      <Typography
-        variant="body"
-        className="text-base font-semibold text-absolute-white 2xl:text-xl"
-      >
+      <Typography variant="h4" className="text-absolute-white">
         {getYear(single_media_item.created_at)}
       </Typography>
     </div>
