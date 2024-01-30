@@ -1,6 +1,7 @@
 import { Card, CardContent, CardFooter } from "@/components/ui/Card";
 import { ArrowRightIcon } from "@heroicons/react/24/solid";
 import { Badge } from "../ui/Badge";
+import Typography from "../ui/Typography";
 
 interface GenreCardProps {
   title: string;
@@ -31,9 +32,12 @@ const GenreCard: React.FC<GenreCardProps> = ({
         <CardFooter className="justify-between p-0">
           <div className="text flex flex-col items-start gap-y-2">
             {topBadge && <Badge>Top 10 In</Badge>}
-            <span className="flex w-full items-center justify-between text-lg font-semibold capitalize">
+            <Typography
+              variant="h4"
+              className="flex w-full items-center justify-between capitalize"
+            >
               {title}
-            </span>
+            </Typography>
           </div>
           <ArrowRightIcon className="h-[30px] w-[30px]" />
         </CardFooter>

@@ -55,7 +55,7 @@ const Reviews: React.FC<ReviewsProps> = ({
     >
       {/* Label */}
       <div className="heading flex items-center justify-between">
-        <Typography variant="body" className={fieldLabelClasses}>
+        <Typography variant="h5" className={fieldLabelClasses}>
           Reviews
         </Typography>
 

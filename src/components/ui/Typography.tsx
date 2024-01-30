@@ -9,6 +9,8 @@ const typographyVariants = cva("text-absolute-white", {
       h1: "font-bold text-4xl xl:text-6xl 2xl:text-7xl",
       h2: "font-bold text-3xl xl:text-4xl 2xl:text-5xl",
       h3: "font-semibold text-lg xl:text-xl 2xl:text-3xl",
+      h4: "font-semibold text-base xl:text-xl",
+      h5: "font-medium text-sm xl:text-base 2xl:text-lg",
       body: "font-normal text-grey-grey-60 text-sm sm:text-base 2xl:text-lg",
       span: "",
     },
@@ -27,6 +29,8 @@ const variantElementMap: Record<
   h1: "h1",
   h2: "h2",
   h3: "h3",
+  h4: "h4",
+  h5: "h5",
   body: "p",
   span: "span",
 };

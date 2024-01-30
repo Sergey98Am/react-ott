@@ -22,7 +22,7 @@ const Genres: React.FC<GenresProps> = ({
   return (
     <div className={`genres ${fieldContentDistanceClasses}`}>
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         <span>
           <Squares2X2Icon className={labelIconClasses} />
         </span>

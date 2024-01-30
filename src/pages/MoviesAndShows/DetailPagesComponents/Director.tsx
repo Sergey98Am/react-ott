@@ -16,7 +16,7 @@ const Director: React.FC<DirectorProps> = ({
   return (
     <div className={`director ${fieldContentDistanceClasses}`}>
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         Director
       </Typography>
 

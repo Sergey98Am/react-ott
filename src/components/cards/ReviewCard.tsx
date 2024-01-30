@@ -28,12 +28,15 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
     >
       <CardHeader className="flex flex-row items-center justify-between">
         <div className="user">
-          <h4 className="text-base font-medium sm:text-lg 2xl:text-xl">
+          <Typography
+            variant="h4"
+            className="text-base font-medium sm:text-lg 2xl:text-xl"
+          >
             {userName}
-          </h4>
-          <h5 className="text-sm font-medium text-grey-grey-60 sm:text-base 2xl:text-lg">
+          </Typography>
+          <Typography variant="h5" className="text-grey-grey-60">
             {userCountry}
-          </h5>
+          </Typography>
         </div>
         <div className="rating">
           <Badge

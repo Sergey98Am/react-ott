@@ -16,7 +16,7 @@ const Music: React.FC<MusicProps> = ({
   return (
     <div className={`musician ${fieldContentDistanceClasses}`}>
       {/* Label */}
-      <Typography variant="body" className={fieldLabelClasses}>
+      <Typography variant="h5" className={fieldLabelClasses}>
         Music
       </Typography>
 
