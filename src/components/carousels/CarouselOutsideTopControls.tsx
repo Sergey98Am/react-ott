@@ -64,7 +64,7 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
         </div>
 
         {/* Desktop/laptop controls */}
-        <div className="hiddenmax-w-xs relative items-center justify-center gap-x-4 rounded-xl border border-dark-black-12 bg-dark-black-06 p-4 lg:flex">
+        <div className="relative hidden max-w-xs items-center justify-center gap-x-4 rounded-xl border border-dark-black-12 bg-dark-black-06 p-4 lg:flex">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <div className="pagination flex gap-[3px]">
             {scrollSnaps.map((_, index) => (
