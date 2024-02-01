@@ -21,6 +21,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
           "linear-gradient(222deg, rgba(229, 0, 0, 0.50) -208.03%, rgba(229, 0, 0, 0.00) 41.32%), #0F0F0F",
       }}
     >
+      {/* Image and title */}
       <CardHeader className="flex-row items-center gap-x-4">
         <div className="w-fit rounded-xl bg-dark-black-12 p-2.5 sm:p-3 2xl:p-4">
           <Image
@@ -31,6 +32,8 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
         </div>
         <Typography variant="h3">{title}</Typography>
       </CardHeader>
+
+      {/* Description */}
       <Typography variant="body">{description}</Typography>
     </Card>
   );

@@ -29,15 +29,17 @@ const carouselItemClasses = ctl(
 
 const ShowsList = () => {
   const { isLoading: isLoadingGenres, genres } = useGenres();
+
   const topGenres = genres?.filter((data) => data.top === true);
+
   const {
     isLoading: isLoadingTrendingShows,
     trendingMediaItems: trendingShows,
   } = useTrendingMediaItem("Show");
-  console.log(trendingShows);
 
   const { isLoading: isLoadingNewShows, new_media_items: new_shows } =
     useNewMediaItems("Show");
+
   const {
     isLoading: isLoadingMustWatchShows,
     must_watch_media_items: must_watch_shows,
@@ -53,6 +55,7 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
+              // Genre item
               return (
                 <div className={carouselItemClasses} key={genre.id}>
                   <GenreCard title={genre.title} image={genre.image} />
@@ -69,6 +72,7 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
+              // Genre item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px]  lg:w-1/4`)}
@@ -92,6 +96,7 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {trendingShows?.map((movie) => {
+              // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
@@ -117,6 +122,7 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {new_shows?.map((movie) => {
+              // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
@@ -142,6 +148,7 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {must_watch_shows?.map((movie) => {
+              // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}

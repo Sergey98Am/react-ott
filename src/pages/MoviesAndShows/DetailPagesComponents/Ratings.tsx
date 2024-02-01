@@ -4,12 +4,6 @@ import Typography from "@/components/ui/Typography";
 import { StarIcon } from "@heroicons/react/24/outline";
 import React from "react";
 
-interface RatingProps {
-  fieldLabelClasses: string;
-  fieldContentDistanceClasses: string;
-  labelIconClasses: string;
-}
-
 const ratingsArr = [
   {
     title: "Imdb",
@@ -20,6 +14,12 @@ const ratingsArr = [
     stars: 5,
   },
 ];
+
+interface RatingProps {
+  fieldLabelClasses: string;
+  fieldContentDistanceClasses: string;
+  labelIconClasses: string;
+}
 
 const Ratings: React.FC<RatingProps> = ({
   fieldLabelClasses,
@@ -36,19 +36,24 @@ const Ratings: React.FC<RatingProps> = ({
         <span>Ratings</span>
       </Typography>
 
+      {/* Single movie or show rating */}
       <div className="flex gap-4">
         {ratingsArr.map((rating, index) => (
+          // Rating item
           <Badge
             key={index}
             variant="circle"
             className="w-full flex-shrink-0 basis-1/2 gap-0.5 rounded-lg p-3 text-start sm:p-3.5 2xl:p-4"
           >
+            {/* Title */}
             <Typography
               variant="h4"
               className="text-sm xl:text-base 2xl:text-xl"
             >
               {rating.title}
             </Typography>
+
+            {/* Stars */}
             <div className="flex items-center space-x-1">
               <CustomRating
                 className="max-w-[90px] 2xl:max-w-[120px]"

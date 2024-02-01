@@ -1,7 +1,6 @@
 import { faq } from "@/constants";
 import { chunkIntoN } from "@/lib/utils";
 import Typography from "./ui/Typography";
-import ctl from "@netlify/classnames-template-literals";
 import Button from "./ui/Button";
 import {
   Accordion,
@@ -13,44 +12,13 @@ import { PlusIcon, MinusIcon } from "@heroicons/react/24/solid";
 
 const dividedArray = chunkIntoN(faq, 2);
 
-const sectionContainer = ctl(
-  `section-container
-  flex 
-  flex-col 
-  gap-y-10
-  xl:gap-y-[60px]
-  2xl:gap-y-20`,
-);
-
-const headingClasses = ctl(
-  `heading 
-  flex 
-  flex-col
-  justify-between
-  items-start
-  gap-y-5
-  lg:items-end 
-  lg:flex-row
-  lg:gap-y-0`,
-);
-
-const infoClasses = ctl(
-  `info 
-  flex 
-  flex-col 
-  gap-y-2
-  md:w-10/12
-  xl:gap-y-2.5
-  2xl:gap-y-3.5`,
-);
-
 const FAQ = () => {
   return (
-    <div className={sectionContainer}>
+    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
       {/* Heading */}
-      <div className={headingClasses}>
+      <div className="flex flex-col items-start justify-between gap-y-5 lg:flex-row lg:items-end lg:gap-y-0">
         {/* Title and description */}
-        <div className={infoClasses}>
+        <div className="flex flex-col gap-y-2 md:w-10/12 xl:gap-y-2.5 2xl:gap-y-3.5">
           <Typography variant="h2" className="text-xl xl:text-4xl 2xl:text-5xl">
             Frequently Asked Questions
           </Typography>
@@ -61,6 +29,8 @@ const FAQ = () => {
         </div>
         <Button variant="primary">Ask a Question</Button>
       </div>
+
+      {/* Questions accordion */}
       <div className="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-10 2xl:gap-x-10">
         {dividedArray.map((part, index) => (
           <Accordion key={`part-${index}`} type="multiple" className="w-full">
@@ -82,6 +52,7 @@ const FAQ = () => {
                   <span className="h-fit gap-2.5 rounded-[10px] bg-dark-black-12 p-3 text-base font-semibold leading-[normal] sm:p-4 2xl:p-5 2xl:text-xl">
                     {item.id < 10 ? "0" + item.id : item.id}
                   </span>
+
                   <div className="my-auto w-full sm:my-0 2xl:space-y-5">
                     {/* Trigger */}
                     <AccordionTrigger className="group relative py-0 text-start text-lg hover:no-underline sm:pt-4 sm:text-xl sm:data-[state=open]:pt-0 2xl:text-2xl [&[data-state=open]>svg]:rotate-0">
@@ -100,6 +71,7 @@ const FAQ = () => {
                     </AccordionContent>
                   </div>
                 </div>
+
                 {/* Mobile content */}
                 <AccordionContent className="pb-0 pt-3 text-sm sm:hidden">
                   <Typography variant="body">{item.description}</Typography>

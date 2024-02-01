@@ -20,9 +20,10 @@ const Music: React.FC<MusicProps> = ({
         Music
       </Typography>
 
-      {/* Musician */}
+      {/* Single movie or show musician(s) */}
       <div className="gap-y-3">
         {musicians.map((director, index) => (
+          // Musician item
           <MemberCard
             key={index}
             image={director.image}

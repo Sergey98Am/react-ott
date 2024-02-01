@@ -6,38 +6,7 @@ import { PlayIcon, PlusIcon } from "@heroicons/react/24/solid";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
-interface MediaOverlayCardProps {
-  className?: string;
-  title: string;
-  image: string;
-  description: string;
-}
-
-const cardClasses = ctl(
-  `aspect-ratio-portrait 
-  relative 
-  flex 
-  items-end 
-  rounded-none 
-  border-0 
-  !bg-cover 
-  !bg-center 
-  !bg-no-repeat 
-  shadow-none
-  md:aspect-ratio-univisium`,
-);
-
-const actionClasses = ctl(
-  `actions 
-  flex 
-  w-full 
-  flex-col 
-  gap-y-5 
-  md:w-auto 
-  md:flex-row 
-  md:gap-x-5 
-  md:gap-y-0`,
-);
+// When there is a class reusing, used ctl()
 
 const iconButtonClasses = ctl(
   `rounded-lg 
@@ -55,10 +24,17 @@ const iconClasses = ctl(
   2xl:w-7`,
 );
 
+interface MediaOverlayCardProps {
+  className?: string;
+  title: string;
+  image: string;
+  description: string;
+}
+
 const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
   return (
     <Card
-      className={cardClasses}
+      className="aspect-ratio-portrait md:aspect-ratio-univisium relative flex items-end rounded-none border-0 !bg-cover !bg-center !bg-no-repeat shadow-none"
       style={{
         background: `linear-gradient(0deg, #141414 0%, rgba(20, 20, 20, 0.00) 100%), url(${props.image}), 50% / cover no-repeat`,
       }}
@@ -71,6 +47,7 @@ const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
       >
         <CardContent className="w-full p-0 lg:px-28 2xl:px-36">
           <div className="flex flex-col items-center gap-y-5 text-center md:gap-y-6 2xl:gap-y-7">
+            {/* Title and description */}
             <div className="info">
               <Typography variant="h2">{props.title}</Typography>
               <Typography
@@ -80,7 +57,9 @@ const MediaOverlayCard: React.FC<MediaOverlayCardProps> = (props) => {
                 {props.description}
               </Typography>
             </div>
-            <div className={actionClasses}>
+
+            {/* Actions */}
+            <div className="flex w-full flex-col gap-y-5 md:w-auto md:flex-row md:gap-x-5 md:gap-y-0">
               <Button className="w-full gap-1 !py-3.5 md:w-auto">
                 <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Play Now
               </Button>

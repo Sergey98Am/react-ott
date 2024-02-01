@@ -1,41 +1,12 @@
 import FeatureCard from "@/components/cards/FeatureCard";
 import { features } from "@/constants";
 import Typography from "../ui/Typography";
-import ctl from "@netlify/classnames-template-literals";
-
-const sectionContainer = ctl(
-  `section-container
-  flex 
-  flex-col 
-  gap-y-10
-  xl:gap-y-[60px]
-  2xl:gap-y-20`,
-);
-
-const infoClasses = ctl(
-  `info 
-  flex 
-  flex-col 
-  gap-y-2
-  md:w-10/12
-  xl:gap-y-2.5
-  2xl:gap-y-3.5`,
-);
-
-const gridClasses = ctl(
-  `grid 
-  grid-cols-1 
-  gap-5 
-  sm:grid-cols-2 
-  lg:grid-cols-3 
-  2xl:gap-[30px]`,
-);
 
 const Features = () => {
   return (
-    <div className={sectionContainer}>
+    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
       {/* Title and description */}
-      <div className={infoClasses}>
+      <div className="flex flex-col gap-y-2 md:w-10/12 xl:gap-y-2.5 2xl:gap-y-3.5">
         <Typography variant="h2" className="text-xl xl:text-4xl 2xl:text-5xl">
           We Provide you streaming experience across various devices.
         </Typography>
@@ -46,8 +17,11 @@ const Features = () => {
           entertainment.
         </Typography>
       </div>
-      <div className={gridClasses}>
+
+      {/* Features list */}
+      <div className="grid grid-cols-1 gap-5 sm:grid-cols-2 lg:grid-cols-3 2xl:gap-[30px]">
         {features?.map((feature, index) => (
+          // Feature item
           <FeatureCard
             key={index}
             icon={feature.icon}

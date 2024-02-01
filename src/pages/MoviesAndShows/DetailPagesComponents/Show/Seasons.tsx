@@ -1,3 +1,4 @@
+import React from "react";
 import VideoCard from "@/components/cards/VideoCard";
 import {
   Accordion,
@@ -9,7 +10,6 @@ import { Separator } from "@/components/ui/Separator";
 import Typography from "@/components/ui/Typography";
 import { cn } from "@/lib/utils";
 import { ArrowDownIcon } from "@heroicons/react/24/solid";
-import React from "react";
 
 interface Episode {
   number: number;
@@ -55,6 +55,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
               {/* Trigger */}
               <AccordionTrigger className="trigger group p-0 hover:no-underline [&[data-state=open]>.arrow]:rotate-180">
                 <div className="flex items-center gap-x-1 xl:gap-x-2 2xl:gap-x-3">
+                  {/* Season number */}
                   <Typography
                     variant="h3"
                     className="text-base xl:text-xl 2xl:text-3xl"
@@ -62,22 +63,32 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
                     Season{" "}
                     {season.number < 10 ? `0${season.number}` : season.number}
                   </Typography>
-                  <h5 className="text-sm font-medium text-grey-grey-60 xl:text-base 2xl:text-lg">
+
+                  {/* Episodes count */}
+                  <Typography variant="h5" className="text-grey-grey-60">
                     {season.episodes.length}{" "}
                     {season.episodes.length > 1 ? "Episodes" : "Episode"}
-                  </h5>
+                  </Typography>
                 </div>
+                {/* Accordion item arrow */}
                 <div className="arrow rounded-full border border-dark-black-15 bg-dark-black-08 p-3 transition-transform duration-200">
                   <ArrowDownIcon className="h-5 w-5 2xl:h-6 2xl:w-6" />
                 </div>
               </AccordionTrigger>
+
               {/* Content */}
               <AccordionContent className="p-0 pt-5 md:pt-0">
+                {/* Line */}
                 <Separator className="mt-6 hidden md:mb-7 md:block 2xl:mb-10" />
+
+                {/* Episodes */}
                 <div className="space-y-5 md:space-y-7 2xl:space-y-10">
                   {season.episodes.map((episode, index) => (
+                    // Episode item
                     <React.Fragment key={`episode-${index}`}>
+                      {/* Single episode wrapper */}
                       <div className="relative flex items-center gap-x-4 rounded-lg bg-dark-black-08 p-5 md:gap-x-5 md:bg-transparent md:p-0 2xl:gap-x-11">
+                        {/* Episode number */}
                         <div className="absolute left-5 right-5 top-14 flex items-center space-x-6 text-3xl !font-semibold text-grey-grey-60 md:static md:text-4xl">
                           <div className="h-[1px] w-screen bg-absolute-white md:hidden"></div>
                           <div>
@@ -86,6 +97,8 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
                               : `0${episode.number}`}
                           </div>
                         </div>
+
+                        {/* Video card item with line */}
                         <VideoCard
                           image={episode.image}
                           title={episode.title}

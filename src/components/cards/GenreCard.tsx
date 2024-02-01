@@ -17,6 +17,7 @@ const GenreCard: React.FC<GenreCardProps> = ({
   return (
     <div>
       <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-5 sm:px-6 xl:p-[30px]">
+        {/* Image */}
         <CardContent className="relative rounded-[18px] p-0">
           <div
             className="aspect-ratio-short-portrait"
@@ -29,6 +30,8 @@ const GenreCard: React.FC<GenreCardProps> = ({
             }}
           ></div>
         </CardContent>
+
+        {/* Title */}
         <CardFooter className="justify-between p-0">
           <div className="text flex flex-col items-start gap-y-2">
             {topBadge && <Badge>Top 10 In</Badge>}

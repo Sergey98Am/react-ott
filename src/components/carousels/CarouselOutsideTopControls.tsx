@@ -7,7 +7,6 @@ import {
   NextButton,
   usePrevNextButtons,
 } from "./controls/CarouselArrowButtons";
-import ctl from "@netlify/classnames-template-literals";
 import Typography from "../ui/Typography";
 import Spinner from "@/components/icons/Spinner";
 
@@ -48,60 +47,24 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const sliderContainer = ctl(
-    `outside-controls-carousel-container 
-    flex 
-    flex-col 
-    gap-y-10
-    xl:gap-y-[60px]
-    2xl:gap-y-20`,
-  );
-
-  const headingClasses = ctl(
-    `heading 
-    flex 
-    ${headingDescription ? "items-end" : "items-center"}
-    justify-between`,
-  );
-
-  const infoClasses = ctl(
-    `info 
-    flex 
-    flex-col 
-    gap-y-2
-    xl:gap-y-2.5
-    2xl:gap-y-3.5`,
-  );
-
-  const arrowsAndPaginationClasses = ctl(
-    `arrows-and-pagination
-    relative 
-    hidden
-    max-w-xs 
-    items-center 
-    justify-center 
-    gap-x-4 
-    rounded-xl 
-    border 
-    border-dark-black-12 
-    bg-dark-black-06 
-    p-4
-    lg:flex`,
-  );
-
   return (
-    <div className={sliderContainer}>
+    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
       {/* Heading */}
-      <div className={headingClasses}>
+      <div
+        className={`flex justify-between ${
+          headingDescription ? "items-end" : "items-center"
+        }`}
+      >
         {/* Title and description */}
-        <div className={infoClasses}>
+        <div className="flex flex-col gap-y-2 xl:gap-y-2.5 2xl:gap-y-3.5">
           <Typography variant="h2">{headingTitle}</Typography>
           {headingDescription && (
             <Typography variant="body">{headingDescription}</Typography>
           )}
         </div>
-        {/* Desktop/laptop arrows and pagination */}
-        <div className={arrowsAndPaginationClasses}>
+
+        {/* Desktop/laptop controls */}
+        <div className="hiddenmax-w-xs relative items-center justify-center gap-x-4 rounded-xl border border-dark-black-12 bg-dark-black-06 p-4 lg:flex">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
           <div className="pagination flex gap-[3px]">
             {scrollSnaps.map((_, index) => (
@@ -124,6 +87,7 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
       ) : (
         <div className="overflow-hidden" ref={emblaRef}>
           {children}
+
           {/* Mobile pagination */}
           <div className="flex items-center justify-center lg:hidden">
             <div className="pagination-small-screens mt-6 flex w-fit bg-dark-black-20">

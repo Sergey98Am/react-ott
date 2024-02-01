@@ -20,9 +20,10 @@ const Director: React.FC<DirectorProps> = ({
         Director
       </Typography>
 
-      {/* Director */}
+      {/* Single movie or show director(s) */}
       <div className="gap-y-3">
         {directors.map((director, index) => (
+          // Director item
           <MemberCard
             key={index}
             image={director.image}

@@ -15,6 +15,8 @@ import Cast from "./DetailPagesComponents/Cast";
 import Reviews from "./DetailPagesComponents/Reviews";
 import Ratings from "./DetailPagesComponents/Ratings";
 
+// When there is a class reusing, used ctl()
+
 const infoSectionClasses = ctl(
   `bg-dark-black-10
   border
