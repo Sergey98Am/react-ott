@@ -10,6 +10,7 @@ const FreeTrial = () => {
         backgroundImage: `url("${Background}")`,
       }}
     >
+      {/* Background */}
       <div
         className="absolute bottom-0 left-0 right-0 top-0 -z-10"
         style={{
@@ -17,6 +18,8 @@ const FreeTrial = () => {
             "linear-gradient(90deg, #0F0F0F 2.42%, rgba(20, 15, 15, 0.97) 25.46%, rgba(34, 14, 14, 0.91) 46.72%, rgba(229, 0, 0, 0.00) 168.98%)",
         }}
       ></div>
+
+      {/* Text */}
       <div className="flex flex-col gap-y-2.5 2xl:gap-y-3.5">
         <Typography variant="h2" className="2xl:text-6xl">
           Start your free trial today!
@@ -26,6 +29,7 @@ const FreeTrial = () => {
           sign up for a free trial of StreamVibe.
         </Typography>
       </div>
+
       <Button>Start a Free Trail</Button>
     </div>
   );

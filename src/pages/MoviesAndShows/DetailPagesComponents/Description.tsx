@@ -25,7 +25,7 @@ const Description: React.FC<DescriptionProps> = ({
         Description
       </Typography>
 
-      {/* Description */}
+      {/* Single movie or show description */}
       <Typography
         variant="body"
         className={`${fieldLabelClasses} font-medium text-absolute-white`}

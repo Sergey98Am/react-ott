@@ -120,6 +120,8 @@ type MediaCardProps =
   | (MediaCardPropsBase & MediaCardSeasonVariant);
 
 const MediaCard: React.FC<MediaCardProps> = (props) => {
+  // When there is a class reusing, used ctl()
+
   const cardClasses = ctl(
     `rounded-lg 
     border 

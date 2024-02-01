@@ -1,10 +1,10 @@
+import React from "react";
 import ReviewCard from "@/components/cards/ReviewCard";
 import CarouselOutsideBottomControls from "@/components/carousels/CarouselOutsideBottomControls";
 import Button from "@/components/ui/Button";
 import Typography from "@/components/ui/Typography";
+import { cn } from "@/lib/utils";
 import { PlusIcon } from "@heroicons/react/24/solid";
-import ctl from "@netlify/classnames-template-literals";
-import React from "react";
 
 interface UserCountry {
   name: string;
@@ -28,22 +28,6 @@ interface ReviewsProps {
   reviews: Review[];
 }
 
-const fieldContentDistanceClasses = ctl(
-  `flex 
-  flex-col 
-  gap-y-6
-  sm:gap-y-7
-  2xl:gap-y-10`,
-);
-
-const carouselItemsParentClasses = ctl(
-  `backface-hidden 
-  flex 
-  touch-pan-y
-  ml-[-16px] 
-  2xl:ml-[-20px]`,
-);
-
 const Reviews: React.FC<ReviewsProps> = ({
   infoSectionClasses,
   fieldLabelClasses,
@@ -51,7 +35,9 @@ const Reviews: React.FC<ReviewsProps> = ({
 }) => {
   return (
     <div
-      className={`${infoSectionClasses} ${fieldContentDistanceClasses} reviews`}
+      className={cn(
+        `reviews gap-y-6sm:gap-y-7 flex flex-col 2xl:gap-y-10 ${infoSectionClasses}`,
+      )}
     >
       {/* Label */}
       <div className="heading flex items-center justify-between">
@@ -65,9 +51,11 @@ const Reviews: React.FC<ReviewsProps> = ({
         </Button>
       </div>
 
+      {/* Single movie or show reviews */}
       <CarouselOutsideBottomControls>
-        <div className={carouselItemsParentClasses}>
+        <div className="backface-hidden ml-[-16px] flex touch-pan-y 2xl:ml-[-20px]">
           {reviews.map((review, index) => (
+            // Review item
             <div
               key={index}
               className="relative w-full min-w-0 flex-shrink-0 flex-grow-0 overflow-hidden pl-4 md:w-1/2 2xl:pl-5"

@@ -28,7 +28,7 @@ const ReleasedYear: React.FC<ReleasedYearProps> = ({
         <span>Relased Year</span>
       </Typography>
 
-      {/* Released year */}
+      {/* Single movie or show released year */}
       <Typography variant="h4" className="text-absolute-white">
         {getYear(single_media_item.created_at)}
       </Typography>

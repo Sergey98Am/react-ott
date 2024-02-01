@@ -8,6 +8,7 @@ import { PlayIcon } from "@heroicons/react/24/solid";
 const Hero = () => {
   return (
     <div>
+      {/* Image */}
       <div className="relative">
         <div className="aspect-ratio-portrait sm:aspect-ratio-cinemascope">
           <Image
@@ -28,8 +29,11 @@ const Hero = () => {
           }}
         ></div>
       </div>
+
+      {/* Content */}
       <Container className="z-1 mt-[-70px] flex justify-center">
         <div className="relative flex max-w-[1096px] flex-col items-center justify-center gap-[30px] self-stretch text-center xl:gap-10 2xl:gap-[50px]">
+          {/* Title and description */}
           <div className="text-content relative flex flex-col gap-2.5 2xl:gap-3.5">
             <Typography variant="h1">The Best Streaming Experience</Typography>
             <Typography variant="body" className="text-sm 2xl:text-lg">
@@ -41,6 +45,8 @@ const Hero = () => {
               the content you want to watch.
             </Typography>
           </div>
+
+          {/* Watching button */}
           <Button className="gap-1">
             <PlayIcon className="h-6 w-6 2xl:h-7 2xl:w-7" /> Start Watching Now
           </Button>

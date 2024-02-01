@@ -27,6 +27,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
       )}
     >
       <CardHeader className="flex flex-row items-center justify-between">
+        {/* User name and country */}
         <div className="user">
           <Typography
             variant="h4"
@@ -38,6 +39,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
             {userCountry}
           </Typography>
         </div>
+
+        {/* Stars */}
         <div className="rating">
           <Badge
             variant="circle"
@@ -50,6 +53,8 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
           </Badge>
         </div>
       </CardHeader>
+
+      {/* Description */}
       <CardContent className="p-0">
         <Typography variant="body">{reviewDescription}</Typography>
       </CardContent>

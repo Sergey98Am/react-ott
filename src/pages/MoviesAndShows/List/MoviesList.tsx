@@ -8,6 +8,8 @@ import { useTrendingMediaItem } from "@/hooks/media/useTrendingMediaItem";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
 
+// When there is a class reusing, used ctl()
+
 const carouselItemsParentClasses = ctl(
   `backface-hidden 
   ml-[-20px] 
@@ -47,6 +49,7 @@ const MoviesList = () => {
 
   return (
     <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
+      {/* Carousels */}
       <div className="genres space-y-12 2xl:space-y-24">
         {/* Genres */}
         <CarouselOutsideTopControls
@@ -55,6 +58,7 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
+              // Genre item
               return (
                 <div className={carouselItemClasses} key={genre.id}>
                   <GenreCard title={genre.title} image={genre.image} />
@@ -72,6 +76,7 @@ const MoviesList = () => {
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
               return (
+                // Genre item
                 <div
                   className={cn(`${carouselItemClasses} w-[250px]  lg:w-1/4`)}
                   key={genre.id}
@@ -95,6 +100,7 @@ const MoviesList = () => {
           <div className={carouselItemsParentClasses}>
             {trendingMovies?.map((movie) => {
               return (
+                // Movie item
                 <div
                   className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
                   key={movie.id}
@@ -120,6 +126,7 @@ const MoviesList = () => {
           <div className={carouselItemsParentClasses}>
             {newMovies?.map((movie) => {
               return (
+                // Movie item
                 <div
                   className={cn(`${carouselItemClasses} w-[200px] lg:w-1/5`)}
                   key={movie.id}
@@ -144,6 +151,7 @@ const MoviesList = () => {
           <div className={carouselItemsParentClasses}>
             {mustWatchMovies?.map((movie) => {
               return (
+                // Movie item
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
                   key={movie.id}

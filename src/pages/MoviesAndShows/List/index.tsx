@@ -8,31 +8,20 @@ import MoviesList from "./MoviesList";
 import { useTopMediaItems } from "@/hooks/media/useTopMediaItems";
 import FreeTrial from "@/components/FreeTrial";
 
-// 1 is Movie and 2 is Show
+// When there is a class reusing, used ctl()
 
-const MoviesAndShows = () => {
-  const { isLoading, top_media_items } = useTopMediaItems("Movie");
-
-  const desktopMoviesAndShowsClasses = ctl(
-    `for-desktop 
-    hidden 
-    space-y-32 
-    md:block 
-    2xl:space-y-36`,
-  );
-
-  const movieAndShowClasses = ctl(
-    `relative 
+const movieAndShowClasses = ctl(
+  `relative 
     rounded-xl 
     border 
     border-dark-black-15 
     p-10 
     2xl:p-12 
     2xl:pt-16`,
-  );
+);
 
-  const movieAndShowTextClasses = ctl(
-    `absolute 
+const movieAndShowTextClasses = ctl(
+  `absolute 
     top-[-20px] 
     rounded-md 
     bg-primary-red-45 
@@ -42,29 +31,26 @@ const MoviesAndShows = () => {
     2xl:px-6 
     2xl:py-2.5 
     2xl:text-xl`,
-  );
+);
 
-  const carouselItemsParentClasses = ctl(
-    `backface-hidden 
-    flex 
-    touch-pan-y`,
-  );
+// 1 is Movie and 2 is Show
 
-  const carouselItemClasses = ctl(
-    `w-full
-    flex-shrink-0 
-    flex-grow-0`,
-  );
+const MoviesAndShows = () => {
+  const { isLoading, top_media_items } = useTopMediaItems("Movie");
 
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
       <Container className="space-y-24 2xl:space-y-32">
         {/* Movies slider */}
         <CarouselDefault isLoading={isLoading}>
-          <div className={carouselItemsParentClasses}>
+          <div className="backface-hidden flex touch-pan-y">
             {top_media_items?.map((movie) => {
               return (
-                <div key={movie.id} className={carouselItemClasses}>
+                // Carousel item
+                <div
+                  key={movie.id}
+                  className="w-full flex-shrink-0 flex-grow-0"
+                >
                   <MediaOverlayCard
                     className="md:!pb-[88px]"
                     title={movie.title}
@@ -80,7 +66,7 @@ const MoviesAndShows = () => {
         {/* Movies and Shows */}
         <div className="movies-and-shows">
           {/* For Desktop */}
-          <div className={desktopMoviesAndShowsClasses}>
+          <div className="hidden space-y-32 md:block 2xl:space-y-36">
             <div className={`movies ${movieAndShowClasses}`}>
               <div className={movieAndShowTextClasses}>Movies</div>
               <MoviesList />

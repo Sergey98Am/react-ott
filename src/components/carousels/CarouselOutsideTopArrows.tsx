@@ -10,6 +10,22 @@ import ctl from "@netlify/classnames-template-literals";
 import Typography from "../ui/Typography";
 import Spinner from "@/components/icons/Spinner";
 
+// When there is a class reusing, used ctl()
+
+const arrowClasses = ctl(
+  `rounded-full
+    bg-dark-black-08
+    p-3
+    2xl:p-3.5`,
+);
+
+const iconClasses = ctl(
+  `w-5
+    h-5
+    2xl:w-6
+    2xl:h-6`,
+);
+
 type PropType = {
   children: ReactNode;
   isLoading?: boolean;
@@ -38,59 +54,19 @@ const CarouselOutsideTopArrows: React.FC<PropType> = (props) => {
     onNextButtonClick,
   } = usePrevNextButtons(emblaApi);
 
-  const sliderContainer = ctl(
-    `outside-arrows-carousel-container 
-    flex 
-    flex-col 
-    gap-y-4
-    xl:gap-y-5
-    2xl:gap-y-7`,
-  );
-
-  const headingClasses = ctl(
-    `heading 
-    flex 
-    items-center
-    justify-between`,
-  );
-
-  const arrowClasses = ctl(
-    `rounded-full
-    bg-dark-black-08
-    p-3
-    2xl:p-3.5`,
-  );
-
-  const iconClasses = ctl(
-    `w-5
-    h-5
-    2xl:w-6
-    2xl:h-6`,
-  );
-
-  const headingTitleClasses = ctl(
-    `title 
-    text-sm 
-    !font-medium 
-    text-grey-grey-60 
-    flex
-    items-center
-    gap-x-0.5
-    sm:text-base 
-    2xl:text-lg
-    2xl:gap-x-1`,
-  );
-
   return (
-    <div className={sliderContainer}>
+    <div className="flex flex-col gap-y-4 xl:gap-y-5 2xl:gap-y-7">
       {/* Heading */}
-      <div className={headingClasses}>
+      <div className="flex items-center justify-between">
         {/* Title */}
-        <Typography variant="h5" className={headingTitleClasses}>
+        <Typography
+          variant="h5"
+          className="flex items-center gap-x-0.5 text-sm text-grey-grey-60 sm:text-base 2xl:gap-x-1 2xl:text-lg"
+        >
           {headingTitle}
         </Typography>
 
-        {/* Desktop/laptop arrows and pagination */}
+        {/* Desktop/laptop controls */}
         <div className="arrows relative flex gap-x-2.5">
           <PrevButton
             onClick={onPrevButtonClick}
@@ -111,6 +87,7 @@ const CarouselOutsideTopArrows: React.FC<PropType> = (props) => {
           <Spinner className="h-12 w-12 animate-spin lg:h-16 lg:w-16" />
         </div>
       ) : (
+        // Carousel wrapper
         <div className="overflow-hidden" ref={emblaRef}>
           {children}
         </div>

@@ -29,9 +29,10 @@ const Genres: React.FC<GenresProps> = ({
         <span>Genres</span>
       </Typography>
 
-      {/* Genres */}
+      {/* Single movie or show genres */}
       <div className="flex flex-wrap gap-2.5">
         {genres.map((item, index) => (
+          // Genre item
           <button
             key={index}
             className="rounded-md border border-dark-black-15 bg-dark-black-08 px-3 py-1.5 text-sm font-medium capitalize 2xl:rounded-lg 2xl:px-3.5 2xl:py-2 2xl:text-lg"

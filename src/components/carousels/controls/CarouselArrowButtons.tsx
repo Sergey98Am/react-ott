@@ -61,6 +61,8 @@ type PropType = PropsWithChildren<
   > & { iconClassName?: string }
 >;
 
+// When there is a class reusing, used ctl()
+
 const arrowButtons = ctl(
   `cursor-pointer 
   rounded-lg

@@ -7,7 +7,6 @@ import {
   NextButton,
   usePrevNextButtons,
 } from "./controls/CarouselArrowButtons";
-import ctl from "@netlify/classnames-template-literals";
 import Spinner from "@/components/icons/Spinner";
 
 type PropType = {
@@ -15,35 +14,6 @@ type PropType = {
   isLoading?: boolean;
   options?: EmblaOptionsType;
 };
-
-const sliderContainer = ctl(
-  `one-item-slider-container 
-    flex 
-    flex-col 
-    gap-y-10
-    xl:gap-y-[60px]
-    2xl:gap-y-20`,
-);
-
-const arrowsAndPaginationClasses = ctl(
-  `arrows-and-pagination
-    absolute
-    bottom-0
-    left-0
-    right-0
-    z-10
-    hidden
-    items-center 
-    justify-between 
-    gap-x-4 
-    md:flex
-    inset-x-6 
-    bottom-4 
-    md:inset-x-10
-    md:bottom-4 
-    2xl:inset-x-12
-    2xl:bottom-5`,
-);
 
 const CarouselDefault: React.FC<PropType> = (props) => {
   const { children, isLoading = false, options } = props;
@@ -67,17 +37,21 @@ const CarouselDefault: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className={sliderContainer}>
+    // Carousel container
+    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
       {isLoading ? (
         <div className="flex items-center justify-center">
           <Spinner className="h-12 w-12 animate-spin lg:h-16 lg:w-16" />
         </div>
       ) : (
         <div className="relative">
+          {/* Carousel wrapper */}
           <div className="overflow-hidden" ref={emblaRef}>
             {children}
           </div>
-          <div className={arrowsAndPaginationClasses}>
+
+          {/* Controls */}
+          <div className="md:flexinset-x-6 absolute bottom-0 left-0 right-0 z-10 hidden items-center justify-between gap-x-4 md:inset-x-10 md:bottom-4 2xl:inset-x-12 2xl:bottom-5">
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}

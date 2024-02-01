@@ -4,6 +4,15 @@ import Image from "../ui/Image";
 import Typography from "../ui/Typography";
 import { Link } from "react-router-dom";
 
+const cardClasses = ctl(
+  `w-full 
+  rounded-lg 
+  bg-dark-black-08 
+  p-2.5 
+  sm:p-3 
+  2xl:p-3.5`,
+);
+
 interface MemberCardProps {
   to?: string;
   image: string;
@@ -17,22 +26,17 @@ const MemberCard: React.FC<MemberCardProps> = ({
   name,
   country,
 }) => {
-  const cardClasses = ctl(
-    `w-full 
-    rounded-lg 
-    bg-dark-black-08 
-    p-2.5 
-    sm:p-3 
-    2xl:p-3.5`,
-  );
-
+  // Content
   const cardContent = (
     <CardContent className="flex items-center gap-x-2  p-0">
+      {/* Member image */}
       <div className="w-14">
         <div className="aspect-ratio-square rounded-md">
           <Image src={image} alt="dddsa" className="object-cover" />
         </div>
       </div>
+
+      {/* Member name and country */}
       <div className="info">
         <Typography
           variant="h5"

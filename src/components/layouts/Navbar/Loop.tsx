@@ -26,9 +26,12 @@ const Loop = () => {
 
   return (
     <div>
+      {/* Magnifier */}
       <Button variant="ghost" onClick={() => setOpen((open) => !open)}>
         <MagnifyingGlassIcon className="h-6 w-6 2xl:h-[34px] 2xl:w-[34px]" />
       </Button>
+
+      {/* Dialog result */}
       <CommandDialog open={open} onOpenChange={setOpen}>
         <CommandInput placeholder="Type a command or search..." />
         <CommandList>
