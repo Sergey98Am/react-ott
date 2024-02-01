@@ -39,9 +39,9 @@ const MoviesAndShows = () => {
   const { isLoading, top_media_items } = useTopMediaItems("Movie");
 
   return (
-    <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
-      <Container className="space-y-24 2xl:space-y-32">
-        {/* Movies slider */}
+    <div className="space-y-24 pb-20 pt-36 md:pb-28 2xl:space-y-32 2xl:pt-40">
+      {/* Movies slider */}
+      <Container>
         <CarouselDefault isLoading={isLoading}>
           <div className="backface-hidden flex touch-pan-y">
             {top_media_items?.map((movie) => {
@@ -62,41 +62,46 @@ const MoviesAndShows = () => {
             })}
           </div>
         </CarouselDefault>
+      </Container>
 
-        {/* Movies and Shows */}
-        <div className="movies-and-shows">
-          {/* For Desktop */}
-          <div className="hidden space-y-32 md:block 2xl:space-y-36">
-            <div className={`movies ${movieAndShowClasses}`}>
-              <div className={movieAndShowTextClasses}>Movies</div>
+      {/* Movies and Shows */}
+      <div className="movies-and-shows">
+        {/* For Desktop */}
+        <Container className="hidden space-y-32 md:block 2xl:space-y-36">
+          <div className={`movies ${movieAndShowClasses}`}>
+            <div className={movieAndShowTextClasses}>Movies</div>
+            <MoviesList />
+          </div>
+          <div className={`shows ${movieAndShowClasses}`}>
+            <div className={movieAndShowTextClasses}>Shows</div>
+            <ShowsList />
+          </div>
+        </Container>
+
+        {/* For Mobile */}
+        <Tabs defaultValue="movies" className="space-y-12 md:hidden">
+          <Container>
+            <TabsList className="w-full">
+              <TabsTrigger value="movies" className="w-6/12">
+                Movies
+              </TabsTrigger>
+              <TabsTrigger value="shows" className="w-6/12">
+                Shows
+              </TabsTrigger>
+            </TabsList>
+          </Container>
+          <Container className="pr-0">
+            <TabsContent value="movies">
               <MoviesList />
-            </div>
-            <div className={`shows ${movieAndShowClasses}`}>
-              <div className={movieAndShowTextClasses}>Shows</div>
+            </TabsContent>
+            <TabsContent value="shows">
               <ShowsList />
-            </div>
-          </div>
-          {/* For Mobile */}
-          <div className="for-mobile md:hidden">
-            <Tabs defaultValue="movies" className="space-y-12">
-              <TabsList className="w-full">
-                <TabsTrigger value="movies" className="w-6/12">
-                  Movies
-                </TabsTrigger>
-                <TabsTrigger value="shows" className="w-6/12">
-                  Shows
-                </TabsTrigger>
-              </TabsList>
-              <TabsContent value="movies">
-                <MoviesList />
-              </TabsContent>
-              <TabsContent value="shows">
-                <ShowsList />
-              </TabsContent>
-            </Tabs>
-          </div>
-        </div>
+            </TabsContent>
+          </Container>
+        </Tabs>
+      </div>
 
+      <Container>
         <FreeTrial />
       </Container>
     </div>
