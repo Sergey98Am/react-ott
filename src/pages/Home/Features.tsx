@@ -1,6 +1,6 @@
 import FeatureCard from "@/components/cards/FeatureCard";
 import { features } from "@/constants";
-import Typography from "../ui/Typography";
+import Typography from "../../components/ui/Typography";
 
 const Features = () => {
   return (

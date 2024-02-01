@@ -1,8 +1,8 @@
 import FAQ from "@/components/FAQ";
 import FreeTrial from "@/components/FreeTrial";
 import Pricing from "@/components/Pricing";
-import Features from "@/components/homepage/Features";
-import Hero from "@/components/homepage/Hero";
+import Features from "@/pages/Home/Features";
+import Hero from "@/pages/Home/Hero";
 import Container from "@/components/ui/Container";
 import { useGenres } from "@/hooks/useGenres";
 import GenreCard from "@/components/cards/GenreCard";

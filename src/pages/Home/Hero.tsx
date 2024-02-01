@@ -1,8 +1,8 @@
-import Image from "../ui/Image";
+import Image from "../../components/ui/Image";
 import Banner from "@/assets/Banner.jpg";
-import Typography from "../ui/Typography";
-import Container from "../ui/Container";
-import Button from "../ui/Button";
+import Typography from "../../components/ui/Typography";
+import Container from "../../components/ui/Container";
+import Button from "../../components/ui/Button";
 import { PlayIcon } from "@heroicons/react/24/solid";
 
 const Hero = () => {
