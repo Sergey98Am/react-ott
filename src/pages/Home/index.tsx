@@ -7,6 +7,7 @@ import Container from "@/components/ui/Container";
 import { useGenres } from "@/hooks/useGenres";
 import GenreCard from "@/components/cards/GenreCard";
 import CarouselOutsideTopControls from "@/components/carousels/CarouselOutsideTopControls";
+import { supabase } from "@/services/supabaseClient";
 
 const Home = () => {
   const { isLoading, genres } = useGenres();
@@ -26,13 +27,25 @@ const Home = () => {
             {/* Carousel item wrapper */}
             <div className="backface-hidden ml-[-20px] flex touch-pan-y 2xl:ml-[-30px]">
               {genres?.map((genre) => {
+                // Movie image with optimization
+                const { data: genreImage } = supabase.storage
+                  .from("images")
+                  .getPublicUrl(genre.image, {
+                    transform: {
+                      width: 400,
+                    },
+                  });
+
                 return (
                   // Carousel item
                   <div
                     className="relative w-[200px] min-w-0 flex-shrink-0  flex-grow-0 pl-5 lg:w-1/5 2xl:pl-[30px]"
                     key={genre.id}
                   >
-                    <GenreCard title={genre.title} image={genre.image} />
+                    <GenreCard
+                      title={genre.title}
+                      image={genreImage.publicUrl}
+                    />
                   </div>
                 );
               })}

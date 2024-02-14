@@ -7,6 +7,7 @@ import { useTrendingMediaItem } from "@/hooks/media/useTrendingMediaItem";
 import { useGenres } from "@/hooks/useGenres";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
+import { supabase } from "@/services/supabaseClient";
 
 const carouselItemsParentClasses = ctl(
   `backface-hidden 
@@ -55,10 +56,19 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
+              // Genre image with optimization
+              const { data: genreImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(genre.image, {
+                  transform: {
+                    width: 350,
+                  },
+                });
+
               // Genre item
               return (
                 <div className={carouselItemClasses} key={genre.id}>
-                  <GenreCard title={genre.title} image={genre.image} />
+                  <GenreCard title={genre.title} image={genreImage.publicUrl} />
                 </div>
               );
             })}
@@ -72,6 +82,15 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
+              // Genre image with optimization
+              const { data: genreImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(genre.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               // Genre item
               return (
                 <div
@@ -80,7 +99,7 @@ const ShowsList = () => {
                 >
                   <GenreCard
                     title={genre.title}
-                    image={genre.image}
+                    image={genreImage.publicUrl}
                     topBadge={genre.top}
                   />
                 </div>
@@ -95,19 +114,28 @@ const ShowsList = () => {
           isLoading={isLoadingTrendingShows}
         >
           <div className={carouselItemsParentClasses}>
-            {trendingShows?.map((movie) => {
+            {trendingShows?.map((show) => {
+              // Show image with optimization
+              const { data: showImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(show.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
-                  key={movie.id}
+                  key={show.id}
                 >
                   <MediaCard
-                    to={`show/${movie.id}`}
+                    to={`show/${show.id}`}
                     variant="season"
-                    image={movie.image}
-                    duration={movie.duration}
-                    season={movie.season}
+                    image={showImage.publicUrl}
+                    duration={show.duration}
+                    season={show.season}
                   />
                 </div>
               );
@@ -121,19 +149,28 @@ const ShowsList = () => {
           isLoading={isLoadingNewShows}
         >
           <div className={carouselItemsParentClasses}>
-            {new_shows?.map((movie) => {
+            {new_shows?.map((show) => {
+              // Show image with optimization
+              const { data: showImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(show.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
-                  key={movie.id}
+                  key={show.id}
                 >
                   <MediaCard
-                    to={`show/${movie.id}`}
+                    to={`show/${show.id}`}
                     variant="season"
-                    image={movie.image}
-                    duration={movie.duration}
-                    season={movie.season}
+                    image={showImage.publicUrl}
+                    duration={show.duration}
+                    season={show.season}
                   />
                 </div>
               );
@@ -147,19 +184,28 @@ const ShowsList = () => {
           isLoading={isLoadingMustWatchShows}
         >
           <div className={carouselItemsParentClasses}>
-            {must_watch_shows?.map((movie) => {
+            {must_watch_shows?.map((show) => {
+              // Show image with optimization
+              const { data: showImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(show.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               // Show item
               return (
                 <div
                   className={cn(`${carouselItemClasses} w-[250px] lg:w-1/4`)}
-                  key={movie.id}
+                  key={show.id}
                 >
                   <MediaCard
-                    to={`show/${movie.id}`}
+                    to={`show/${show.id}`}
                     variant="rating"
-                    image={movie.image}
-                    duration={movie.duration}
-                    votes={movie.votes}
+                    image={showImage.publicUrl}
+                    duration={show.duration}
+                    votes={show.votes}
                   />
                 </div>
               );
