@@ -1,6 +1,7 @@
 import MemberCard from "@/components/cards/MemberCard";
 import Typography from "@/components/ui/Typography";
 import { Member as MusicianType } from "@/types/index";
+import { supabase } from "@/services/supabaseClient";
 
 interface DirectorProps {
   fieldLabelClasses: string;
@@ -22,15 +23,22 @@ const Director: React.FC<DirectorProps> = ({
 
       {/* Single movie or show director(s) */}
       <div className="gap-y-3">
-        {directors.map((director, index) => (
+        {directors.map((director, index) => {
+          // Director image
+          const { data: directorImage } = supabase.storage
+            .from("images")
+            .getPublicUrl(director.image);
+
           // Director item
-          <MemberCard
-            key={index}
-            image={director.image}
-            name={`${director.first_name} ${director.last_name}`}
-            country={director.countries.name}
-          />
-        ))}
+          return (
+            <MemberCard
+              key={index}
+              image={directorImage.publicUrl}
+              name={`${director.first_name} ${director.last_name}`}
+              country={director.countries.name}
+            />
+          );
+        })}
       </div>
     </div>
   );

@@ -59,7 +59,7 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
-              // Genre image with optimization
+              // Genre image
               const { data: genreImage } = supabase.storage
                 .from("images")
                 .getPublicUrl(genre.image);
@@ -81,14 +81,10 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
-              // Genre image with optimization
+              // Genre image
               const { data: genreImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(genre.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(genre.image);
 
               return (
                 // Genre item
@@ -114,14 +110,10 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {trendingMovies?.map((movie) => {
-              // Movie image with optimization
+              // Movie image
               const { data: movieImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(movie.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(movie.image);
 
               return (
                 // Movie item
@@ -149,14 +141,10 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {newMovies?.map((movie) => {
-              // Movie image with optimization
+              // Movie image
               const { data: movieImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(movie.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(movie.image);
 
               return (
                 // Movie item
@@ -183,14 +171,10 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {mustWatchMovies?.map((movie) => {
-              // Movie image with optimization
+              // Movie image
               const { data: movieImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(movie.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(movie.image);
 
               return (
                 // Movie item

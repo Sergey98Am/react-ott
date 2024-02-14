@@ -46,14 +46,10 @@ const MoviesAndShows = () => {
         <CarouselDefault isLoading={isLoading}>
           <div className="backface-hidden flex touch-pan-y">
             {top_media_items?.map((movie) => {
-              // Movie image with optimization
+              // Movie image""
               const { data: movieBanner } = supabase.storage
                 .from("images")
-                .getPublicUrl(movie.banner, {
-                  transform: {
-                    width: 1600,
-                  },
-                });
+                .getPublicUrl(movie.banner);
 
               return (
                 // Carousel item

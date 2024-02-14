@@ -15,6 +15,7 @@ import Cast from "./DetailPagesComponents/Cast";
 import Reviews from "./DetailPagesComponents/Reviews";
 import Ratings from "./DetailPagesComponents/Ratings";
 import Seasons from "./DetailPagesComponents/Show/Seasons";
+import { supabase } from "@/services/supabaseClient";
 
 // When there is a class reusing, used ctl()
 
@@ -59,6 +60,11 @@ const ShowDetail = () => {
     Number(params.id),
   );
 
+  // singleMediaItemBanner image
+  const { data: singleMediaItemBanner } = supabase.storage
+    .from("images")
+    .getPublicUrl(single_media_item?.banner);
+
   return (
     <div className="pb-20 pt-36 md:pb-28 2xl:pt-40">
       <Container className="space-y-24 2xl:space-y-32">
@@ -69,7 +75,7 @@ const ShowDetail = () => {
         ) : (
           <div className="space-y-14 sm:space-y-20 2xl:space-y-24">
             <MediaOverlayCard
-              image={single_media_item.banner}
+              image={singleMediaItemBanner.publicUrl}
               title={single_media_item.title}
               description={single_media_item.description}
             />

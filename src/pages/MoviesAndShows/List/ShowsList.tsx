@@ -56,14 +56,10 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
-              // Genre image with optimization
+              // Genre image
               const { data: genreImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(genre.image, {
-                  transform: {
-                    width: 350,
-                  },
-                });
+                .getPublicUrl(genre.image);
 
               // Genre item
               return (
@@ -82,14 +78,10 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
-              // Genre image with optimization
+              // Genre image
               const { data: genreImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(genre.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(genre.image);
 
               // Genre item
               return (
@@ -115,14 +107,10 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {trendingShows?.map((show) => {
-              // Show image with optimization
+              // Show image
               const { data: showImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(show.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(show.image);
 
               // Show item
               return (
@@ -150,14 +138,10 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {new_shows?.map((show) => {
-              // Show image with optimization
+              // Show image
               const { data: showImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(show.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(show.image);
 
               // Show item
               return (
@@ -185,14 +169,10 @@ const ShowsList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {must_watch_shows?.map((show) => {
-              // Show image with optimization
+              // Show image
               const { data: showImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(show.image, {
-                  transform: {
-                    width: 400,
-                  },
-                });
+                .getPublicUrl(show.image);
 
               // Show item
               return (
