@@ -27,14 +27,10 @@ const Home = () => {
             {/* Carousel item wrapper */}
             <div className="backface-hidden ml-[-20px] flex touch-pan-y 2xl:ml-[-30px]">
               {genres?.map((genre) => {
-                // Movie image""
+                // Movie image
                 const { data: genreImage } = supabase.storage
                   .from("images")
-                  .getPublicUrl(genre.image, {
-                    transform: {
-                      width: 400,
-                    },
-                  });
+                  .getPublicUrl(genre.image);
 
                 return (
                   // Carousel item
