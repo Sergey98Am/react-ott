@@ -62,11 +62,7 @@ const MoviesList = () => {
               // Genre image with optimization
               const { data: genreImage } = supabase.storage
                 .from("images")
-                .getPublicUrl(genre.image, {
-                  transform: {
-                    width: 350,
-                  },
-                });
+                .getPublicUrl(genre.image);
 
               // Genre item
               return (
