@@ -7,6 +7,7 @@ import { useNewMediaItems } from "@/hooks/media/useNewMediaItems";
 import { useTrendingMediaItem } from "@/hooks/media/useTrendingMediaItem";
 import { cn } from "@/lib/utils";
 import ctl from "@netlify/classnames-template-literals";
+import { supabase } from "@/services/supabaseClient";
 
 // When there is a class reusing, used ctl()
 
@@ -58,10 +59,19 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {genres?.map((genre) => {
+              // Genre image with optimization
+              const { data: genreImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(genre.image, {
+                  transform: {
+                    width: 350,
+                  },
+                });
+
               // Genre item
               return (
                 <div className={carouselItemClasses} key={genre.id}>
-                  <GenreCard title={genre.title} image={genre.image} />
+                  <GenreCard title={genre.title} image={genreImage.publicUrl} />
                 </div>
               );
             })}
@@ -75,6 +85,15 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {topGenres?.map((genre) => {
+              // Genre image with optimization
+              const { data: genreImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(genre.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               return (
                 // Genre item
                 <div
@@ -83,7 +102,7 @@ const MoviesList = () => {
                 >
                   <GenreCard
                     title={genre.title}
-                    image={genre.image}
+                    image={genreImage.publicUrl}
                     topBadge={genre.top}
                   />
                 </div>
@@ -99,6 +118,15 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {trendingMovies?.map((movie) => {
+              // Movie image with optimization
+              const { data: movieImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(movie.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               return (
                 // Movie item
                 <div
@@ -108,7 +136,7 @@ const MoviesList = () => {
                   <MediaCard
                     to={`movie/${movie.id}`}
                     variant="views"
-                    image={movie.image}
+                    image={movieImage.publicUrl}
                     duration={movie.duration}
                     views={movie.views}
                   />
@@ -125,6 +153,15 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {newMovies?.map((movie) => {
+              // Movie image with optimization
+              const { data: movieImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(movie.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               return (
                 // Movie item
                 <div
@@ -134,7 +171,7 @@ const MoviesList = () => {
                   <MediaCard
                     to={`movie/${movie.id}`}
                     variant="releasedTime"
-                    image={movie.image}
+                    image={movieImage.publicUrl}
                     releasedTime={movie.created_at}
                   />
                 </div>
@@ -150,6 +187,15 @@ const MoviesList = () => {
         >
           <div className={carouselItemsParentClasses}>
             {mustWatchMovies?.map((movie) => {
+              // Movie image with optimization
+              const { data: movieImage } = supabase.storage
+                .from("images")
+                .getPublicUrl(movie.image, {
+                  transform: {
+                    width: 400,
+                  },
+                });
+
               return (
                 // Movie item
                 <div
@@ -159,7 +205,7 @@ const MoviesList = () => {
                   <MediaCard
                     to={`movie/${movie.id}`}
                     variant="rating"
-                    image={movie.image}
+                    image={movieImage.publicUrl}
                     duration={movie.duration}
                     votes={movie.votes}
                   />

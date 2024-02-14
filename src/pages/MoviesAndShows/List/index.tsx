@@ -7,6 +7,7 @@ import ShowsList from "./ShowsList";
 import MoviesList from "./MoviesList";
 import { useTopMediaItems } from "@/hooks/media/useTopMediaItems";
 import FreeTrial from "@/components/FreeTrial";
+import { supabase } from "@/services/supabaseClient";
 
 // When there is a class reusing, used ctl()
 
@@ -45,6 +46,15 @@ const MoviesAndShows = () => {
         <CarouselDefault isLoading={isLoading}>
           <div className="backface-hidden flex touch-pan-y">
             {top_media_items?.map((movie) => {
+              // Movie image with optimization
+              const { data: movieBanner } = supabase.storage
+                .from("images")
+                .getPublicUrl(movie.banner, {
+                  transform: {
+                    width: 1600,
+                  },
+                });
+
               return (
                 // Carousel item
                 <div
@@ -55,7 +65,7 @@ const MoviesAndShows = () => {
                     className="md:!pb-[88px]"
                     title={movie.title}
                     description={movie.description}
-                    image={movie.banner}
+                    image={movieBanner.publicUrl}
                   />
                 </div>
               );
