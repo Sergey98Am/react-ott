@@ -181,19 +181,22 @@ const SupportForm = () => {
             control={form.control}
             name="agreement"
             render={({ field }) => (
-              <FormItem className="flex flex-row items-center space-x-2 space-y-0 2xl:space-x-3">
-                <FormControl>
-                  <Checkbox
-                    checked={field.value}
-                    onCheckedChange={field.onChange}
-                    className="h-6 w-6 2xl:h-7 2xl:w-7"
-                  />
-                </FormControl>
-                <div>
-                  <FormLabel className="font-normal text-grey-grey-60 2xl:text-lg">
-                    I agree with Terms of Use and Privacy Policy
-                  </FormLabel>
+              <FormItem>
+                <div className="flex flex-row items-center space-x-2 space-y-0 2xl:space-x-3">
+                  <FormControl>
+                    <Checkbox
+                      checked={field.value}
+                      onCheckedChange={field.onChange}
+                      className="h-6 w-6 2xl:h-7 2xl:w-7"
+                    />
+                  </FormControl>
+                  <div>
+                    <FormLabel className="font-normal text-grey-grey-60 2xl:text-lg">
+                      I agree with Terms of Use and Privacy Policy
+                    </FormLabel>
+                  </div>
                 </div>
+                <FormMessage />
               </FormItem>
             )}
           />
