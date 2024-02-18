@@ -33,13 +33,16 @@ const Loop = () => {
 
       {/* Dialog result */}
       <CommandDialog open={open} onOpenChange={setOpen}>
-        <CommandInput placeholder="Type a command or search..." />
+        <CommandInput
+          placeholder="Type a command or search..."
+          className="2xl:text-lg"
+        />
         <CommandList>
           <CommandEmpty>No results found.</CommandEmpty>
           <CommandGroup>
-            <CommandItem>Calendar</CommandItem>
-            <CommandItem>Search Emoji</CommandItem>
-            <CommandItem>Calculator</CommandItem>
+            <CommandItem className="2xl:text-lg">Calendar</CommandItem>
+            <CommandItem className="2xl:text-lg">Search Emoji</CommandItem>
+            <CommandItem className="2xl:text-lg">Calculator</CommandItem>
           </CommandGroup>
         </CommandList>
       </CommandDialog>
