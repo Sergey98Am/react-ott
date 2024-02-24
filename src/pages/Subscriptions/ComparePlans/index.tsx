@@ -1,5 +1,6 @@
 import PlansTable from "./PlansTable";
 import PlansTabs from "./PlanTabs";
+import Typography from "@/components/ui/Typography";
 
 const basicPlan = {
   price: "$9.99/Month",
@@ -45,7 +46,18 @@ const premiumPlan = {
 
 export function ComparePlans() {
   return (
-    <div>
+    <div className="flex flex-col items-start gap-y-5 xl:gap-y-[60px] 2xl:gap-y-20">
+      {/* Title and description */}
+      <div className="flex flex-col gap-y-2 xl:gap-y-2.5 2xl:gap-y-3.5">
+        <Typography variant="h2">
+          Compare our plans and find the right one for you
+        </Typography>
+        <Typography variant="body">
+          StreamVibe offers three different plans to fit your needs: Basic,
+          Standard, and Premium. Compare the features of each plan and choose
+          the one that's right for you.
+        </Typography>
+      </div>
       {/* For large screens */}
       <PlansTable
         basicPlan={basicPlan}
