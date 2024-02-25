@@ -4,9 +4,9 @@ import Typography from "../../components/ui/Typography";
 
 const Features = () => {
   return (
-    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
+    <div className="space-y-10 xl:space-y-[60px] 2xl:space-y-20">
       {/* Title and description */}
-      <div className="flex flex-col gap-y-2 md:w-10/12 xl:gap-y-2.5 2xl:gap-y-3.5">
+      <div className="space-y-2 md:w-10/12 xl:space-y-2.5 2xl:space-y-3.5">
         <Typography variant="h2" className="text-xl xl:text-4xl 2xl:text-5xl">
           We Provide you streaming experience across various devices.
         </Typography>

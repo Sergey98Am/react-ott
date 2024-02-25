@@ -22,7 +22,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   return (
     <Card
       className={cn(
-        `flex flex-col gap-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none sm:p-7 2xl:gap-y-5 2xl:p-10`,
+        `space-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none sm:p-7 2xl:space-y-5 2xl:p-10`,
         className,
       )}
     >
@@ -44,7 +44,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
         <div className="rating">
           <Badge
             variant="circle"
-            className="flex items-center gap-0.5 space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
+            className="flex items-center space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
           >
             <CustomRating value={Number(reviewRating)} readOnly />
             <span className="font-medium text-grey-grey-60">

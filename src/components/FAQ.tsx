@@ -14,11 +14,11 @@ const dividedArray = chunkIntoN(faq, 2);
 
 const FAQ = () => {
   return (
-    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
+    <div className="space-y-10 xl:space-y-[60px] 2xl:space-y-20">
       {/* Heading */}
-      <div className="flex flex-col items-start justify-between gap-y-5 lg:flex-row lg:items-end lg:gap-y-0">
+      <div className="flex flex-col items-start justify-between space-y-5 lg:flex-row lg:items-end lg:space-y-0">
         {/* Title and description */}
-        <div className="flex flex-col gap-y-2 md:w-10/12 xl:gap-y-2.5 2xl:gap-y-3.5">
+        <div className="space-y-2 md:w-10/12 xl:space-y-2.5 2xl:space-y-3.5">
           <Typography variant="h2" className="text-xl xl:text-4xl 2xl:text-5xl">
             Frequently Asked Questions
           </Typography>
@@ -47,9 +47,9 @@ const FAQ = () => {
                   borderImageSlice: 1,
                 }}
               >
-                <div className="flex gap-x-4">
+                <div className="flex space-x-4">
                   {/* Accoordion number */}
-                  <span className="h-fit gap-2.5 rounded-[10px] bg-dark-black-12 p-3 text-base font-semibold leading-[normal] sm:p-4 2xl:p-5 2xl:text-xl">
+                  <span className="h-fit space-x-2.5 rounded-[10px] bg-dark-black-12 p-3 text-base font-semibold leading-[normal] sm:p-4 2xl:p-5 2xl:text-xl">
                     {item.id < 10 ? "0" + item.id : item.id}
                   </span>
 

@@ -38,7 +38,7 @@ const CarouselDefault: React.FC<PropType> = (props) => {
 
   return (
     // Carousel container
-    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
+    <div className="space-y-10 xl:space-y-[60px] 2xl:space-y-20">
       {isLoading ? (
         <div className="flex items-center justify-center">
           <Spinner className="h-12 w-12 animate-spin lg:h-16 lg:w-16" />
@@ -51,13 +51,13 @@ const CarouselDefault: React.FC<PropType> = (props) => {
           </div>
 
           {/* Controls */}
-          <div className="md:flexinset-x-6 absolute bottom-0 left-0 right-0 z-10 hidden items-center justify-between gap-x-4 md:inset-x-10 md:bottom-4 2xl:inset-x-12 2xl:bottom-5">
+          <div className="absolute inset-x-6 bottom-0 left-0 right-0 z-10 hidden items-center justify-between space-x-4 md:inset-x-10 md:bottom-4 md:flex 2xl:inset-x-12 2xl:bottom-5">
             <PrevButton
               onClick={onPrevButtonClick}
               disabled={prevBtnDisabled}
               className="bg-dark-black-06"
             />
-            <div className="pagination flex gap-[3px]">
+            <div className="pagination flex space-x-[3px]">
               {scrollSnaps.map((_, index) => (
                 <DotButton
                   key={index}

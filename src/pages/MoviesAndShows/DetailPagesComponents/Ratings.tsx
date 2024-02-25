@@ -37,13 +37,13 @@ const Ratings: React.FC<RatingProps> = ({
       </Typography>
 
       {/* Single movie or show rating */}
-      <div className="flex gap-4">
+      <div className="grid grid-cols-2 gap-4">
         {ratingsArr.map((rating, index) => (
           // Rating item
           <Badge
             key={index}
             variant="circle"
-            className="w-full flex-shrink-0 basis-1/2 gap-0.5 rounded-lg p-3 text-start sm:p-3.5 2xl:p-4"
+            className="w-full flex-shrink-0 basis-1/2 space-y-0.5 rounded-lg p-3 text-start sm:p-3.5 2xl:p-4"
           >
             {/* Title */}
             <Typography

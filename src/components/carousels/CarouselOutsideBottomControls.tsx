@@ -71,14 +71,14 @@ const CarouselOutsideBottomControls: React.FC<PropType> = (props) => {
           {children}
 
           {/* Controls */}
-          <div className="relative flex w-full items-center justify-center gap-x-2.5">
+          <div className="relative flex w-full items-center justify-center space-x-2.5">
             <PrevButton
               onClick={onPrevButtonClick}
               className={arrowClasses}
               iconClassName={iconClasses}
               disabled={prevBtnDisabled}
             />
-            <div className="pagination flex gap-[3px]">
+            <div className="pagination flex space-x-[3px]">
               {scrollSnaps.map((_, index) => (
                 <DotButton
                   key={index}

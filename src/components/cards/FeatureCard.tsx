@@ -15,14 +15,14 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
 }) => {
   return (
     <Card
-      className="flex flex-col gap-[30px] rounded-xl border border-dark-black-15 p-6 sm:p-10 2xl:p-12"
+      className="space-y-[30px] rounded-xl border border-dark-black-15 p-6 sm:p-10 2xl:p-12"
       style={{
         background:
           "linear-gradient(222deg, rgba(229, 0, 0, 0.50) -208.03%, rgba(229, 0, 0, 0.00) 41.32%), #0F0F0F",
       }}
     >
       {/* Image and title */}
-      <CardHeader className="flex-row items-center gap-x-4">
+      <CardHeader className="flex-row items-center space-x-4">
         <div className="w-fit rounded-xl bg-dark-black-12 p-2.5 sm:p-3 2xl:p-4">
           <Image
             src={icon}

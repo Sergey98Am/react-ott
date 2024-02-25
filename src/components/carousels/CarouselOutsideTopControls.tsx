@@ -48,7 +48,7 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="flex flex-col gap-y-10 xl:gap-y-[60px] 2xl:gap-y-20">
+    <div className="space-y-10 xl:space-y-[60px] 2xl:space-y-20">
       {/* Heading */}
       <div
         className={`flex justify-between ${
@@ -56,7 +56,7 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
         }`}
       >
         {/* Title and description */}
-        <div className="flex flex-col gap-y-2 xl:gap-y-2.5 2xl:gap-y-3.5">
+        <div className="space-y-2 xl:space-y-2.5 2xl:space-y-3.5">
           <Typography variant="h2">{headingTitle}</Typography>
           {headingDescription && (
             <Typography variant="body">{headingDescription}</Typography>
@@ -64,9 +64,9 @@ const CarouselOutsideTopControls: React.FC<PropType> = (props) => {
         </div>
 
         {/* Desktop/laptop controls */}
-        <div className="relative hidden max-w-xs items-center justify-center gap-x-4 rounded-xl border border-dark-black-12 bg-dark-black-06 p-4 lg:flex">
+        <div className="relative hidden max-w-xs items-center justify-center space-x-4 rounded-xl border border-dark-black-12 bg-dark-black-06 p-4 lg:flex">
           <PrevButton onClick={onPrevButtonClick} disabled={prevBtnDisabled} />
-          <div className="pagination flex gap-[3px]">
+          <div className="pagination flex space-x-[3px]">
             {scrollSnaps.map((_, index) => (
               <DotButton
                 key={index}

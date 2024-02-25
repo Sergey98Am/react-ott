@@ -46,9 +46,9 @@ const premiumPlan = {
 
 export function ComparePlans() {
   return (
-    <div className="flex flex-col items-start gap-y-5 xl:gap-y-[60px] 2xl:gap-y-20">
+    <div className="space-y-5 xl:space-y-[60px] 2xl:space-y-20">
       {/* Title and description */}
-      <div className="flex flex-col gap-y-2 xl:gap-y-2.5 2xl:gap-y-3.5">
+      <div className="space-y-2 xl:space-y-2.5 2xl:space-y-3.5">
         <Typography variant="h2">
           Compare our plans and find the right one for you
         </Typography>

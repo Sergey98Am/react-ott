@@ -36,7 +36,7 @@ const Reviews: React.FC<ReviewsProps> = ({
   return (
     <div
       className={cn(
-        `reviews gap-y-6sm:gap-y-7 flex flex-col 2xl:gap-y-10 ${infoSectionClasses}`,
+        `reviews space-y-6 sm:space-y-7 2xl:space-y-10 ${infoSectionClasses}`,
       )}
     >
       {/* Label */}
@@ -45,7 +45,7 @@ const Reviews: React.FC<ReviewsProps> = ({
           Reviews
         </Typography>
 
-        <Button variant="dark" className="gap-1 !py-3.5 md:w-auto">
+        <Button variant="dark" className="space-x-1 !py-3.5 md:w-auto">
           <PlusIcon className="h-6 w-6 2xl:h-7 2xl:w-7" />
           <span>Add Your Review</span>
         </Button>

@@ -28,7 +28,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
 }) => {
   // Content
   const cardContent = (
-    <CardContent className="flex items-center gap-x-2  p-0">
+    <CardContent className="flex items-center space-x-2  p-0">
       {/* Member image */}
       <div className="w-14">
         <div className="aspect-ratio-square rounded-md">

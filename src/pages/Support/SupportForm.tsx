@@ -175,7 +175,7 @@ const SupportForm = () => {
         />
 
         {/* Input wrapper */}
-        <div className="flex flex-col justify-between gap-5 xl:flex-row">
+        <div className="flex flex-col space-y-5 xl:flex-row xl:items-center xl:justify-between xl:space-x-5 xl:space-y-0">
           {/* Agreement checkbox */}
           <FormField
             control={form.control}

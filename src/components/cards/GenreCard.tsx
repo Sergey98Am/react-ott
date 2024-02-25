@@ -33,7 +33,7 @@ const GenreCard: React.FC<GenreCardProps> = ({
 
         {/* Title */}
         <CardFooter className="justify-between p-0">
-          <div className="text flex flex-col items-start gap-y-2">
+          <div className="text space-y-2">
             {topBadge && <Badge>Top 10 In</Badge>}
             <Typography
               variant="h4"

@@ -21,7 +21,7 @@ const VideoCard: React.FC<VideoCardProps> = ({
   duration,
 }) => {
   const cardContent = (
-    <CardContent className="flex flex-col gap-4 p-0 md:flex-row md:items-center 2xl:gap-5">
+    <CardContent className="flex flex-col space-y-4 p-0 md:flex-row md:items-center md:space-x-5 md:space-y-0">
       {/* Image and play icon */}
       <div className="relative w-44 min-w-0 flex-shrink-0 flex-grow-0">
         {/* Image */}
@@ -47,16 +47,16 @@ const VideoCard: React.FC<VideoCardProps> = ({
       </div>
 
       {/* Video title, duration and description */}
-      <div className="flex flex-col gap-2.5 2xl:gap-3.5">
+      <div className="space-y-2.5 2xl:space-y-3.5">
         {/* Title and duration */}
-        <div className="info-heading flex flex-col-reverse justify-between	gap-2.5 md:flex-row md:items-center 2xl:gap-3.5">
+        <div className="info-heading flex flex-col-reverse justify-between	space-y-2.5 space-y-reverse md:flex-row md:items-center 2xl:space-x-3.5">
           {/* Title */}
           <h4 className="text-base font-semibold md:text-lg 2xl:text-xl">
             {title}
           </h4>
 
           {/* Duration */}
-          <div className="md:text-md flex w-fit min-w-[80px] items-center justify-center gap-x-1 rounded-md border border-dark-black-15 bg-dark-black-08 p-1.5 text-xs text-grey-grey-60 2xl:rounded-lg 2xl:px-2.5 2xl:py-2 2xl:text-base">
+          <div className="md:text-md flex w-fit min-w-[80px] items-center justify-center space-x-1 rounded-md border border-dark-black-15 bg-dark-black-08 p-1.5 text-xs text-grey-grey-60 2xl:rounded-lg 2xl:px-2.5 2xl:py-2 2xl:text-base">
             <ClockIcon className="h-5 w-5 2xl:h-6 2xl:w-6" />
             <span className="font-medium">{duration}</span>
           </div>
