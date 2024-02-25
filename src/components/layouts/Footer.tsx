@@ -69,7 +69,7 @@ const Footer = () => {
             {/* Icons */}
             <div className={`icons ${footerItem}`}>
               <div className={footerItemTitle}>Connect With Us</div>
-              <div className="flex gap-x-2.5 2xl:gap-x-2.5">
+              <div className="flex space-x-2.5 2xl:space-x-2.5">
                 <a
                   href="https://www.facebook.com"
                   target="_blank"
@@ -96,13 +96,13 @@ const Footer = () => {
           </div>
 
           {/* Copyright items */}
-          <div className="flex flex-col gap-y-5 2xl:gap-y-6">
+          <div className="space-y-5 2xl:space-y-6">
             <Separator />
-            <div className="flex flex-col gap-y-5 text-grey-grey-60 sm:flex-row sm:justify-between sm:gap-y-0">
+            <div className="flex flex-col space-y-5 text-grey-grey-60 sm:flex-row sm:justify-between sm:space-y-0">
               <div className={footerBelowItem}>
                 ©{new Date().getFullYear()} streamvib, All Rights Reserved
               </div>
-              <div className="flex items-center gap-x-4 2xl:gap-x-5">
+              <div className="flex items-center space-x-4 2xl:space-x-5">
                 <div className={footerBelowItem}>
                   <a href="">Terms of Use</a>
                 </div>

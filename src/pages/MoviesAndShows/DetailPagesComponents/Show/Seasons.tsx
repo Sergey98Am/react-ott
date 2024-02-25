@@ -33,7 +33,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
   return (
     <div
       className={cn(
-        `${infoSectionClasses} flex w-full flex-col gap-y-5 sm:gap-y-7 2xl:gap-y-10 2xl:px-10`,
+        `${infoSectionClasses} w-full space-y-5 sm:space-y-7 2xl:space-y-10 2xl:px-10`,
       )}
     >
       <Typography variant="h3" className="!font-bold">
@@ -41,10 +41,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
       </Typography>
 
       <div className="seasons-list">
-        <Accordion
-          type="multiple"
-          className="flex flex-col gap-y-4 2xl:gap-y-5"
-        >
+        <Accordion type="multiple" className="space-y-4 2xl:space-y-5">
           {seasons.map((season, index) => (
             // Accordion Item
             <AccordionItem
@@ -54,7 +51,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
             >
               {/* Trigger */}
               <AccordionTrigger className="trigger group p-0 hover:no-underline [&[data-state=open]>.arrow]:rotate-180">
-                <div className="flex items-center gap-x-1 xl:gap-x-2 2xl:gap-x-3">
+                <div className="flex items-center space-x-1 xl:space-x-2 2xl:space-x-3">
                   {/* Season number */}
                   <Typography
                     variant="h3"
@@ -87,7 +84,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
                     // Episode item
                     <React.Fragment key={`episode-${index}`}>
                       {/* Single episode wrapper */}
-                      <div className="relative flex items-center gap-x-4 rounded-lg bg-dark-black-08 p-5 md:gap-x-5 md:bg-transparent md:p-0 2xl:gap-x-11">
+                      <div className="relative flex items-center rounded-lg bg-dark-black-08 p-5 md:space-x-5 md:bg-transparent md:p-0 2xl:space-x-11">
                         {/* Episode number */}
                         <div className="absolute left-5 right-5 top-14 flex items-center space-x-6 text-3xl !font-semibold text-grey-grey-60 md:static md:text-4xl">
                           <div className="h-[1px] w-screen bg-absolute-white md:hidden"></div>

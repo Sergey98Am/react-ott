@@ -30,11 +30,9 @@ const infoSectionClasses = ctl(
 );
 
 const fieldContentDistanceClasses = ctl(
-  `flex
-  flex-col 
-  gap-y-2 
-  sm:gap-y-2.5 
-  2xl:gap-y-3.5`,
+  `space-y-2 
+  sm:space-y-2.5 
+  2xl:space-y-3.5`,
 );
 
 const fieldLabelClasses = ctl(
@@ -42,8 +40,8 @@ const fieldLabelClasses = ctl(
   text-grey-grey-60 
   flex
   items-center
-  gap-x-0.5
-  2xl:gap-x-1`,
+  space-x-0.5
+  2xl:space-x-1`,
 );
 
 const labelIconClasses = ctl(
@@ -79,7 +77,7 @@ const MovieDetail = () => {
               description={single_media_item.description}
             />
             <div className="info grid grid-cols-12 gap-5">
-              <div className="col-span-12 flex flex-col gap-y-5 xl:col-span-8 2xl:gap-y-7">
+              <div className="col-span-12 space-y-5 xl:col-span-8 2xl:space-y-7">
                 {/* Movie description */}
                 <div className="description hidden xl:!flex">
                   <Description
@@ -103,7 +101,7 @@ const MovieDetail = () => {
                   reviews={single_media_item.reviews}
                 />
               </div>
-              <div className="order-first col-span-12 flex flex-col gap-y-5 xl:order-last xl:col-span-4">
+              <div className="order-first col-span-12 space-y-5 xl:order-last xl:col-span-4">
                 {/* Movie description */}
                 <div className="description block xl:hidden">
                   <Description
@@ -114,9 +112,7 @@ const MovieDetail = () => {
                   />
                 </div>
 
-                <div
-                  className={`${infoSectionClasses} flex flex-col gap-y-5 sm:gap-y-6`}
-                >
+                <div className={`${infoSectionClasses} space-y-5 sm:space-y-6`}>
                   {/* Released year */}
                   <ReleasedYear
                     fieldLabelClasses={fieldLabelClasses}

@@ -89,12 +89,12 @@ const CountrySelect = ({
         <button
           type="button"
           className={cn(
-            "flex items-center gap-1 rounded-md border border-dark-black-15 bg-dark-black-08 px-2 py-4 2xl:rounded-lg 2xl:px-3 2xl:py-5",
+            "flex items-center space-x-1 space-y-1 rounded-md border border-dark-black-15 bg-dark-black-08 px-2 py-4 2xl:rounded-lg 2xl:px-3 2xl:py-5",
           )}
           disabled={disabled}
         >
           <span className="flex items-center truncate">
-            <div className="flex h-6 w-9 gap-x-1 rounded-sm bg-grey-grey-60">
+            <div className="flex h-6 w-9 space-x-1 space-y-1 rounded-sm bg-grey-grey-60">
               {value && <FlagComponent country={value} countryName={value} />}
             </div>
           </span>
@@ -113,7 +113,7 @@ const CountrySelect = ({
                 .filter((x) => x.value)
                 .map((option) => (
                   <CommandItem
-                    className={"gap-2 text-sm"}
+                    className={"space-x-2 text-sm"}
                     key={option.value}
                     onSelect={() => handleSelect(option.value)}
                   >

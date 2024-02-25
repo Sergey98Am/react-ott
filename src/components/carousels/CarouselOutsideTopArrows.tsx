@@ -55,19 +55,19 @@ const CarouselOutsideTopArrows: React.FC<PropType> = (props) => {
   } = usePrevNextButtons(emblaApi);
 
   return (
-    <div className="flex flex-col gap-y-4 xl:gap-y-5 2xl:gap-y-7">
+    <div className="space-y-4 xl:space-y-5 2xl:space-y-7">
       {/* Heading */}
       <div className="flex items-center justify-between">
         {/* Title */}
         <Typography
           variant="h5"
-          className="flex items-center gap-x-0.5 text-sm text-grey-grey-60 sm:text-base 2xl:gap-x-1 2xl:text-lg"
+          className="flex items-center space-x-0.5 text-sm text-grey-grey-60 sm:text-base 2xl:space-x-1 2xl:text-lg"
         >
           {headingTitle}
         </Typography>
 
         {/* Desktop/laptop controls */}
-        <div className="arrows relative flex gap-x-2.5">
+        <div className="arrows relative flex space-x-2.5">
           <PrevButton
             onClick={onPrevButtonClick}
             disabled={prevBtnDisabled}

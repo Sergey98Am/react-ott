@@ -22,7 +22,7 @@ const Director: React.FC<DirectorProps> = ({
       </Typography>
 
       {/* Single movie or show director(s) */}
-      <div className="gap-y-3">
+      <div className="space-y-3">
         {directors.map((director, index) => {
           // Director image
           const { data: directorImage } = supabase.storage

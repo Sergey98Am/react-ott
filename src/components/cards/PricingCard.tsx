@@ -11,9 +11,9 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = (props) => {
   return (
-    <Card className="flex flex-col gap-y-[30px] border-dark-black-15 bg-dark-black-10 p-6 sm:gap-y-10 sm:p-10 2xl:gap-y-[50px] 2xl:p-[50px]">
+    <Card className="space-y-[30px] border-dark-black-15 bg-dark-black-10 p-6 sm:space-y-10 sm:p-10 2xl:space-y-[50px] 2xl:p-[50px]">
       {/* Title and description */}
-      <CardHeader className="info gap-y-2.5 sm:gap-y-3 2xl:gap-y-4">
+      <CardHeader className="info space-y-2.5 sm:space-y-3 2xl:space-y-4">
         <Typography variant="h3" className="font-bold">
           {props.title}
         </Typography>
@@ -36,7 +36,7 @@ const PricingCard: React.FC<PricingCardProps> = (props) => {
       </CardContent>
 
       {/* Actions */}
-      <CardFooter className="actions flex gap-x-3 self-stretch p-0 2xl:gap-x-5">
+      <CardFooter className="actions flex space-x-3 self-stretch p-0 2xl:space-x-5">
         <Button
           variant="dark"
           className="flex-basis-0 flex-shrink-0 flex-grow px-0"

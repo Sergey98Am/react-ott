@@ -38,7 +38,7 @@ const MobileNavbar = () => {
 
         {/* Icons */}
         <div className="flex items-center justify-center space-x-3">
-          <div className="flex gap-x-3.5 2xl:gap-x-[30px]">
+          <div className="flex space-x-3.5 2xl:space-x-[30px]">
             <Loop />
             <Bell />
           </div>

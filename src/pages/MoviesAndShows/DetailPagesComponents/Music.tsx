@@ -22,7 +22,7 @@ const Music: React.FC<MusicProps> = ({
       </Typography>
 
       {/* Single movie or show musician(s) */}
-      <div className="gap-y-3">
+      <div className="space-y-3">
         {musicians.map((musician, index) => {
           // Musician image
           const { data: musicianImage } = supabase.storage

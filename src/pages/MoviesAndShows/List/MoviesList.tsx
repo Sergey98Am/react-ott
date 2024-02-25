@@ -49,7 +49,7 @@ const MoviesList = () => {
   } = useMustWatchMediaItems("Movie");
 
   return (
-    <div className="flex flex-col gap-y-12 md:gap-y-20 2xl:gap-y-24">
+    <div className="space-y-12 md:space-y-20 2xl:space-y-24">
       {/* Carousels */}
       <div className="genres space-y-12 2xl:space-y-24">
         {/* Genres */}
