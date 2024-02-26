@@ -36,9 +36,19 @@ const Pricing = () => {
         </div>
 
         {/* Tabs for choosing monthly or yearly plan */}
-        <TabsList>
-          <TabsTrigger value="monthly">Monthly</TabsTrigger>
-          <TabsTrigger value="yearly">Yearly</TabsTrigger>
+        <TabsList className="2xl:p-2.5">
+          <TabsTrigger
+            value="monthly"
+            className="2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+          >
+            Monthly
+          </TabsTrigger>
+          <TabsTrigger
+            value="yearly"
+            className="2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+          >
+            Yearly
+          </TabsTrigger>
         </TabsList>
       </div>
 
