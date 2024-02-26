@@ -73,7 +73,7 @@ const PlansTable: React.FC<PlansTableProps> = ({
           <TableHead className={elementPaddingClasses}>Basic</TableHead>
           <TableHead className={`${elementPaddingClasses} space-x-2`}>
             <span>Standard</span>
-            <Badge className="inline !rounded-sm !p-1 !text-xs !font-medium lg:!text-sm 2xl:!px-3">
+            <Badge className="inline rounded-sm p-1 text-xs font-medium lg:text-sm 2xl:px-3">
               Popular
             </Badge>
           </TableHead>

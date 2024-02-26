@@ -1,5 +1,4 @@
 import { cn, formatNumber } from "@/lib/utils";
-import { Badge } from "../ui/Badge";
 import { Card, CardContent, CardHeader } from "../ui/Card";
 import CustomRating from "../ui/CustomRating";
 import Typography from "../ui/Typography";
@@ -42,15 +41,13 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
 
         {/* Stars */}
         <div className="rating">
-          <Badge
-            variant="circle"
-            className="flex items-center space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
-          >
+          {/* Stars */}
+          <div className="flex items-center space-x-1 rounded-3xl border border-dark-black-15 bg-dark-black-08 px-2 py-1.5 text-xs sm:px-2.5 2xl:text-sm ">
             <CustomRating value={Number(reviewRating)} readOnly />
             <span className="font-medium text-grey-grey-60">
               {formatNumber(Number(reviewRating))}
             </span>
-          </Badge>
+          </div>
         </div>
       </CardHeader>
 

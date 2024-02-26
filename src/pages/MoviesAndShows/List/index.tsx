@@ -87,11 +87,17 @@ const MoviesAndShows = () => {
         {/* For Mobile */}
         <Tabs defaultValue="movies" className="space-y-12 md:hidden">
           <Container>
-            <TabsList className="w-full">
-              <TabsTrigger value="movies" className="w-6/12">
+            <TabsList className="w-full 2xl:p-2.5">
+              <TabsTrigger
+                value="movies"
+                className="w-6/12 2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+              >
                 Movies
               </TabsTrigger>
-              <TabsTrigger value="shows" className="w-6/12">
+              <TabsTrigger
+                value="shows"
+                className="w-6/12 2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+              >
                 Shows
               </TabsTrigger>
             </TabsList>

@@ -5,11 +5,24 @@ import {
 } from "@heroicons/react/24/solid";
 import { Card, CardContent } from "../ui/Card";
 import Image from "../ui/Image";
-import { Badge } from "../ui/Badge";
 import { formatDate, formatNumber } from "@/lib/utils";
 import CustomRating from "../ui/CustomRating";
 import { Link } from "react-router-dom";
 import ctl from "@netlify/classnames-template-literals";
+
+const mediaFieldClasses = ctl(
+  `flex 
+  items-center 
+  space-x-0.5 
+  rounded-3xl 
+  border 
+  border-dark-black-15 
+  bg-dark-black-08 
+  p-1
+  pr-2 
+  2xl:p-1.5 
+  2xl:pr-2.5`,
+);
 
 // Duration component
 interface DurationProps {
@@ -18,15 +31,12 @@ interface DurationProps {
 
 const Duration: React.FC<DurationProps> = ({ duration }) => {
   return (
-    <Badge
-      variant="circle"
-      className="flex items-center space-x-0.5 pr-2 2xl:p-1.5 2xl:pr-2.5"
-    >
+    <div className={mediaFieldClasses}>
       <ClockIcon className="h-5 w-5 text-grey-grey-60 2xl:h-6 2xl:w-6" />
       <span className="text-xs font-medium text-grey-grey-60 2xl:text-base">
         {duration}
       </span>
-    </Badge>
+    </div>
   );
 };
 
@@ -37,15 +47,12 @@ interface ViewsProps {
 
 const Views: React.FC<ViewsProps> = ({ views }) => {
   return (
-    <Badge
-      variant="circle"
-      className="flex items-center space-x-0.5 pr-2 2xl:p-1.5 2xl:pr-2.5"
-    >
+    <div className={mediaFieldClasses}>
       <EyeIcon className="h-5 w-5 text-grey-grey-60 2xl:h-6 2xl:w-6" />
       <span className="text-xs !font-medium text-grey-grey-60 2xl:text-base">
         {formatNumber(views)}
       </span>
-    </Badge>
+    </div>
   );
 };
 
@@ -56,13 +63,12 @@ interface ReleasedTimeProps {
 
 const ReleasedTime: React.FC<ReleasedTimeProps> = ({ time }) => {
   return (
-    <Badge
-      variant="circle"
-      className="w-full space-y-0.5 pr-2 font-medium text-grey-grey-75 2xl:p-1.5 2xl:pr-2.5"
+    <div
+      className={`${mediaFieldClasses} w-full flex-col text-xs text-grey-grey-75 2xl:text-base`}
     >
       <p>Released at</p>
       <p>{formatDate(`${time}`)}</p>
-    </Badge>
+    </div>
   );
 };
 
@@ -73,15 +79,12 @@ interface SeasonProps {
 
 const Season: React.FC<SeasonProps> = ({ season }) => {
   return (
-    <Badge
-      variant="circle"
-      className="flex items-center space-x-0.5 pr-2 2xl:p-1.5 2xl:pr-2.5"
-    >
+    <div className={mediaFieldClasses}>
       <RectangleStackIcon className="h-5 w-5 text-grey-grey-60 2xl:h-6 2xl:w-6" />
       <span className="text-xs font-medium text-grey-grey-60 2xl:text-base">
         {season} season
       </span>
-    </Badge>
+    </div>
   );
 };
 
@@ -159,15 +162,14 @@ const MediaCard: React.FC<MediaCardProps> = (props) => {
       {props.variant === "rating" && (
         <div className="flex items-center justify-between">
           <Duration duration={props.duration} />
-          <Badge
-            variant="circle"
-            className="flex items-center space-x-1 px-2 py-1.5 pr-2 text-xs sm:px-2.5 2xl:text-sm"
-          >
+
+          {/* Stars */}
+          <div className="flex items-center space-x-1 rounded-3xl border border-dark-black-15 bg-dark-black-08 px-2 py-1.5 text-xs sm:px-2.5 2xl:text-sm ">
             <CustomRating value={4} readOnly />
             <span className="font-medium text-grey-grey-60">
               {formatNumber(props.votes)}
             </span>
-          </Badge>
+          </div>
         </div>
       )}
       {/* Variant "season" */}

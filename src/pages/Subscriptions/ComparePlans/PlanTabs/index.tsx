@@ -15,10 +15,25 @@ const PlansTabs: React.FC<PlansTabsProps> = ({
 }) => {
   return (
     <Tabs defaultValue="basic" className="block md:hidden">
-      <TabsList className="grid w-full grid-cols-3">
-        <TabsTrigger value="basic">Basic</TabsTrigger>
-        <TabsTrigger value="standard">Standard</TabsTrigger>
-        <TabsTrigger value="premium">Premium</TabsTrigger>
+      <TabsList className="grid w-full grid-cols-3 2xl:p-2.5">
+        <TabsTrigger
+          value="basic"
+          className="2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+        >
+          Basic
+        </TabsTrigger>
+        <TabsTrigger
+          value="standard"
+          className="2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+        >
+          Standard
+        </TabsTrigger>
+        <TabsTrigger
+          value="premium"
+          className="2xl:rounded-[10px] 2xl:px-6 2xl:py-3.5 2xl:text-lg"
+        >
+          Premium
+        </TabsTrigger>
       </TabsList>
       <TabsContent value="basic" className="mt-5">
         <PlanDetails plan={basicPlan} />
