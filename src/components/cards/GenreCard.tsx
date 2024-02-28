@@ -16,7 +16,7 @@ const GenreCard: React.FC<GenreCardProps> = ({
 }) => {
   return (
     <div>
-      <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-5 sm:px-6 xl:p-[30px]">
+      <Card className="rounded-xl border border-dark-black-15 bg-dark-black-10 p-5 transition hover:bg-dark-black-12 sm:px-6 xl:p-[30px]">
         {/* Image */}
         <CardContent className="relative rounded-[18px] p-0">
           <div

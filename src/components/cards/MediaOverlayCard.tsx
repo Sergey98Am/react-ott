@@ -14,6 +14,7 @@ const iconButtonClasses = ctl(
   border-dark-black-15 
   bg-dark-black-06 
   p-3 
+  hover:bg-dark-black-08
   2xl:p-3.5`,
 );
 

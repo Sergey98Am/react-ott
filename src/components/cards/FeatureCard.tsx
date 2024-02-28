@@ -14,13 +14,7 @@ const FeatureCard: React.FC<FeatureCardProps> = ({
   description,
 }) => {
   return (
-    <Card
-      className="space-y-[30px] rounded-xl border border-dark-black-15 p-6 sm:p-10 2xl:p-12"
-      style={{
-        background:
-          "linear-gradient(222deg, rgba(229, 0, 0, 0.50) -208.03%, rgba(229, 0, 0, 0.00) 41.32%), #0F0F0F",
-      }}
-    >
+    <Card className="space-y-[30px] rounded-xl border border-dark-black-15 bg-dark-black-06 bg-gradient-to-bl from-[#e50000]/10 from-0% to-transparent to-50% p-6 transition-all hover:shadow-lg hover:shadow-primary-red-45 sm:p-10 2xl:p-12">
       {/* Image and title */}
       <CardHeader className="flex-row items-center space-x-4">
         <div className="w-fit rounded-xl bg-dark-black-12 p-2.5 sm:p-3 2xl:p-4">

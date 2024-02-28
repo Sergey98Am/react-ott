@@ -65,7 +65,7 @@ export const DotButton: React.FC<PropType> = (props) => {
   return (
     <button
       className={cn(
-        `flex h-1 w-5 cursor-pointer rounded bg-dark-black-20`,
+        `flex h-1 w-5 cursor-pointer rounded bg-dark-black-20 transition-colors hover:bg-grey-grey-60`,
         className,
       )}
       type="button"

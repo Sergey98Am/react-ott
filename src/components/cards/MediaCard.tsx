@@ -131,9 +131,11 @@ const MediaCard: React.FC<MediaCardProps> = (props) => {
     border-dark-black-15 
     bg-dark-black-10 
     p-3 
+    transition-colors
     sm:p-4 
     2xl:rounded-xl 
-    2xl:p-5`,
+    2xl:p-5
+    hover:bg-dark-black-15`,
   );
 
   const cardContent = (

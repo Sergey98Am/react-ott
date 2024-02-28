@@ -89,7 +89,7 @@ const CountrySelect = ({
         <button
           type="button"
           className={cn(
-            "flex items-center space-x-1 space-y-1 rounded-md border border-dark-black-15 bg-dark-black-08 px-2 py-4 2xl:rounded-lg 2xl:px-3 2xl:py-5",
+            "flex items-center space-x-1 space-y-1 rounded-md border border-dark-black-15 bg-dark-black-08 px-2 py-4 transition-colors hover:bg-dark-black-06 2xl:rounded-lg 2xl:px-3 2xl:py-5",
           )}
           disabled={disabled}
         >

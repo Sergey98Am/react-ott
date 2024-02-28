@@ -9,6 +9,7 @@ const cardClasses = ctl(
   rounded-lg 
   bg-dark-black-08 
   p-2.5 
+  hover:bg-dark-black-10
   sm:p-3 
   2xl:p-3.5`,
 );
@@ -28,7 +29,7 @@ const MemberCard: React.FC<MemberCardProps> = ({
 }) => {
   // Content
   const cardContent = (
-    <CardContent className="flex items-center space-x-2  p-0">
+    <CardContent className="flex items-center space-x-2 p-0">
       {/* Member image */}
       <div className="w-14">
         <div className="aspect-ratio-square rounded-md">

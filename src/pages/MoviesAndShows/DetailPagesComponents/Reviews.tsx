@@ -36,7 +36,7 @@ const Reviews: React.FC<ReviewsProps> = ({
   return (
     <div
       className={cn(
-        `reviews space-y-6 sm:space-y-7 2xl:space-y-10 ${infoSectionClasses}`,
+        `reviews space-y-6 hover:bg-dark-black-12 sm:space-y-7 2xl:space-y-10 ${infoSectionClasses}`,
       )}
     >
       {/* Label */}

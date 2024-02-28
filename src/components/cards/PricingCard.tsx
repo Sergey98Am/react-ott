@@ -11,7 +11,7 @@ interface PricingCardProps {
 
 const PricingCard: React.FC<PricingCardProps> = (props) => {
   return (
-    <Card className="space-y-[30px] border-dark-black-15 bg-dark-black-10 p-6 sm:space-y-10 sm:p-10 2xl:space-y-[50px] 2xl:p-[50px]">
+    <Card className="space-y-[30px] border-dark-black-15 bg-dark-black-10 p-6 transition-colors hover:bg-dark-black-15 sm:space-y-10 sm:p-10 2xl:space-y-[50px] 2xl:p-[50px]">
       {/* Title and description */}
       <CardHeader className="info space-y-2.5 sm:space-y-3 2xl:space-y-4">
         <Typography variant="h3" className="font-bold">

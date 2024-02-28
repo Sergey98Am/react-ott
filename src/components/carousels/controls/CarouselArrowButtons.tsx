@@ -70,7 +70,9 @@ const arrowButtons = ctl(
   border-dark-black-12
   bg-dark-black-10 
   p-3.5
-  disabled:text-dark-black-30`,
+  disabled:text-dark-black-30
+  transition-colors
+  hover:bg-dark-black-15`,
 );
 
 export const PrevButton: React.FC<PropType> = (props) => {
