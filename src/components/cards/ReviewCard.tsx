@@ -21,7 +21,7 @@ const ReviewCard: React.FC<ReviewCardProps> = ({
   return (
     <Card
       className={cn(
-        `space-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none sm:p-7 2xl:space-y-5 2xl:p-10`,
+        `space-y-4 rounded-xl border border-dark-black-15 bg-dark-black-06 p-6 shadow-none hover:bg-dark-black-08 sm:p-7 2xl:space-y-5 2xl:p-10`,
         className,
       )}
     >

@@ -37,16 +37,13 @@ const FAQ = () => {
             {part.map((item) => (
               // Accordion item
               <AccordionItem
-                className="border-none px-2.5 py-5 sm:space-y-0 sm:p-6 2xl:p-[30px]"
+                className="group relative border-none px-2.5 py-5 transition-all sm:space-y-0 sm:p-6 2xl:p-[30px]"
                 key={item.id}
                 value={item.title}
-                style={{
-                  borderBottom: "1px solid transparent",
-                  borderImage:
-                    "linear-gradient(90deg, rgba(229, 0, 0, 0.00) 0%, #E50000 16.67%, rgba(229, 0, 0, 0.00) 100%)",
-                  borderImageSlice: 1,
-                }}
               >
+                {/* Accordion line */}
+                <div className="absolute bottom-0 left-0 h-px w-full bg-gradient-to-r from-transparent from-0% via-[#e50000] via-20% to-transparent to-100% group-hover:via-80%"></div>
+
                 <div className="flex space-x-4">
                   {/* Accoordion number */}
                   <span className="h-fit space-x-2.5 rounded-[10px] bg-dark-black-12 p-3 text-base font-semibold leading-[normal] sm:p-4 2xl:p-5 2xl:text-xl">

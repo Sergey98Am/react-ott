@@ -14,7 +14,7 @@ interface CastProps {
 
 const Cast: React.FC<CastProps> = ({ infoSectionClasses, actors }) => {
   return (
-    <div className={`${infoSectionClasses} cast`}>
+    <div className={`${infoSectionClasses} cast hover:bg-dark-black-12`}>
       {/* Single movie or show actors */}
       <CarouselOutsideTopArrows headingTitle="Cast">
         <div className="backface-hidden ml-[-10px] flex touch-pan-y 2xl:ml-[-20px]">

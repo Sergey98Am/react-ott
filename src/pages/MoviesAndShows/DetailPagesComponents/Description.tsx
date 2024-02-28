@@ -18,7 +18,7 @@ const Description: React.FC<DescriptionProps> = ({
 }) => {
   return (
     <div
-      className={`${infoSectionClasses} ${fieldContentDistanceClasses} w-full`}
+      className={`${infoSectionClasses} ${fieldContentDistanceClasses} w-full hover:bg-dark-black-12`}
     >
       {/* Label */}
       <Typography variant="h5" className={fieldLabelClasses}>

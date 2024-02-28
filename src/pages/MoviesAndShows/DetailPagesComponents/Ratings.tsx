@@ -1,4 +1,3 @@
-import { Badge } from "@/components/ui/Badge";
 import CustomRating from "@/components/ui/CustomRating";
 import Typography from "@/components/ui/Typography";
 import { StarIcon } from "@heroicons/react/24/outline";
@@ -40,10 +39,9 @@ const Ratings: React.FC<RatingProps> = ({
       <div className="grid grid-cols-2 gap-4">
         {ratingsArr.map((rating, index) => (
           // Rating item
-          <Badge
+          <div
             key={index}
-            variant="circle"
-            className="w-full flex-shrink-0 basis-1/2 space-y-0.5 rounded-lg p-3 text-start sm:p-3.5 2xl:p-4"
+            className="w-full flex-shrink-0 basis-1/2 space-y-0.5 rounded-lg border border-dark-black-15 bg-dark-black-08 p-3 text-start hover:bg-dark-black-10 sm:p-3.5 2xl:p-4"
           >
             {/* Title */}
             <Typography
@@ -64,7 +62,7 @@ const Ratings: React.FC<RatingProps> = ({
                 {rating.stars}
               </span>
             </div>
-          </Badge>
+          </div>
         ))}
       </div>
     </div>

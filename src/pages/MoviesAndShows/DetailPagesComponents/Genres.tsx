@@ -35,7 +35,7 @@ const Genres: React.FC<GenresProps> = ({
           // Genre item
           <button
             key={index}
-            className="rounded-md border border-dark-black-15 bg-dark-black-08 px-3 py-1.5 text-sm font-medium capitalize 2xl:rounded-lg 2xl:px-3.5 2xl:py-2 2xl:text-lg"
+            className="rounded-md border border-dark-black-15 bg-dark-black-08 px-3 py-1.5 text-sm font-medium capitalize hover:bg-dark-black-10 2xl:rounded-lg 2xl:px-3.5 2xl:py-2 2xl:text-lg"
           >
             {item.title}
           </button>
