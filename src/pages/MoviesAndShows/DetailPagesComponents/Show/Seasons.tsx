@@ -33,7 +33,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
   return (
     <div
       className={cn(
-        `${infoSectionClasses} w-full space-y-5 sm:space-y-7 2xl:space-y-10 2xl:px-10`,
+        `${infoSectionClasses} w-full space-y-5 hover:bg-dark-black-12 sm:space-y-7 2xl:space-y-10 2xl:px-10`,
       )}
     >
       <Typography variant="h3" className="!font-bold">
@@ -47,7 +47,7 @@ const Seasons: React.FC<SeasonProps> = ({ infoSectionClasses, seasons }) => {
             <AccordionItem
               key={`season-${index}`}
               value={`season-${index}`}
-              className="rounded-lg border border-dark-black-15 bg-dark-black-06 px-5 py-4 transition-[data-[state=open]] xl:px-10 xl:py-5 xl:data-[state=open]:py-10 2xl:rounded-xl 2xl:px-12 2xl:py-6 2xl:data-[state=open]:py-12"
+              className="rounded-lg border border-dark-black-15 bg-dark-black-06 px-5 py-4 transition-[data-[state=open]] hover:bg-dark-black-08 xl:px-10 xl:py-5 xl:data-[state=open]:py-10 2xl:rounded-xl 2xl:px-12 2xl:py-6 2xl:data-[state=open]:py-12"
             >
               {/* Trigger */}
               <AccordionTrigger className="trigger group p-0 hover:no-underline [&[data-state=open]>.arrow]:rotate-180">

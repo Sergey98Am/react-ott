@@ -78,39 +78,42 @@ const ShowDetail = () => {
               description={single_media_item.description}
             />
             <div className="info grid grid-cols-12 gap-5">
-              <div className="col-span-12 space-y-5 xl:col-span-8 2xl:space-y-7">
-                {/* Seasons and Episodes */}
-                <div className="hidden xl:!flex">
-                  <Seasons
-                    infoSectionClasses={infoSectionClasses}
-                    seasons={single_media_item.seasons}
-                  />
-                </div>
+              <div className="col-span-12 xl:col-span-8">
+                {/* Here is used grid gap for hidden element */}
+                <div className="flex flex-col gap-y-5 2xl:gap-y-7">
+                  {/* Seasons and Episodes */}
+                  <div className="hidden xl:!flex">
+                    <Seasons
+                      infoSectionClasses={infoSectionClasses}
+                      seasons={single_media_item.seasons}
+                    />
+                  </div>
 
-                {/* Movie description */}
-                <div className="description hidden xl:!flex">
-                  <Description
+                  {/* Movie description */}
+                  <div className="description hidden xl:!flex">
+                    <Description
+                      infoSectionClasses={infoSectionClasses}
+                      fieldContentDistanceClasses={fieldContentDistanceClasses}
+                      fieldLabelClasses={fieldLabelClasses}
+                      single_media_item={single_media_item}
+                    />
+                  </div>
+
+                  {/* Cast */}
+                  <Cast
                     infoSectionClasses={infoSectionClasses}
-                    fieldContentDistanceClasses={fieldContentDistanceClasses}
+                    actors={single_media_item.actors}
+                  />
+
+                  {/* Reviews */}
+                  <Reviews
+                    infoSectionClasses={infoSectionClasses}
                     fieldLabelClasses={fieldLabelClasses}
-                    single_media_item={single_media_item}
+                    reviews={single_media_item.reviews}
                   />
                 </div>
-
-                {/* Cast */}
-                <Cast
-                  infoSectionClasses={infoSectionClasses}
-                  actors={single_media_item.actors}
-                />
-
-                {/* Reviews */}
-                <Reviews
-                  infoSectionClasses={infoSectionClasses}
-                  fieldLabelClasses={fieldLabelClasses}
-                  reviews={single_media_item.reviews}
-                />
               </div>
-              <div className="order-first col-span-12 space-y-5 xl:order-last xl:col-span-4">
+              <div className="order-first col-span-12 space-y-5 xl:order-last xl:col-span-4 xl:space-y-0">
                 {/* Seasons and Episodes */}
                 <div className="block xl:hidden">
                   <Seasons
@@ -129,7 +132,9 @@ const ShowDetail = () => {
                   />
                 </div>
 
-                <div className={`${infoSectionClasses} space-y-5 sm:space-y-6`}>
+                <div
+                  className={`${infoSectionClasses} space-y-5 hover:bg-dark-black-12 sm:space-y-6`}
+                >
                   {/* Released year */}
                   <ReleasedYear
                     fieldLabelClasses={fieldLabelClasses}
